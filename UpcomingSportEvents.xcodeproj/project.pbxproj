@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */; };
-		EBD7073E2996FF4D00ECF0E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7073D2996FF4D00ECF0E8 /* SceneDelegate.swift */; };
-		EBD707402996FF4D00ECF0E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7073F2996FF4D00ECF0E8 /* ViewController.swift */; };
-		EBD707432996FF4D00ECF0E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD707412996FF4D00ECF0E8 /* Main.storyboard */; };
 		EBD707452996FF4F00ECF0E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD707442996FF4F00ECF0E8 /* Assets.xcassets */; };
 		EBD707482996FF4F00ECF0E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD707462996FF4F00ECF0E8 /* LaunchScreen.storyboard */; };
 		EBD707532996FF4F00ECF0E8 /* UpcomingSportEventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD707522996FF4F00ECF0E8 /* UpcomingSportEventsTests.swift */; };
 		EBD7075D2996FF4F00ECF0E8 /* UpcomingSportEventsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7075C2996FF4F00ECF0E8 /* UpcomingSportEventsUITests.swift */; };
 		EBD7075F2996FF4F00ECF0E8 /* UpcomingSportEventsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7075E2996FF4F00ECF0E8 /* UpcomingSportEventsUITestsLaunchTests.swift */; };
+		EBD707702997018E00ECF0E8 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7076F2997018E00ECF0E8 /* EventListViewController.swift */; };
+		EBD707742997020600ECF0E8 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD707732997020600ECF0E8 /* Storyboarded.swift */; };
+		EBD707762997023E00ECF0E8 /* EventList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD707752997023E00ECF0E8 /* EventList.storyboard */; };
+		EBD707782997027200ECF0E8 /* ViewConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD707772997027200ECF0E8 /* ViewConstructor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +39,6 @@
 /* Begin PBXFileReference section */
 		EBD707382996FF4D00ECF0E8 /* UpcomingSportEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpcomingSportEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EBD7073D2996FF4D00ECF0E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EBD7073F2996FF4D00ECF0E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EBD707422996FF4D00ECF0E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBD707442996FF4F00ECF0E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBD707472996FF4F00ECF0E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBD707492996FF4F00ECF0E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +47,10 @@
 		EBD707582996FF4F00ECF0E8 /* UpcomingSportEventsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UpcomingSportEventsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD7075C2996FF4F00ECF0E8 /* UpcomingSportEventsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingSportEventsUITests.swift; sourceTree = "<group>"; };
 		EBD7075E2996FF4F00ECF0E8 /* UpcomingSportEventsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingSportEventsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EBD7076F2997018E00ECF0E8 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		EBD707732997020600ECF0E8 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		EBD707752997023E00ECF0E8 /* EventList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventList.storyboard; sourceTree = "<group>"; };
+		EBD707772997027200ECF0E8 /* ViewConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstructor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +101,9 @@
 		EBD7073A2996FF4D00ECF0E8 /* UpcomingSportEvents */ = {
 			isa = PBXGroup;
 			children = (
+				EBD7076B299700A200ECF0E8 /* App */,
+				EBD70771299701CB00ECF0E8 /* Helpers */,
 				EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */,
-				EBD7073D2996FF4D00ECF0E8 /* SceneDelegate.swift */,
-				EBD7073F2996FF4D00ECF0E8 /* ViewController.swift */,
-				EBD707412996FF4D00ECF0E8 /* Main.storyboard */,
 				EBD707442996FF4F00ECF0E8 /* Assets.xcassets */,
 				EBD707462996FF4F00ECF0E8 /* LaunchScreen.storyboard */,
 				EBD707492996FF4F00ECF0E8 /* Info.plist */,
@@ -125,6 +126,40 @@
 				EBD7075E2996FF4F00ECF0E8 /* UpcomingSportEventsUITestsLaunchTests.swift */,
 			);
 			path = UpcomingSportEventsUITests;
+			sourceTree = "<group>";
+		};
+		EBD7076B299700A200ECF0E8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EBD7076C299700AA00ECF0E8 /* Events */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EBD7076C299700AA00ECF0E8 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				EBD7076E2997016A00ECF0E8 /* EventList */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		EBD7076E2997016A00ECF0E8 /* EventList */ = {
+			isa = PBXGroup;
+			children = (
+				EBD7076F2997018E00ECF0E8 /* EventListViewController.swift */,
+				EBD707752997023E00ECF0E8 /* EventList.storyboard */,
+			);
+			path = EventList;
+			sourceTree = "<group>";
+		};
+		EBD70771299701CB00ECF0E8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EBD707732997020600ECF0E8 /* Storyboarded.swift */,
+				EBD707772997027200ECF0E8 /* ViewConstructor.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,8 +268,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBD707482996FF4F00ECF0E8 /* LaunchScreen.storyboard in Resources */,
+				EBD707762997023E00ECF0E8 /* EventList.storyboard in Resources */,
 				EBD707452996FF4F00ECF0E8 /* Assets.xcassets in Resources */,
-				EBD707432996FF4D00ECF0E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,9 +316,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBD707402996FF4D00ECF0E8 /* ViewController.swift in Sources */,
+				EBD707702997018E00ECF0E8 /* EventListViewController.swift in Sources */,
+				EBD707742997020600ECF0E8 /* Storyboarded.swift in Sources */,
+				EBD707782997027200ECF0E8 /* ViewConstructor.swift in Sources */,
 				EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */,
-				EBD7073E2996FF4D00ECF0E8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,14 +356,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EBD707412996FF4D00ECF0E8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EBD707422996FF4D00ECF0E8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EBD707462996FF4F00ECF0E8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -465,9 +493,10 @@
 				INFOPLIST_FILE = UpcomingSportEvents/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -493,9 +522,10 @@
 				INFOPLIST_FILE = UpcomingSportEvents/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
