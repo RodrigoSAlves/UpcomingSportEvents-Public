@@ -5,8 +5,8 @@
 //  Created by Rodrigo Alves on 10/02/2023.
 //
 
-import XCTest
 @testable import UpcomingSportEvents
+import XCTest
 
 final class UpcomingSportEventsTests: XCTestCase {
 
@@ -32,5 +32,4 @@ final class UpcomingSportEventsTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

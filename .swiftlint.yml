@@ -1,0 +1,71 @@
+disabled_rules: # rule identifiers to exclude from running
+  - switch_case_alignment
+  - nesting
+opt_in_rules: # some rules are only opt-in
+  - closure_end_indentation
+  - closure_spacing
+  - collection_alignment
+  - contains_over_filter_count
+  - contains_over_filter_is_empty
+  - contains_over_first_not_nil
+  - empty_collection_literal
+  - empty_count
+  - empty_string
+  - fallthrough
+  - fatal_error_message
+  - flatmap_over_map_reduce
+  - identical_operands
+  - last_where
+  - literal_expression_end_indentation
+  - multiline_arguments
+  - multiline_parameters_brackets
+  - operator_usage_whitespace
+  - toggle_bool
+  - yoda_condition
+  - array_init
+  - trailing_closure
+  - prefer_zero_over_explicit_init
+  - sorted_imports
+  - untyped_error_in_catch
+  - weak_delegate
+  - vertical_whitespace_closing_braces
+
+  # Find all the available rules by running:
+  # swiftlint rules
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+force_cast: warning # implicitly
+force_try:
+  severity: warning # explicitly
+class_delegate_protocol: warning
+vertical_whitespace_closing_braces: error
+line_length: 200
+type_body_length:
+  - 400 # warning
+  - 1000 # error
+function_body_length:
+  warning: 50
+  error: 200
+file_length:
+  warning: 400
+  error: 2000
+large_tuple: 4
+type_name:
+  min_length: 4 # only warning
+  max_length: # warning and error
+    warning: 40
+    error: 50
+  excluded: iPhone # excluded via string
+identifier_name:
+  min_length: # only min_length
+    error: 3 # only error
+  excluded: # excluded via string array
+    - id
+    - URL
+    - GlobalAPIKey
+
+reporter: "xcode"

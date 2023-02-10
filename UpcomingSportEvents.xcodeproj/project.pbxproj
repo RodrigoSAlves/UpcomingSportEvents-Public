@@ -135,6 +135,7 @@
 			buildConfigurationList = EBD707622996FF4F00ECF0E8 /* Build configuration list for PBXNativeTarget "UpcomingSportEvents" */;
 			buildPhases = (
 				EBD707342996FF4D00ECF0E8 /* Sources */,
+				EBD707792997055A00ECF0E8 /* Run SwiftLint */,
 				EBD707352996FF4D00ECF0E8 /* Frameworks */,
 				EBD707362996FF4D00ECF0E8 /* Resources */,
 			);
@@ -252,6 +253,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EBD707792997055A00ECF0E8 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint --fix && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EBD707342996FF4D00ECF0E8 /* Sources */ = {
