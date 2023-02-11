@@ -16,7 +16,9 @@ final class DIContainer {
     init() {
         assembler = Assembler(
             [
-                SceneAssembly()
+                SceneAssembly(),
+                NetworkingAssembly(),
+                RepositoryAssembly()
             ],
             container: container
         )

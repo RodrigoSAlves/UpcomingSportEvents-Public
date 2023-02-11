@@ -8,4 +8,10 @@
 import Foundation
 
 final class EventListViewModel {
+
+    let eventRepository: EventRepositoryProtocol
+
+    init(eventRepository: EventRepositoryProtocol) {
+        self.eventRepository = eventRepository
+    }
 }
