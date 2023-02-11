@@ -9,7 +9,7 @@ import Alamofire
 import Foundation
 
 protocol SportsServiceProtocol {
-    func getEventsBySport(completion: @escaping ((Result<[Sport], NetworkError>) -> Void))
+    func getAllSportsEagerLoadedWithEvents(completion: @escaping ((Result<[SportData], NetworkError>) -> Void))
 }
 
 final class SportsService: BaseService, SportsServiceProtocol {
@@ -26,12 +26,12 @@ final class SportsService: BaseService, SportsServiceProtocol {
         return decoder
     }()
 
-    func getEventsBySport(completion: @escaping ((Result<[Sport], NetworkError>) -> Void)) {
+    func getAllSportsEagerLoadedWithEvents(completion: @escaping ((Result<[SportData], NetworkError>) -> Void)) {
         let endpointURL = SportsService.Endpoint.getEventsBySport(baseURL: baseURL)
 
         AF.request(endpointURL)
             .validate()
-            .responseDecodable(of: [Sport].self, decoder: decoder) { response in
+            .responseDecodable(of: [SportData].self, decoder: decoder) { response in
                 completion(self.handleResult(result: response.result))
             }
     }

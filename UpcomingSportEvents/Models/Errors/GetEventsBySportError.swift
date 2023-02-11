@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum GetAllEventsError: PresentableError {
+enum GetEventsBySportError: PresentableError {
     case networkError(NetworkError)
 
     var title: String {

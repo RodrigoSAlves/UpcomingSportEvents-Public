@@ -15,6 +15,7 @@ struct ViewConstructor: ViewConstructorProtocol {
     func getEventListViewController() -> EventListViewController {
         let viewController = EventListViewController.instantiate()
         viewController.viewModel = DIContainer.shared.resolve()
+        viewController.viewModel?.delegate = viewController
         return viewController
     }
 }

@@ -7,16 +7,9 @@
 
 import Foundation
 
-struct Event: Codable {
+struct Event {
     let id: String
     let name: String
     let sportId: String
     let startTime: Date
-
-    enum CodingKeys: String, CodingKey {
-        case id = "i"
-        case name = "d"
-        case sportId = "si"
-        case startTime = "tt"
-    }
 }
