@@ -11,6 +11,10 @@ import UIKit
 class EventListViewController: UIViewController, Storyboarded {
     static let storyboardIdentifier: String = "EventList"
 
+    struct Constants {
+        static let defaultSportsTableViewCellHeight: CGFloat = 100.0
+    }
+
     @IBOutlet weak var mainTableView: UITableView!
 
     var viewModel: EventListViewModel?
@@ -23,6 +27,11 @@ class EventListViewController: UIViewController, Storyboarded {
     func setupUI() {
         mainTableView.delegate = self
         mainTableView.dataSource = self
+
+        mainTableView.register(
+            UINib(nibName: EventListTableViewCell.nibIdentifier, bundle: nil),
+            forCellReuseIdentifier: EventListTableViewCell.identifier
+        )
     }
 }
 
@@ -37,7 +46,17 @@ extension EventListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let viewModel, let cell = tableView.dequeueReusableCell(withIdentifier: EventListTableViewCell.identifier, for: indexPath) as? EventListTableViewCell else {
+            return UITableViewCell()
+        }
+
+        cell.fill(events: viewModel.eventsBySport[indexPath.section].events)
+
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return Constants.defaultSportsTableViewCellHeight
     }
 }
 
