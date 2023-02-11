@@ -9,5 +9,5 @@ import Foundation
 
 struct EventsBySport {
     let sport: Sport
-    let events: [Event]
+    var events: [Event]
 }

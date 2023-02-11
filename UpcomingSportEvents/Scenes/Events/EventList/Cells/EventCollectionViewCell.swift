@@ -7,13 +7,38 @@
 
 import UIKit
 
+protocol EventCollectionViewDelegate: AnyObject {
+    func didTapMakeFavorite(event: Event)
+}
+
 class EventCollectionViewCell: UICollectionViewCell {
     static let nibIdentifier = "EventCollectionViewCell"
     static let identifier = "EventCollectionViewCell"
 
-    @IBOutlet weak var eventNameLabel: UILabel!
+    @IBOutlet weak var firstOpponentLabel: UILabel!
+    @IBOutlet weak var secondOpponentLabel: UILabel!
+    @IBOutlet weak var makeFavoriteButton: UIButton!
+    @IBOutlet weak var startTimeLabel: UILabel!
 
-    func fill(event: Event) {
-        eventNameLabel.text = event.name
+    weak var delegate: EventCollectionViewDelegate?
+    var event: Event?
+
+    func fill(event: Event, isFavorite: Bool) {
+        self.event = event
+        firstOpponentLabel.text = event.firstOpponentName
+        secondOpponentLabel.text = event.secondOpponentName
+
+        makeFavoriteButton.backgroundColor = isFavorite ? .yellow : .darkGray
+
+        let components = Calendar.current.dateComponents([.hour, .minute, .second], from: Date(), to: event.startTime)
+        startTimeLabel.text = "\(components.hour ?? 0) : \(components.minute ?? 0) : \(components.second ?? 0)"
+    }
+
+    @IBAction func didTapMakeFavoriteButton(_ sender: Any) {
+        guard let event else {
+            return
+        }
+
+        delegate?.didTapMakeFavorite(event: event)
     }
 }

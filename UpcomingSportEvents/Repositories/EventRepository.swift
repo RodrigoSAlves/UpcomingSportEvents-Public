@@ -39,6 +39,8 @@ struct EventRepository: EventRepositoryProtocol {
                         events.append(event)
                     }
 
+                    events.sort { $0.startTime < $1.startTime }
+
                     eventsBySport.append(EventsBySport(sport: sport, events: events))
                 }
 

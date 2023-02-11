@@ -72,6 +72,7 @@ extension EventListViewController: UITableViewDataSource, UITableViewDelegate {
         }
 
         cell.fill(events: viewModel.eventsBySport[indexPath.section].events)
+        cell.delegate = self
 
         return cell
     }
@@ -102,10 +103,24 @@ extension EventListViewController: EventListViewModelDelegate {
             mainTableView.deleteRows(at: indexPaths, with: .fade)
         }
     }
+
+    func didUpdateFavoriteStateForEventAt(section: Int, index: Int) {
+        mainTableView.reloadSections(IndexSet(integer: section), with: .automatic)
+    }
 }
 
 extension EventListViewController: SportSectionHeaderViewDelegate {
     func didTapToggleSectionButton(sport: Sport) {
         viewModel?.toggleSportExpansion(sport: sport)
+    }
+}
+
+extension EventListViewController: EventListTableViewCellDelegate {
+    func didTapMakeFavorite(event: Event) {
+        viewModel?.toggleFavoriteForEvent(event: event)
+    }
+
+    func isFavorite(event: Event) -> Bool {
+        return viewModel?.isFavorite(event: event) ?? false
     }
 }

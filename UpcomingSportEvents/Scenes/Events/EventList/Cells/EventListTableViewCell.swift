@@ -7,11 +7,18 @@
 
 import UIKit
 
+protocol EventListTableViewCellDelegate: AnyObject {
+    func didTapMakeFavorite(event: Event)
+    func isFavorite(event: Event) -> Bool
+}
+
 class EventListTableViewCell: UITableViewCell {
     static let nibIdentifier = "EventListTableViewCell"
     static let identifier = "EventListTableViewCell"
 
     @IBOutlet weak var mainCollectionView: UICollectionView!
+
+    weak var delegate: EventListTableViewCellDelegate?
 
     var events: [Event] = [Event]()
 
@@ -35,7 +42,7 @@ class EventListTableViewCell: UITableViewCell {
     }
 }
 
-extension EventListTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension EventListTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return events.count
     }
@@ -45,8 +52,23 @@ extension EventListTableViewCell: UICollectionViewDelegate, UICollectionViewData
             return UICollectionViewCell()
         }
 
-        cell.fill(event: events[indexPath.row])
+        let event = events[indexPath.row]
+        cell.fill(
+            event: event,
+            isFavorite: delegate?.isFavorite(event: event) ?? false
+        )
+        cell.delegate = self
 
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 200.0, height: collectionView.frame.height)
+    }
+}
+
+extension EventListTableViewCell: EventCollectionViewDelegate {
+    func didTapMakeFavorite(event: Event) {
+        delegate?.didTapMakeFavorite(event: event)
     }
 }
