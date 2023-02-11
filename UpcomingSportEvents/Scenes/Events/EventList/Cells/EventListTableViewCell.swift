@@ -21,6 +21,7 @@ class EventListTableViewCell: UITableViewCell {
     weak var delegate: EventListTableViewCellDelegate?
 
     var events: [Event] = [Event]()
+    var sportId: String?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,7 +39,53 @@ class EventListTableViewCell: UITableViewCell {
 
     func fill(events: [Event]) {
         self.events = events
+        self.sportId = events.first?.sportId
         mainCollectionView.reloadData()
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(didToggleEventFavoriteStatus),
+            name: .didToggleEventFavoriteStatus,
+            object: nil
+        )
+    }
+
+    @objc func didToggleEventFavoriteStatus(_ notification: Notification) {
+        guard let notificationPayload = notification.object as? ToggleEventFavoriteStatusNotificationPayload else {
+            return
+        }
+
+        let event = notificationPayload.event
+
+        guard event.sportId == sportId else {
+            print("Not for this sport")
+            return
+        }
+
+        guard let originalIndex = events.firstIndex(where: { $0.id == event.id }) else {
+            print("Event not found in list")
+            return
+        }
+
+        print("Event Index \(originalIndex)")
+
+        events.sort {
+            let isFirstElementFavorite = favoriteEvents[$0.id] ?? false
+            let isSecondElementFavorite = favoriteEvents[$1.id] ?? false
+
+            if isFirstElementFavorite == isSecondElementFavorite {
+                return $0.startTime < $1.startTime
+            } else {
+                return isFirstElementFavorite
+            }
+        }
+
+        let newIndex = events.firstIndex(where: { $0.id == event.id })!
+
+        mainCollectionView.performBatchUpdates {
+            mainCollectionView.deleteItems(at: [IndexPath(row: originalIndex, section: 0)])
+            mainCollectionView.insertItems(at: [IndexPath(row: newIndex, section: 0)])
+        }
     }
 }
 

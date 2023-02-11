@@ -14,6 +14,8 @@ protocol EventListViewModelDelegate: AnyObject {
     func didUpdateFavoriteStateForEventAt(section: Int, index: Int)
 }
 
+var favoriteEvents: [String: Bool] = [:]
+
 final class EventListViewModel {
     private let eventRepository: EventRepositoryProtocol
 
@@ -21,7 +23,6 @@ final class EventListViewModel {
     private(set) var getEventsBySportError: GetEventsBySportError?
     private(set) var isLoadingSportingEvents: Bool = false
     private(set) var sportExpansionStates: [String: Bool] = [:]
-    private(set) var favoriteEvents: [String: Bool] = [:]
 
     weak var delegate: EventListViewModelDelegate?
 
@@ -99,26 +100,24 @@ final class EventListViewModel {
             return
         }
 
+        print("Index before toggle \(eventIndex)")
+
+        let newFavoriteStatus: Bool
+
         if favoriteEvents[event.id] != nil {
-            favoriteEvents[event.id] = !favoriteEvents[event.id]!
+            newFavoriteStatus = !favoriteEvents[event.id]!
         } else {
-            favoriteEvents[event.id] = true
+            newFavoriteStatus = true
         }
 
-        eventsBySport[sectionIndex].events.sort {
-            let isFirstElementFavorite = favoriteEvents[$0.id] ?? false
-            let isSecondElementFavorite = favoriteEvents[$1.id] ?? false
+        favoriteEvents[event.id] = newFavoriteStatus
 
-            if isFirstElementFavorite == isSecondElementFavorite {
-                return $0.startTime < $1.startTime
-            } else {
-                return isFirstElementFavorite
-            }
-        }
+        let notificationPayload = ToggleEventFavoriteStatusNotificationPayload(
+            event: event,
+            newFavoriteStatus: newFavoriteStatus
+        )
 
-        print(eventsBySport[sectionIndex].events)
-
-        delegate?.didUpdateFavoriteStateForEventAt(section: sectionIndex, index: eventIndex)
+        NotificationCenter.default.post(name: .didToggleEventFavoriteStatus, object: notificationPayload)
     }
 
     func isFavorite(event: Event) -> Bool {
