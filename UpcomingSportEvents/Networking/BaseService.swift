@@ -8,7 +8,11 @@
 import Alamofire
 import Foundation
 
-class BaseService {
+protocol BaseServiceProtocol {
+    var baseURL: URL { get }
+}
+
+class BaseService: BaseServiceProtocol {
     let baseURL: URL
 
     init(baseURL: URL) {

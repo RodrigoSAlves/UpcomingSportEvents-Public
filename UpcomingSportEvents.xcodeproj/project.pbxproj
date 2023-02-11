@@ -253,8 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				EBD707A12997268C00ECF0E8 /* SportsService */,
-				EB4B697E2997C273003CE1F1 /* NetworkError.swift */,
 				EB4B69802997C3F2003CE1F1 /* BaseService.swift */,
+				EB4B697E2997C273003CE1F1 /* NetworkError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";

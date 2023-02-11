@@ -13,6 +13,13 @@ protocol SportsServiceProtocol {
 }
 
 final class SportsService: BaseService, SportsServiceProtocol {
+
+    struct Endpoint {
+        static func getEventsBySport(baseURL: URL) -> URL {
+            return baseURL.appendingPathComponent("/api/sports")
+        }
+    }
+
     lazy var decoder: JSONDecoder = {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
@@ -20,14 +27,12 @@ final class SportsService: BaseService, SportsServiceProtocol {
     }()
 
     func getEventsBySport(completion: @escaping ((Result<[Sport], NetworkError>) -> Void)) {
-        guard var endpointURL = URL(string: baseURL.absoluteString) else {
-            return
-        }
+        let endpointURL = SportsService.Endpoint.getEventsBySport(baseURL: baseURL)
 
-        endpointURL.appendPathComponent("/api/sports")
-
-        AF.request(endpointURL).validate().responseDecodable(of: [Sport].self, decoder: decoder) { response in
-            completion(self.handleResult(result: response.result))
-        }
+        AF.request(endpointURL)
+            .validate()
+            .responseDecodable(of: [Sport].self, decoder: decoder) { response in
+                completion(self.handleResult(result: response.result))
+            }
     }
 }
