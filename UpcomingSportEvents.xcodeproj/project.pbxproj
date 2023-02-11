@@ -27,6 +27,7 @@
 		EBD707912997146200ECF0E8 /* SportsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD707902997146200ECF0E8 /* SportsService.swift */; };
 		EBD70798299717AB00ECF0E8 /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD70797299717AB00ECF0E8 /* EventRepository.swift */; };
 		EBD7079C29971E1C00ECF0E8 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7079B29971E1C00ECF0E8 /* Environment.swift */; };
+		EBD7079F2997208B00ECF0E8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EBD7079E2997208B00ECF0E8 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBD7078129970E4400ECF0E8 /* Swinject in Frameworks */,
+				EBD7079F2997208B00ECF0E8 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +262,7 @@
 			name = UpcomingSportEvents;
 			packageProductDependencies = (
 				EBD7078029970E4400ECF0E8 /* Swinject */,
+				EBD7079E2997208B00ECF0E8 /* Alamofire */,
 			);
 			productName = UpcomingSportEvents;
 			productReference = EBD707382996FF4D00ECF0E8 /* UpcomingSportEvents.app */;
@@ -335,6 +338,7 @@
 			mainGroup = EBD7072F2996FF4D00ECF0E8;
 			packageReferences = (
 				EBD7077F29970E4400ECF0E8 /* XCRemoteSwiftPackageReference "Swinject" */,
+				EBD7079D2997208B00ECF0E8 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = EBD707392996FF4D00ECF0E8 /* Products */;
 			projectDirPath = "";
@@ -760,6 +764,14 @@
 				minimumVersion = 2.8.0;
 			};
 		};
+		EBD7079D2997208B00ECF0E8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -767,6 +779,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EBD7077F29970E4400ECF0E8 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		EBD7079E2997208B00ECF0E8 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EBD7079D2997208B00ECF0E8 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

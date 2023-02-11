@@ -13,5 +13,8 @@ final class EventListViewModel {
 
     init(eventRepository: EventRepositoryProtocol) {
         self.eventRepository = eventRepository
+        eventRepository.getAllEvents { result in
+            print(result)
+        }
     }
 }
