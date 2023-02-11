@@ -8,7 +8,7 @@
 import Foundation
 
 protocol EventRepositoryProtocol {
-    func getAllEvents(completion: @escaping (Result<[Sport], GetAllEventsError>) -> Void)
+    func getEventsBySport(completion: @escaping (Result<[Sport], GetAllEventsError>) -> Void)
 }
 
 struct EventRepository: EventRepositoryProtocol {
@@ -18,8 +18,8 @@ struct EventRepository: EventRepositoryProtocol {
         self.sportsService = sportsService
     }
 
-    func getAllEvents(completion: @escaping (Result<[Sport], GetAllEventsError>) -> Void) {
-        sportsService.getAllEvents { result in
+    func getEventsBySport(completion: @escaping (Result<[Sport], GetAllEventsError>) -> Void) {
+        sportsService.getEventsBySport { result in
             switch result {
             case .success(let data):
                 completion(.success(data))

@@ -9,7 +9,7 @@ import Alamofire
 import Foundation
 
 protocol SportsServiceProtocol {
-    func getAllEvents(completion: @escaping ((Result<[Sport], NetworkError>) -> Void))
+    func getEventsBySport(completion: @escaping ((Result<[Sport], NetworkError>) -> Void))
 }
 
 final class SportsService: BaseService, SportsServiceProtocol {
@@ -19,7 +19,7 @@ final class SportsService: BaseService, SportsServiceProtocol {
         return decoder
     }()
 
-    func getAllEvents(completion: @escaping ((Result<[Sport], NetworkError>) -> Void)) {
+    func getEventsBySport(completion: @escaping ((Result<[Sport], NetworkError>) -> Void)) {
         guard var endpointURL = URL(string: baseURL.absoluteString) else {
             return
         }
