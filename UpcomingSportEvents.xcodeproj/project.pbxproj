@@ -18,6 +18,9 @@
 		EB4B698E2997F57E003CE1F1 /* EventListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4B698C2997F57E003CE1F1 /* EventListTableViewCell.xib */; };
 		EB4B69912997F7C7003CE1F1 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B698F2997F7C7003CE1F1 /* EventCollectionViewCell.swift */; };
 		EB4B69922997F7C7003CE1F1 /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4B69902997F7C7003CE1F1 /* EventCollectionViewCell.xib */; };
+		EB4B69952997FBA3003CE1F1 /* SportSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4B69942997FBA3003CE1F1 /* SportSectionHeaderView.xib */; };
+		EB4B69972997FBB6003CE1F1 /* SportSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B69962997FBB6003CE1F1 /* SportSectionHeaderView.swift */; };
+		EBA8FCB1299808650075B4D8 /* UIDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCB0299808650075B4D8 /* UIDesignableView.swift */; };
 		EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */; };
 		EBD707452996FF4F00ECF0E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD707442996FF4F00ECF0E8 /* Assets.xcassets */; };
 		EBD707482996FF4F00ECF0E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD707462996FF4F00ECF0E8 /* LaunchScreen.storyboard */; };
@@ -72,6 +75,9 @@
 		EB4B698C2997F57E003CE1F1 /* EventListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventListTableViewCell.xib; sourceTree = "<group>"; };
 		EB4B698F2997F7C7003CE1F1 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		EB4B69902997F7C7003CE1F1 /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
+		EB4B69942997FBA3003CE1F1 /* SportSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportSectionHeaderView.xib; sourceTree = "<group>"; };
+		EB4B69962997FBB6003CE1F1 /* SportSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportSectionHeaderView.swift; sourceTree = "<group>"; };
+		EBA8FCB0299808650075B4D8 /* UIDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDesignableView.swift; sourceTree = "<group>"; };
 		EBD707382996FF4D00ECF0E8 /* UpcomingSportEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpcomingSportEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBD707442996FF4F00ECF0E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +164,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		EB4B69932997FB53003CE1F1 /* SportSectionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				EB4B69962997FBB6003CE1F1 /* SportSectionHeaderView.swift */,
+				EB4B69942997FBA3003CE1F1 /* SportSectionHeaderView.xib */,
+			);
+			path = SportSectionHeader;
+			sourceTree = "<group>";
+		};
 		EBD7072F2996FF4D00ECF0E8 = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +247,7 @@
 		EBD7076E2997016A00ECF0E8 /* EventList */ = {
 			isa = PBXGroup;
 			children = (
+				EB4B69932997FB53003CE1F1 /* SportSectionHeader */,
 				EB4B69822997E50F003CE1F1 /* Cells */,
 				EBD7076F2997018E00ECF0E8 /* EventListViewController.swift */,
 				EBD707882997102500ECF0E8 /* EventListViewModel.swift */,
@@ -246,6 +262,7 @@
 				EBD7079B29971E1C00ECF0E8 /* Environment.swift */,
 				EBD707732997020600ECF0E8 /* Storyboarded.swift */,
 				EBD707772997027200ECF0E8 /* ViewConstructor.swift */,
+				EBA8FCB0299808650075B4D8 /* UIDesignableView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -438,6 +455,7 @@
 				EB4B698E2997F57E003CE1F1 /* EventListTableViewCell.xib in Resources */,
 				EBD707482996FF4F00ECF0E8 /* LaunchScreen.storyboard in Resources */,
 				EBD707762997023E00ECF0E8 /* EventList.storyboard in Resources */,
+				EB4B69952997FBA3003CE1F1 /* SportSectionHeaderView.xib in Resources */,
 				EBD707452996FF4F00ECF0E8 /* Assets.xcassets in Resources */,
 				EB4B69922997F7C7003CE1F1 /* EventCollectionViewCell.xib in Resources */,
 			);
@@ -498,7 +516,9 @@
 				EB4B69862997EC00003CE1F1 /* Sport.swift in Sources */,
 				EBD707742997020600ECF0E8 /* Storyboarded.swift in Sources */,
 				EBD7078B299713FE00ECF0E8 /* NetworkingAssembly.swift in Sources */,
+				EB4B69972997FBB6003CE1F1 /* SportSectionHeaderView.swift in Sources */,
 				EBD7077E29970DDB00ECF0E8 /* DIContainer.swift in Sources */,
+				EBA8FCB1299808650075B4D8 /* UIDesignableView.swift in Sources */,
 				EBD707912997146200ECF0E8 /* SportsService.swift in Sources */,
 				EB4B69882997EC08003CE1F1 /* Event.swift in Sources */,
 				EBD707892997102500ECF0E8 /* EventListViewModel.swift in Sources */,

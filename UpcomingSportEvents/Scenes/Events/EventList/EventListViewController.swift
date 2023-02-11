@@ -13,6 +13,7 @@ class EventListViewController: UIViewController, Storyboarded {
 
     struct Constants {
         static let defaultSportsTableViewCellHeight: CGFloat = 100.0
+        static let defaultSportSectionHeaderHeight: CGFloat = 35.0
     }
 
     @IBOutlet weak var mainTableView: UITableView!
@@ -45,6 +46,19 @@ extension EventListViewController: UITableViewDataSource, UITableViewDelegate {
         return 1
     }
 
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = SportSectionHeaderView()
+
+        if let viewModel {
+            let eventsBySportElement = viewModel.eventsBySport[section]
+            headerView.fill(sport: eventsBySportElement.sport)
+        }
+
+        headerView.delegate = self
+
+        return headerView
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let viewModel, let cell = tableView.dequeueReusableCell(withIdentifier: EventListTableViewCell.identifier, for: indexPath) as? EventListTableViewCell else {
             return UITableViewCell()
@@ -53,6 +67,10 @@ extension EventListViewController: UITableViewDataSource, UITableViewDelegate {
         cell.fill(events: viewModel.eventsBySport[indexPath.section].events)
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return Constants.defaultSportSectionHeaderHeight
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -67,5 +85,11 @@ extension EventListViewController: EventListViewModelDelegate {
 
     func didFailToLoadSportsAndEvents(error: GetEventsBySportError) {
         print(error.message)
+    }
+}
+
+extension EventListViewController: SportSectionHeaderViewDelegate {
+    func didTapToggleSectionButton(sport: Sport) {
+        print("Did tap \(sport.name)")
     }
 }
