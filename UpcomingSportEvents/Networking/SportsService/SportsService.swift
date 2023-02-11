@@ -15,6 +15,12 @@ protocol SportsServiceProtocol {
 final class SportsService: SportsServiceProtocol {
     let baseURL: URL
 
+    lazy var decoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .secondsSince1970
+        return decoder
+    }()
+
     init(baseURL: URL) {
         self.baseURL = baseURL
     }
@@ -27,8 +33,8 @@ final class SportsService: SportsServiceProtocol {
         endpointURL.appendPathComponent("/api/sports")
         print(endpointURL)
 
-        AF.request(endpointURL).validate().responseDecodable(of: [Sport].self) { response in
-            print(response)
+        AF.request(endpointURL).validate().responseDecodable(of: [Sport].self, decoder: decoder) { result in
+            print(result)
         }
     }
 }

@@ -11,7 +11,7 @@ struct Event: Codable {
     let id: String
     let name: String
     let sportId: String
-    let startTime: Int
+    let startTime: Date
 
     enum CodingKeys: String, CodingKey {
         case id = "i"
