@@ -27,8 +27,8 @@ final class SportsService: SportsServiceProtocol {
         endpointURL.appendPathComponent("/api/sports")
         print(endpointURL)
 
-        AF.request(endpointURL).response { response in
-            debugPrint(response)
+        AF.request(endpointURL).validate().responseDecodable(of: [Sport].self) { response in
+            print(response)
         }
     }
 }
