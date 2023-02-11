@@ -11,6 +11,8 @@ import UIKit
 class EventListViewController: UIViewController, Storyboarded {
     static let storyboardIdentifier: String = "EventList"
 
+    var viewModel: EventListViewModel?
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }

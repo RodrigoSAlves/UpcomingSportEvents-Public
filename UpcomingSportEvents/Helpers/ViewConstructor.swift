@@ -13,6 +13,8 @@ protocol ViewConstructorProtocol {
 
 struct ViewConstructor: ViewConstructorProtocol {
     func getEventListViewController() -> EventListViewController {
-        return EventListViewController.instantiate()
+        let viewController = EventListViewController.instantiate()
+        viewController.viewModel = DIContainer.shared.resolve()
+        return viewController
     }
 }

@@ -17,6 +17,11 @@
 		EBD707742997020600ECF0E8 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD707732997020600ECF0E8 /* Storyboarded.swift */; };
 		EBD707762997023E00ECF0E8 /* EventList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD707752997023E00ECF0E8 /* EventList.storyboard */; };
 		EBD707782997027200ECF0E8 /* ViewConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD707772997027200ECF0E8 /* ViewConstructor.swift */; };
+		EBD7077E29970DDB00ECF0E8 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7077D29970DDB00ECF0E8 /* DIContainer.swift */; };
+		EBD7078129970E4400ECF0E8 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = EBD7078029970E4400ECF0E8 /* Swinject */; };
+		EBD7078529970F7000ECF0E8 /* EventListSceneAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7078429970F7000ECF0E8 /* EventListSceneAssembly.swift */; };
+		EBD7078729970F9B00ECF0E8 /* SceneAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7078629970F9B00ECF0E8 /* SceneAssembly.swift */; };
+		EBD707892997102500ECF0E8 /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD707882997102500ECF0E8 /* EventListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,10 @@
 		EBD707732997020600ECF0E8 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		EBD707752997023E00ECF0E8 /* EventList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventList.storyboard; sourceTree = "<group>"; };
 		EBD707772997027200ECF0E8 /* ViewConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstructor.swift; sourceTree = "<group>"; };
+		EBD7077D29970DDB00ECF0E8 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		EBD7078429970F7000ECF0E8 /* EventListSceneAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListSceneAssembly.swift; sourceTree = "<group>"; };
+		EBD7078629970F9B00ECF0E8 /* SceneAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneAssembly.swift; sourceTree = "<group>"; };
+		EBD707882997102500ECF0E8 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBD7078129970E4400ECF0E8 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +111,8 @@
 		EBD7073A2996FF4D00ECF0E8 /* UpcomingSportEvents */ = {
 			isa = PBXGroup;
 			children = (
-				EBD7076B299700A200ECF0E8 /* App */,
+				EBD7077C29970DC300ECF0E8 /* DependencyInjection */,
+				EBD7076B299700A200ECF0E8 /* Scenes */,
 				EBD70771299701CB00ECF0E8 /* Helpers */,
 				EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */,
 				EBD707442996FF4F00ECF0E8 /* Assets.xcassets */,
@@ -128,12 +139,12 @@
 			path = UpcomingSportEventsUITests;
 			sourceTree = "<group>";
 		};
-		EBD7076B299700A200ECF0E8 /* App */ = {
+		EBD7076B299700A200ECF0E8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				EBD7076C299700AA00ECF0E8 /* Events */,
 			);
-			path = App;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		EBD7076C299700AA00ECF0E8 /* Events */ = {
@@ -148,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				EBD7076F2997018E00ECF0E8 /* EventListViewController.swift */,
+				EBD707882997102500ECF0E8 /* EventListViewModel.swift */,
 				EBD707752997023E00ECF0E8 /* EventList.storyboard */,
 			);
 			path = EventList;
@@ -160,6 +172,32 @@
 				EBD707772997027200ECF0E8 /* ViewConstructor.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EBD7077C29970DC300ECF0E8 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				EBD7078229970F5800ECF0E8 /* Scenes */,
+				EBD7077D29970DDB00ECF0E8 /* DIContainer.swift */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		EBD7078229970F5800ECF0E8 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EBD7078329970F6000ECF0E8 /* Events */,
+				EBD7078629970F9B00ECF0E8 /* SceneAssembly.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EBD7078329970F6000ECF0E8 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				EBD7078429970F7000ECF0E8 /* EventListSceneAssembly.swift */,
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +217,9 @@
 			dependencies = (
 			);
 			name = UpcomingSportEvents;
+			packageProductDependencies = (
+				EBD7078029970E4400ECF0E8 /* Swinject */,
+			);
 			productName = UpcomingSportEvents;
 			productReference = EBD707382996FF4D00ECF0E8 /* UpcomingSportEvents.app */;
 			productType = "com.apple.product-type.application";
@@ -251,6 +292,9 @@
 				Base,
 			);
 			mainGroup = EBD7072F2996FF4D00ECF0E8;
+			packageReferences = (
+				EBD7077F29970E4400ECF0E8 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = EBD707392996FF4D00ECF0E8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -317,7 +361,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBD707702997018E00ECF0E8 /* EventListViewController.swift in Sources */,
+				EBD7078729970F9B00ECF0E8 /* SceneAssembly.swift in Sources */,
+				EBD7078529970F7000ECF0E8 /* EventListSceneAssembly.swift in Sources */,
 				EBD707742997020600ECF0E8 /* Storyboarded.swift in Sources */,
+				EBD7077E29970DDB00ECF0E8 /* DIContainer.swift in Sources */,
+				EBD707892997102500ECF0E8 /* EventListViewModel.swift in Sources */,
 				EBD707782997027200ECF0E8 /* ViewConstructor.swift in Sources */,
 				EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */,
 			);
@@ -655,6 +703,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EBD7077F29970E4400ECF0E8 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EBD7078029970E4400ECF0E8 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EBD7077F29970E4400ECF0E8 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EBD707302996FF4D00ECF0E8 /* Project object */;
 }
