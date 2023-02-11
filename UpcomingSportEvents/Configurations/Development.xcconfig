@@ -1,0 +1,12 @@
+//
+//  Development.xcconfig
+//  UpcomingSportEvents
+//
+//  Created by Rodrigo Alves on 11/02/2023.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+
+SPORTS_SERVICE_BASE_URL = https:/$()/618d3aa7fe09aa001744060a.mockapi.io

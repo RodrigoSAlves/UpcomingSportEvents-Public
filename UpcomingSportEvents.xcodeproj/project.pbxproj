@@ -26,6 +26,7 @@
 		EBD7078D2997140900ECF0E8 /* RepositoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7078C2997140900ECF0E8 /* RepositoryAssembly.swift */; };
 		EBD707912997146200ECF0E8 /* SportsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD707902997146200ECF0E8 /* SportsService.swift */; };
 		EBD70798299717AB00ECF0E8 /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD70797299717AB00ECF0E8 /* EventRepository.swift */; };
+		EBD7079C29971E1C00ECF0E8 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7079B29971E1C00ECF0E8 /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		EBD7078C2997140900ECF0E8 /* RepositoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAssembly.swift; sourceTree = "<group>"; };
 		EBD707902997146200ECF0E8 /* SportsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsService.swift; sourceTree = "<group>"; };
 		EBD70797299717AB00ECF0E8 /* EventRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRepository.swift; sourceTree = "<group>"; };
+		EBD7079A29971C9200ECF0E8 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		EBD7079B29971E1C00ECF0E8 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,7 @@
 				EBD7078E2997144000ECF0E8 /* Networking */,
 				EBD707962997179900ECF0E8 /* Repositories */,
 				EBD70771299701CB00ECF0E8 /* Helpers */,
+				EBD7079929971C7600ECF0E8 /* Configurations */,
 				EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */,
 				EBD707442996FF4F00ECF0E8 /* Assets.xcassets */,
 				EBD707462996FF4F00ECF0E8 /* LaunchScreen.storyboard */,
@@ -178,6 +182,7 @@
 		EBD70771299701CB00ECF0E8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				EBD7079B29971E1C00ECF0E8 /* Environment.swift */,
 				EBD707732997020600ECF0E8 /* Storyboarded.swift */,
 				EBD707772997027200ECF0E8 /* ViewConstructor.swift */,
 			);
@@ -226,6 +231,14 @@
 				EBD70797299717AB00ECF0E8 /* EventRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		EBD7079929971C7600ECF0E8 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				EBD7079A29971C9200ECF0E8 /* Development.xcconfig */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +409,7 @@
 				EBD7077E29970DDB00ECF0E8 /* DIContainer.swift in Sources */,
 				EBD707912997146200ECF0E8 /* SportsService.swift in Sources */,
 				EBD707892997102500ECF0E8 /* EventListViewModel.swift in Sources */,
+				EBD7079C29971E1C00ECF0E8 /* Environment.swift in Sources */,
 				EBD707782997027200ECF0E8 /* ViewConstructor.swift in Sources */,
 				EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */,
 				EBD70798299717AB00ECF0E8 /* EventRepository.swift in Sources */,
@@ -447,7 +461,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		EBD707602996FF4F00ECF0E8 /* Debug */ = {
+		EBD707602996FF4F00ECF0E8 /* Development (Debug) */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -505,9 +519,9 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
-			name = Debug;
+			name = "Development (Debug)";
 		};
-		EBD707612996FF4F00ECF0E8 /* Release */ = {
+		EBD707612996FF4F00ECF0E8 /* Development (Release) */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -559,9 +573,39 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = "Development (Release)";
 		};
-		EBD707632996FF4F00ECF0E8 /* Debug */ = {
+		EBD707632996FF4F00ECF0E8 /* Development (Debug) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBD7079A29971C9200ECF0E8 /* Development.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KX8YDQK9AX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UpcomingSportEvents/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rodrigosalves.UpcomingSportEvents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Development (Debug)";
+		};
+		EBD707642996FF4F00ECF0E8 /* Development (Release) */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -588,38 +632,9 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
+			name = "Development (Release)";
 		};
-		EBD707642996FF4F00ECF0E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KX8YDQK9AX;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = UpcomingSportEvents/Info.plist;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rodrigosalves.UpcomingSportEvents;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		EBD707662996FF4F00ECF0E8 /* Debug */ = {
+		EBD707662996FF4F00ECF0E8 /* Development (Debug) */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -637,9 +652,9 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UpcomingSportEvents.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UpcomingSportEvents";
 			};
-			name = Debug;
+			name = "Development (Debug)";
 		};
-		EBD707672996FF4F00ECF0E8 /* Release */ = {
+		EBD707672996FF4F00ECF0E8 /* Development (Release) */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -657,9 +672,9 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UpcomingSportEvents.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UpcomingSportEvents";
 			};
-			name = Release;
+			name = "Development (Release)";
 		};
-		EBD707692996FF4F00ECF0E8 /* Debug */ = {
+		EBD707692996FF4F00ECF0E8 /* Development (Debug) */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -675,9 +690,9 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = UpcomingSportEvents;
 			};
-			name = Debug;
+			name = "Development (Debug)";
 		};
-		EBD7076A2996FF4F00ECF0E8 /* Release */ = {
+		EBD7076A2996FF4F00ECF0E8 /* Development (Release) */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -693,7 +708,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = UpcomingSportEvents;
 			};
-			name = Release;
+			name = "Development (Release)";
 		};
 /* End XCBuildConfiguration section */
 
@@ -701,38 +716,38 @@
 		EBD707332996FF4D00ECF0E8 /* Build configuration list for PBXProject "UpcomingSportEvents" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EBD707602996FF4F00ECF0E8 /* Debug */,
-				EBD707612996FF4F00ECF0E8 /* Release */,
+				EBD707602996FF4F00ECF0E8 /* Development (Debug) */,
+				EBD707612996FF4F00ECF0E8 /* Development (Release) */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Development (Release)";
 		};
 		EBD707622996FF4F00ECF0E8 /* Build configuration list for PBXNativeTarget "UpcomingSportEvents" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EBD707632996FF4F00ECF0E8 /* Debug */,
-				EBD707642996FF4F00ECF0E8 /* Release */,
+				EBD707632996FF4F00ECF0E8 /* Development (Debug) */,
+				EBD707642996FF4F00ECF0E8 /* Development (Release) */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Development (Release)";
 		};
 		EBD707652996FF4F00ECF0E8 /* Build configuration list for PBXNativeTarget "UpcomingSportEventsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EBD707662996FF4F00ECF0E8 /* Debug */,
-				EBD707672996FF4F00ECF0E8 /* Release */,
+				EBD707662996FF4F00ECF0E8 /* Development (Debug) */,
+				EBD707672996FF4F00ECF0E8 /* Development (Release) */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Development (Release)";
 		};
 		EBD707682996FF4F00ECF0E8 /* Build configuration list for PBXNativeTarget "UpcomingSportEventsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EBD707692996FF4F00ECF0E8 /* Debug */,
-				EBD7076A2996FF4F00ECF0E8 /* Release */,
+				EBD707692996FF4F00ECF0E8 /* Development (Debug) */,
+				EBD7076A2996FF4F00ECF0E8 /* Development (Release) */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Development (Release)";
 		};
 /* End XCConfigurationList section */
 
