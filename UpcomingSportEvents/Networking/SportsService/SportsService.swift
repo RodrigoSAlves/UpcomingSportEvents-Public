@@ -9,32 +9,25 @@ import Alamofire
 import Foundation
 
 protocol SportsServiceProtocol {
-    func getAllEvents(completion: @escaping ((Result<String, Error>) -> Void))
+    func getAllEvents(completion: @escaping ((Result<[Sport], NetworkError>) -> Void))
 }
 
-final class SportsService: SportsServiceProtocol {
-    let baseURL: URL
-
+final class SportsService: BaseService, SportsServiceProtocol {
     lazy var decoder: JSONDecoder = {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
         return decoder
     }()
 
-    init(baseURL: URL) {
-        self.baseURL = baseURL
-    }
-
-    func getAllEvents(completion: @escaping ((Result<String, Error>) -> Void)) {
+    func getAllEvents(completion: @escaping ((Result<[Sport], NetworkError>) -> Void)) {
         guard var endpointURL = URL(string: baseURL.absoluteString) else {
             return
         }
 
         endpointURL.appendPathComponent("/api/sports")
-        print(endpointURL)
 
-        AF.request(endpointURL).validate().responseDecodable(of: [Sport].self, decoder: decoder) { result in
-            print(result)
+        AF.request(endpointURL).validate().responseDecodable(of: [Sport].self, decoder: decoder) { response in
+            completion(self.handleResult(result: response.result))
         }
     }
 }

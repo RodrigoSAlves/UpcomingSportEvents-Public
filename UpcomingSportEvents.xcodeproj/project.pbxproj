@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB4B697B2997BF74003CE1F1 /* PresentableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B697A2997BF74003CE1F1 /* PresentableError.swift */; };
+		EB4B697D2997BF8E003CE1F1 /* GetAllEventsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B697C2997BF8E003CE1F1 /* GetAllEventsError.swift */; };
+		EB4B697F2997C273003CE1F1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B697E2997C273003CE1F1 /* NetworkError.swift */; };
+		EB4B69812997C3F2003CE1F1 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B69802997C3F2003CE1F1 /* BaseService.swift */; };
 		EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */; };
 		EBD707452996FF4F00ECF0E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD707442996FF4F00ECF0E8 /* Assets.xcassets */; };
 		EBD707482996FF4F00ECF0E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD707462996FF4F00ECF0E8 /* LaunchScreen.storyboard */; };
@@ -50,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB4B697A2997BF74003CE1F1 /* PresentableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableError.swift; sourceTree = "<group>"; };
+		EB4B697C2997BF8E003CE1F1 /* GetAllEventsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllEventsError.swift; sourceTree = "<group>"; };
+		EB4B697E2997C273003CE1F1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		EB4B69802997C3F2003CE1F1 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		EBD707382996FF4D00ECF0E8 /* UpcomingSportEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpcomingSportEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBD707442996FF4F00ECF0E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +113,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB4B69782997BF5C003CE1F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EB4B69792997BF65003CE1F1 /* Errors */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EB4B69792997BF65003CE1F1 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				EB4B697A2997BF74003CE1F1 /* PresentableError.swift */,
+				EB4B697C2997BF8E003CE1F1 /* GetAllEventsError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		EBD7072F2996FF4D00ECF0E8 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +157,7 @@
 				EBD7076B299700A200ECF0E8 /* Scenes */,
 				EBD7078E2997144000ECF0E8 /* Networking */,
 				EBD707962997179900ECF0E8 /* Repositories */,
+				EB4B69782997BF5C003CE1F1 /* Models */,
 				EBD70771299701CB00ECF0E8 /* Helpers */,
 				EBD7079929971C7600ECF0E8 /* Configurations */,
 				EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */,
@@ -227,6 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				EBD707A12997268C00ECF0E8 /* SportsService */,
+				EB4B697E2997C273003CE1F1 /* NetworkError.swift */,
+				EB4B69802997C3F2003CE1F1 /* BaseService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -427,19 +455,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB4B697B2997BF74003CE1F1 /* PresentableError.swift in Sources */,
 				EBD707A4299726EC00ECF0E8 /* Sport.swift in Sources */,
 				EBD707702997018E00ECF0E8 /* EventListViewController.swift in Sources */,
 				EBD7078729970F9B00ECF0E8 /* SceneAssembly.swift in Sources */,
 				EBD7078529970F7000ECF0E8 /* EventListSceneAssembly.swift in Sources */,
+				EB4B697D2997BF8E003CE1F1 /* GetAllEventsError.swift in Sources */,
 				EBD707A62997272900ECF0E8 /* Event.swift in Sources */,
 				EBD707742997020600ECF0E8 /* Storyboarded.swift in Sources */,
 				EBD7078B299713FE00ECF0E8 /* NetworkingAssembly.swift in Sources */,
 				EBD7077E29970DDB00ECF0E8 /* DIContainer.swift in Sources */,
 				EBD707912997146200ECF0E8 /* SportsService.swift in Sources */,
 				EBD707892997102500ECF0E8 /* EventListViewModel.swift in Sources */,
+				EB4B69812997C3F2003CE1F1 /* BaseService.swift in Sources */,
 				EBD7079C29971E1C00ECF0E8 /* Environment.swift in Sources */,
 				EBD707782997027200ECF0E8 /* ViewConstructor.swift in Sources */,
 				EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */,
+				EB4B697F2997C273003CE1F1 /* NetworkError.swift in Sources */,
 				EBD70798299717AB00ECF0E8 /* EventRepository.swift in Sources */,
 				EBD7078D2997140900ECF0E8 /* RepositoryAssembly.swift in Sources */,
 			);
