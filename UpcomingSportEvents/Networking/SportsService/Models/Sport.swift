@@ -8,7 +8,13 @@
 import Foundation
 
 struct Sport: Codable {
-    let i: String
-    let d: String
-    let e: [Event]
+    let id: String
+    let name: String
+    let events: [Event]
+
+    enum CodingKeys: String, CodingKey {
+        case id = "i"
+        case name = "d"
+        case events = "e"
+    }
 }
