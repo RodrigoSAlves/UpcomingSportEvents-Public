@@ -45,7 +45,12 @@ extension EventListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        guard let viewModel else {
+            return 0
+        }
+
+        let eventsBySportElement = viewModel.eventsBySport[section]
+        return viewModel.isExpanded(sport: eventsBySportElement.sport) ? 1 : 0
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -88,10 +93,19 @@ extension EventListViewController: EventListViewModelDelegate {
     func didFailToLoadSportsAndEvents(error: GetEventsBySportError) {
         print(error.message)
     }
+
+    func didToggleExpansionForSection(section: Int, isExpanded: Bool) {
+        let indexPaths = [IndexPath(row: 0, section: section)]
+        if isExpanded {
+            mainTableView.insertRows(at: indexPaths, with: .fade)
+        } else {
+            mainTableView.deleteRows(at: indexPaths, with: .fade)
+        }
+    }
 }
 
 extension EventListViewController: SportSectionHeaderViewDelegate {
     func didTapToggleSectionButton(sport: Sport) {
-        print("Did tap \(sport.name)")
+        viewModel?.toggleSportExpansion(sport: sport)
     }
 }
