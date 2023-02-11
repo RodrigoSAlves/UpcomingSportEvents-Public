@@ -21,6 +21,10 @@ extension Storyboarded where Self: UIViewController {
 
         let storyboard = UIStoryboard(name: storyboardIdentifier, bundle: Bundle.main)
 
-        return storyboard.instantiateViewController(withIdentifier: className) as! Self
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: className) as? Self else {
+            fatalError("Could not find ViewController in Storyboard with identifier \(storyboardIdentifier) using the storyboardIdentifier \(className)")
+        }
+
+        return viewController
     }
 }

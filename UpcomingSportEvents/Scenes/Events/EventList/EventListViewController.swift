@@ -28,6 +28,8 @@ class EventListViewController: UIViewController, Storyboarded {
     func setupUI() {
         mainTableView.delegate = self
         mainTableView.dataSource = self
+        mainTableView.showsVerticalScrollIndicator = false
+        mainTableView.showsHorizontalScrollIndicator = false
 
         mainTableView.register(
             UINib(nibName: EventListTableViewCell.nibIdentifier, bundle: nil),

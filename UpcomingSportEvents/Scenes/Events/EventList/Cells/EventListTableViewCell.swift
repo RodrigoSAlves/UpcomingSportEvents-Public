@@ -19,6 +19,9 @@ class EventListTableViewCell: UITableViewCell {
         super.awakeFromNib()
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
+        mainCollectionView.showsVerticalScrollIndicator = false
+        mainCollectionView.showsHorizontalScrollIndicator = false
+        mainCollectionView.contentInsetAdjustmentBehavior = .never
 
         mainCollectionView.register(
             UINib(nibName: EventCollectionViewCell.nibIdentifier, bundle: nil),
