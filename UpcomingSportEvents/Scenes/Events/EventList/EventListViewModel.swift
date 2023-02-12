@@ -21,7 +21,7 @@ final class EventListViewModel {
     private(set) var eventsBySport: [EventsBySport] = [EventsBySport]()
     private(set) var getEventsBySportError: GetEventsBySportError?
     private(set) var isLoadingSportingEvents: Bool = false
-    private(set) var sportExpansionStates: [String: Bool] = [:]
+    private(set) var sportsSectionsExpansionStatuses: [String: Bool] = [:]
 
     weak var delegate: EventListViewModelDelegate?
 
@@ -56,19 +56,30 @@ final class EventListViewModel {
         }
     }
 
-    func toggleSportExpansion(sport: Sport) {
-        guard let sectionIndex = eventsBySport.firstIndex(where: { $0.sport.id == sport.id }) else {
+    func getSportSectionIdentifier(sport: Sport) -> String {
+        return sport.id
+    }
+
+    func getSportSectionExpansionState(sport: Sport) -> Bool {
+        let sectionIdentifier = getSportSectionIdentifier(sport: sport)
+        return sportsSectionsExpansionStatuses[sectionIdentifier] ?? true
+    }
+
+    func setSportSectionIsExpanded(sport: Sport, isExpanded: Bool) {
+        let sectionIdentifier = getSportSectionIdentifier(sport: sport)
+        sportsSectionsExpansionStatuses[sectionIdentifier] = isExpanded
+    }
+
+    func toggleSportSectionExpansion(sectionIdentifier: String) {
+        guard let sectionIndex = eventsBySport.firstIndex(where: { getSportSectionIdentifier(sport: $0.sport) == sectionIdentifier }) else {
             return
         }
 
-        let currentExpansionState = sportExpansionStates[sport.id] ?? true
-        let newExpandedValue = !currentExpansionState
-        sportExpansionStates[sport.id] = newExpandedValue
-        delegate?.didToggleExpansionForSection(section: sectionIndex, isExpanded: newExpandedValue)
-    }
+        let sport = eventsBySport[sectionIndex].sport
+        let newIsExpandedValue = !getSportSectionExpansionState(sport: sport)
+        setSportSectionIsExpanded(sport: sport, isExpanded: newIsExpandedValue)
 
-    func isExpanded(sport: Sport) -> Bool {
-        return sportExpansionStates[sport.id] ?? true
+        delegate?.didToggleExpansionForSection(section: sectionIndex, isExpanded: newIsExpandedValue)
     }
 
     func toggleFavoriteForEvent(event: Event) {

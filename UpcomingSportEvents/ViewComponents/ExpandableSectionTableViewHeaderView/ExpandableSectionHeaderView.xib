@@ -8,15 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SportSectionHeaderView" customModule="UpcomingSportEvents" customModuleProvider="target">
-            <connections>
-                <outlet property="sportIconImageView" destination="FQE-wU-6RA" id="Bs4-aZ-EVd"/>
-                <outlet property="sportNameLabel" destination="oi6-hA-kf6" id="SUG-Tq-BrN"/>
-                <outlet property="toggleSectionCollapseButton" destination="D9t-3W-fiA" id="gAQ-G2-aEo"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ExpandableSectionHeaderView" customModule="UpcomingSportEvents" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="390" height="40"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -29,21 +23,22 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sport name 123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oi6-hA-kf6">
-                    <rect key="frame" x="54" y="9.6666666666666643" width="230" height="21"/>
+                    <rect key="frame" x="54" y="9.6666666666666643" width="299" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9t-3W-fiA">
-                    <rect key="frame" x="284" y="5" width="90" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9t-3W-fiA">
+                    <rect key="frame" x="353" y="7.6666666666666679" width="25" height="25.000000000000004"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="MZb-sW-B6v"/>
-                        <constraint firstAttribute="width" secondItem="D9t-3W-fiA" secondAttribute="height" multiplier="30:10" id="PBS-HD-DJl"/>
+                        <constraint firstAttribute="height" constant="25" id="MZb-sW-B6v"/>
+                        <constraint firstAttribute="width" secondItem="D9t-3W-fiA" secondAttribute="height" multiplier="1:1" id="PBS-HD-DJl"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Toggle"/>
+                    <color key="tintColor" systemColor="labelColor"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="ic-chevron-down"/>
                     <connections>
-                        <action selector="didTapToggleSectionCollapseButton:" destination="-1" eventType="touchUpInside" id="gJZ-jf-l5f"/>
+                        <action selector="didTapToggleSectionExpansionButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="Mr3-8B-1Wh"/>
                     </connections>
                 </button>
             </subviews>
@@ -53,15 +48,24 @@
                 <constraint firstItem="oi6-hA-kf6" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3hQ-gQ-Zdw"/>
                 <constraint firstItem="oi6-hA-kf6" firstAttribute="leading" secondItem="FQE-wU-6RA" secondAttribute="trailing" constant="8" id="DXb-cY-STn"/>
                 <constraint firstItem="D9t-3W-fiA" firstAttribute="leading" secondItem="oi6-hA-kf6" secondAttribute="trailing" id="HqH-Ef-7dv"/>
-                <constraint firstAttribute="trailing" secondItem="D9t-3W-fiA" secondAttribute="trailing" constant="16" id="UN6-5k-DIM"/>
+                <constraint firstAttribute="trailing" secondItem="D9t-3W-fiA" secondAttribute="trailing" constant="12" id="UN6-5k-DIM"/>
                 <constraint firstItem="FQE-wU-6RA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Uv5-v2-kSL"/>
                 <constraint firstItem="D9t-3W-fiA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="omN-16-n2O"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="leftIcon" destination="FQE-wU-6RA" id="4yf-30-hkx"/>
+                <outlet property="titleLabel" destination="oi6-hA-kf6" id="zjQ-rZ-zQx"/>
+                <outlet property="toggleSectionExpansionButton" destination="D9t-3W-fiA" id="C6S-5D-b6s"/>
+            </connections>
             <point key="canvasLocation" x="127" y="21"/>
         </view>
     </objects>
     <resources>
+        <image name="ic-chevron-down" width="48" height="48"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -36,6 +36,11 @@ class EventListViewController: UIViewController, Storyboarded {
             UINib(nibName: EventListTableViewCell.nibIdentifier, bundle: nil),
             forCellReuseIdentifier: EventListTableViewCell.identifier
         )
+
+        mainTableView.register(
+            UINib(nibName: ExpandableSectionHeaderView.nibIdentifier, bundle: nil),
+            forHeaderFooterViewReuseIdentifier: ExpandableSectionHeaderView.identifier
+        )
     }
 }
 
@@ -51,16 +56,23 @@ extension EventListViewController: UITableViewDataSource, UITableViewDelegate {
         }
 
         let eventsBySportElement = viewModel.eventsBySport[section]
-        return viewModel.isExpanded(sport: eventsBySportElement.sport) ? 1 : 0
+        return viewModel.getSportSectionExpansionState(sport: eventsBySportElement.sport) ? 1 : 0
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = SportSectionHeaderView()
-
-        if let viewModel {
-            let eventsBySportElement = viewModel.eventsBySport[section]
-            headerView.fill(sport: eventsBySportElement.sport)
+        guard let viewModel,
+              let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ExpandableSectionHeaderView.identifier) as? ExpandableSectionHeaderView else {
+            return UIView()
         }
+
+        let sport = viewModel.eventsBySport[section].sport
+
+        headerView.fill(
+            sectionIdentifier: viewModel.getSportSectionIdentifier(sport: sport),
+            title: sport.name,
+            leftIcon: SportIcon.getMainIcon(for: sport),
+            isExpanded: viewModel.getSportSectionExpansionState(sport: sport)
+        )
 
         headerView.delegate = self
 
@@ -125,9 +137,9 @@ extension EventListViewController: UICollectionViewDataSource, UICollectionViewD
     }
 }
 
-extension EventListViewController: SportSectionHeaderViewDelegate {
-    func didTapToggleSectionButton(sport: Sport) {
-        viewModel?.toggleSportExpansion(sport: sport)
+extension EventListViewController: ExpandableSectionHeaderViewDelegate {
+    func didTapToggleSectionExpansionButton(sectionIdentifier: String) {
+        viewModel?.toggleSportSectionExpansion(sectionIdentifier: sectionIdentifier)
     }
 }
 
@@ -152,6 +164,10 @@ extension EventListViewController: EventListViewModelDelegate {
             mainTableView.insertRows(at: indexPaths, with: .fade)
         } else {
             mainTableView.deleteRows(at: indexPaths, with: .fade)
+        }
+
+        if let expandableSectionHeaderView = mainTableView.headerView(forSection: section) as? ExpandableSectionHeaderView {
+            expandableSectionHeaderView.setIsExpanded(isExpanded: isExpanded)
         }
     }
 
