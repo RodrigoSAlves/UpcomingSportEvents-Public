@@ -32,6 +32,7 @@
 		EBA8FCCC299922930075B4D8 /* PersistenceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCCB299922930075B4D8 /* PersistenceAssembly.swift */; };
 		EBA8FCCE299931240075B4D8 /* DidAddEventToFavoritesNotificationPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCCD299931240075B4D8 /* DidAddEventToFavoritesNotificationPayload.swift */; };
 		EBA8FCD0299931420075B4D8 /* DidRemoveEventFromFavoritesNotificationPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCCF299931420075B4D8 /* DidRemoveEventFromFavoritesNotificationPayload.swift */; };
+		EBA8FCD4299944950075B4D8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCD3299944950075B4D8 /* Colors.xcassets */; };
 		EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */; };
 		EBD707452996FF4F00ECF0E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD707442996FF4F00ECF0E8 /* Assets.xcassets */; };
 		EBD707482996FF4F00ECF0E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD707462996FF4F00ECF0E8 /* LaunchScreen.storyboard */; };
@@ -100,6 +101,25 @@
 		EBA8FCCB299922930075B4D8 /* PersistenceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceAssembly.swift; sourceTree = "<group>"; };
 		EBA8FCCD299931240075B4D8 /* DidAddEventToFavoritesNotificationPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidAddEventToFavoritesNotificationPayload.swift; sourceTree = "<group>"; };
 		EBA8FCCF299931420075B4D8 /* DidRemoveEventFromFavoritesNotificationPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidRemoveEventFromFavoritesNotificationPayload.swift; sourceTree = "<group>"; };
+		EBA8FCD3299944950075B4D8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		EBA8FCD82999467E0075B4D8 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		EBA8FCD92999467E0075B4D8 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		EBA8FCDA2999467E0075B4D8 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		EBA8FCDB2999467F0075B4D8 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		EBA8FCDC2999467F0075B4D8 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		EBA8FCDD2999467F0075B4D8 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		EBA8FCDE2999467F0075B4D8 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		EBA8FCDF2999467F0075B4D8 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		EBA8FCE02999467F0075B4D8 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		EBA8FCE12999467F0075B4D8 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		EBA8FCE22999467F0075B4D8 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		EBA8FCE32999467F0075B4D8 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
+		EBA8FCE42999467F0075B4D8 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		EBA8FCE52999467F0075B4D8 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		EBA8FCE62999467F0075B4D8 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		EBA8FCE72999467F0075B4D8 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		EBA8FCE82999467F0075B4D8 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		EBA8FCE92999467F0075B4D8 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
 		EBD707382996FF4D00ECF0E8 /* UpcomingSportEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpcomingSportEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBD707442996FF4F00ECF0E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -241,6 +261,49 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		EBA8FCD52999464D0075B4D8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EBA8FCD6299946580075B4D8 /* Fonts */,
+				EBA8FCD3299944950075B4D8 /* Colors.xcassets */,
+				EBD707442996FF4F00ECF0E8 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EBA8FCD6299946580075B4D8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EBA8FCD72999465E0075B4D8 /* Poppins */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		EBA8FCD72999465E0075B4D8 /* Poppins */ = {
+			isa = PBXGroup;
+			children = (
+				EBA8FCE92999467F0075B4D8 /* Poppins-Black.ttf */,
+				EBA8FCE42999467F0075B4D8 /* Poppins-BlackItalic.ttf */,
+				EBA8FCDD2999467F0075B4D8 /* Poppins-Bold.ttf */,
+				EBA8FCE32999467F0075B4D8 /* Poppins-BoldItalic.ttf */,
+				EBA8FCE52999467F0075B4D8 /* Poppins-ExtraBold.ttf */,
+				EBA8FCDB2999467F0075B4D8 /* Poppins-ExtraBoldItalic.ttf */,
+				EBA8FCD82999467E0075B4D8 /* Poppins-ExtraLight.ttf */,
+				EBA8FCE62999467F0075B4D8 /* Poppins-ExtraLightItalic.ttf */,
+				EBA8FCE02999467F0075B4D8 /* Poppins-Italic.ttf */,
+				EBA8FCDE2999467F0075B4D8 /* Poppins-Light.ttf */,
+				EBA8FCE12999467F0075B4D8 /* Poppins-LightItalic.ttf */,
+				EBA8FCDC2999467F0075B4D8 /* Poppins-Medium.ttf */,
+				EBA8FCE22999467F0075B4D8 /* Poppins-MediumItalic.ttf */,
+				EBA8FCE72999467F0075B4D8 /* Poppins-Regular.ttf */,
+				EBA8FCDA2999467E0075B4D8 /* Poppins-SemiBold.ttf */,
+				EBA8FCE82999467F0075B4D8 /* Poppins-SemiBoldItalic.ttf */,
+				EBA8FCDF2999467F0075B4D8 /* Poppins-Thin.ttf */,
+				EBA8FCD92999467E0075B4D8 /* Poppins-ThinItalic.ttf */,
+			);
+			path = Poppins;
+			sourceTree = "<group>";
+		};
 		EBD7072F2996FF4D00ECF0E8 = {
 			isa = PBXGroup;
 			children = (
@@ -272,8 +335,8 @@
 				EB4B69782997BF5C003CE1F1 /* Models */,
 				EBD70771299701CB00ECF0E8 /* Helpers */,
 				EBD7079929971C7600ECF0E8 /* Configurations */,
+				EBA8FCD52999464D0075B4D8 /* Resources */,
 				EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */,
-				EBD707442996FF4F00ECF0E8 /* Assets.xcassets */,
 				EBD707462996FF4F00ECF0E8 /* LaunchScreen.storyboard */,
 				EBD707492996FF4F00ECF0E8 /* Info.plist */,
 			);
@@ -529,6 +592,7 @@
 				EBD707482996FF4F00ECF0E8 /* LaunchScreen.storyboard in Resources */,
 				EBD707762997023E00ECF0E8 /* EventList.storyboard in Resources */,
 				EB4B69952997FBA3003CE1F1 /* SportSectionHeaderView.xib in Resources */,
+				EBA8FCD4299944950075B4D8 /* Colors.xcassets in Resources */,
 				EBD707452996FF4F00ECF0E8 /* Assets.xcassets in Resources */,
 				EB4B69922997F7C7003CE1F1 /* EventCollectionViewCell.xib in Resources */,
 			);
