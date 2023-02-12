@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB2C7AD7299965F7006F2486 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C7AD6299965F7006F2486 /* UIView.swift */; };
+		EB2C7ADC299967DA006F2486 /* SportIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C7ADB299967DA006F2486 /* SportIcon.swift */; };
+		EB2C7ADE2999685A006F2486 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C7ADD2999685A006F2486 /* AppIcon.swift */; };
+		EB2C7AE02999A863006F2486 /* DidUpdateExpandableSectionExpansionStatusNotificationPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C7ADF2999A863006F2486 /* DidUpdateExpandableSectionExpansionStatusNotificationPayload.swift */; };
 		EB4B697B2997BF74003CE1F1 /* PresentableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B697A2997BF74003CE1F1 /* PresentableError.swift */; };
 		EB4B697D2997BF8E003CE1F1 /* GetEventsBySportError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B697C2997BF8E003CE1F1 /* GetEventsBySportError.swift */; };
 		EB4B697F2997C273003CE1F1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B697E2997C273003CE1F1 /* NetworkError.swift */; };
@@ -76,6 +80,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB2C7AD6299965F7006F2486 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		EB2C7ADB299967DA006F2486 /* SportIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportIcon.swift; sourceTree = "<group>"; };
+		EB2C7ADD2999685A006F2486 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
+		EB2C7ADF2999A863006F2486 /* DidUpdateExpandableSectionExpansionStatusNotificationPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidUpdateExpandableSectionExpansionStatusNotificationPayload.swift; sourceTree = "<group>"; };
 		EB4B697A2997BF74003CE1F1 /* PresentableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableError.swift; sourceTree = "<group>"; };
 		EB4B697C2997BF8E003CE1F1 /* GetEventsBySportError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventsBySportError.swift; sourceTree = "<group>"; };
 		EB4B697E2997C273003CE1F1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -175,9 +183,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB2C7ADA299967BE006F2486 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EB2C7ADB299967DA006F2486 /* SportIcon.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		EB2C7AE22999AAA2006F2486 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		EB4B69782997BF5C003CE1F1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EB2C7ADA299967BE006F2486 /* UI */,
 				EBA8FCB82998391E0075B4D8 /* Notifications */,
 				EB4B69792997BF65003CE1F1 /* Errors */,
 				EB4B69832997EBF3003CE1F1 /* EventsBySport.swift */,
@@ -221,6 +245,7 @@
 			children = (
 				EBA8FCB2299820C60075B4D8 /* Collection.swift */,
 				EBA8FCB6299838BB0075B4D8 /* Notification.swift */,
+				EB2C7AD6299965F7006F2486 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -231,6 +256,7 @@
 				EBA8FCB92998392D0075B4D8 /* DidUpdateEventFavoriteStatusNotificationPayload.swift */,
 				EBA8FCCD299931240075B4D8 /* DidAddEventToFavoritesNotificationPayload.swift */,
 				EBA8FCCF299931420075B4D8 /* DidRemoveEventFromFavoritesNotificationPayload.swift */,
+				EB2C7ADF2999A863006F2486 /* DidUpdateExpandableSectionExpansionStatusNotificationPayload.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -363,6 +389,7 @@
 		EBD7076B299700A200ECF0E8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EB2C7AE22999AAA2006F2486 /* Common */,
 				EBD7076C299700AA00ECF0E8 /* Events */,
 			);
 			path = Scenes;
@@ -396,6 +423,7 @@
 				EBD707732997020600ECF0E8 /* Storyboarded.swift */,
 				EBD707772997027200ECF0E8 /* ViewConstructor.swift */,
 				EBA8FCB0299808650075B4D8 /* UIDesignableView.swift */,
+				EB2C7ADD2999685A006F2486 /* AppIcon.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -651,6 +679,7 @@
 				EBD7078729970F9B00ECF0E8 /* SceneAssembly.swift in Sources */,
 				EBA8FCC7299921590075B4D8 /* EventRepositoryProtocol.swift in Sources */,
 				EB4B698D2997F57E003CE1F1 /* EventListTableViewCell.swift in Sources */,
+				EB2C7ADE2999685A006F2486 /* AppIcon.swift in Sources */,
 				EBD7078529970F7000ECF0E8 /* EventListSceneAssembly.swift in Sources */,
 				EBA8FCC12999204E0075B4D8 /* FavoritesStorageProtocol.swift in Sources */,
 				EB4B697D2997BF8E003CE1F1 /* GetEventsBySportError.swift in Sources */,
@@ -659,11 +688,13 @@
 				EB4B69862997EC00003CE1F1 /* Sport.swift in Sources */,
 				EBD707742997020600ECF0E8 /* Storyboarded.swift in Sources */,
 				EBD7078B299713FE00ECF0E8 /* NetworkingAssembly.swift in Sources */,
+				EB2C7ADC299967DA006F2486 /* SportIcon.swift in Sources */,
 				EB4B69972997FBB6003CE1F1 /* SportSectionHeaderView.swift in Sources */,
 				EBD7077E29970DDB00ECF0E8 /* DIContainer.swift in Sources */,
 				EBA8FCB1299808650075B4D8 /* UIDesignableView.swift in Sources */,
 				EBA8FCC3299920920075B4D8 /* InMemoryFavoritesStorage.swift in Sources */,
 				EBD707912997146200ECF0E8 /* SportsService.swift in Sources */,
+				EB2C7AE02999A863006F2486 /* DidUpdateExpandableSectionExpansionStatusNotificationPayload.swift in Sources */,
 				EB4B69882997EC08003CE1F1 /* Event.swift in Sources */,
 				EBD707892997102500ECF0E8 /* EventListViewModel.swift in Sources */,
 				EBA8FCBD29991F0D0075B4D8 /* FavoritesRepository.swift in Sources */,
@@ -673,6 +704,7 @@
 				EB4B69842997EBF3003CE1F1 /* EventsBySport.swift in Sources */,
 				EBD707782997027200ECF0E8 /* ViewConstructor.swift in Sources */,
 				EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */,
+				EB2C7AD7299965F7006F2486 /* UIView.swift in Sources */,
 				EBA8FCB7299838BB0075B4D8 /* Notification.swift in Sources */,
 				EB4B697F2997C273003CE1F1 /* NetworkError.swift in Sources */,
 				EBA8FCCE299931240075B4D8 /* DidAddEventToFavoritesNotificationPayload.swift in Sources */,
