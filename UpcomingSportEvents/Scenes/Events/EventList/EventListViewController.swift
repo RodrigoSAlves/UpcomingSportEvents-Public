@@ -85,7 +85,7 @@ extension EventListViewController: UITableViewDataSource, UITableViewDelegate {
             return
         }
 
-        collectionViewOffsets[indexPath.row] = tableViewCell.collectionViewOffset
+        collectionViewOffsets[indexPath.section] = tableViewCell.collectionViewOffset
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
