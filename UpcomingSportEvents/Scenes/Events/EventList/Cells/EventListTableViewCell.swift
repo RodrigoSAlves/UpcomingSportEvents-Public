@@ -11,6 +11,16 @@ class EventListTableViewCell: UITableViewCell {
     static let nibIdentifier = "EventListTableViewCell"
     static let identifier = "EventListTableViewCell"
 
+    var collectionViewOffset: CGFloat {
+        get {
+            return mainCollectionView.contentOffset.x
+        }
+
+        set {
+            mainCollectionView.setContentOffset(CGPoint(x: newValue, y: .zero), animated: false)
+        }
+    }
+
     @IBOutlet weak var mainCollectionView: UICollectionView!
 
     override func awakeFromNib() {

@@ -19,6 +19,7 @@ class EventListViewController: UIViewController, Storyboarded {
     @IBOutlet weak var mainTableView: UITableView!
 
     var viewModel: EventListViewModel?
+    var collectionViewOffsets = [Int: CGFloat]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,13 +68,24 @@ extension EventListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: EventListTableViewCell.identifier, for: indexPath) as? EventListTableViewCell else {
-            return UITableViewCell()
+        return tableView.dequeueReusableCell(withIdentifier: EventListTableViewCell.identifier, for: indexPath)
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let tableViewCell = cell as? EventListTableViewCell else {
+            return
         }
 
-        cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.section)
+        tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.section)
+        tableViewCell.collectionViewOffset = collectionViewOffsets[indexPath.section] ?? 0
+    }
 
-        return cell
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let tableViewCell = cell as? EventListTableViewCell else {
+            return
+        }
+
+        collectionViewOffsets[indexPath.row] = tableViewCell.collectionViewOffset
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -91,7 +103,8 @@ extension EventListViewController: UICollectionViewDataSource, UICollectionViewD
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let viewModel, let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventCollectionViewCell.identifier, for: indexPath) as? EventCollectionViewCell else {
+        guard let viewModel,
+              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventCollectionViewCell.identifier, for: indexPath) as? EventCollectionViewCell else {
             return UICollectionViewCell()
         }
 
