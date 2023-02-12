@@ -33,8 +33,8 @@ class EventListViewController: UIViewController, Storyboarded {
         mainTableView.showsHorizontalScrollIndicator = false
 
         mainTableView.register(
-            UINib(nibName: EventListTableViewCell.nibIdentifier, bundle: nil),
-            forCellReuseIdentifier: EventListTableViewCell.identifier
+            UINib(nibName: HorizontalCollectionViewTableViewCell.nibIdentifier, bundle: nil),
+            forCellReuseIdentifier: HorizontalCollectionViewTableViewCell.identifier
         )
 
         mainTableView.register(
@@ -80,11 +80,11 @@ extension EventListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: EventListTableViewCell.identifier, for: indexPath)
+        return tableView.dequeueReusableCell(withIdentifier: HorizontalCollectionViewTableViewCell.identifier, for: indexPath)
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let tableViewCell = cell as? EventListTableViewCell else {
+        guard let tableViewCell = cell as? HorizontalCollectionViewTableViewCell else {
             return
         }
 
@@ -93,7 +93,7 @@ extension EventListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let tableViewCell = cell as? EventListTableViewCell else {
+        guard let tableViewCell = cell as? HorizontalCollectionViewTableViewCell else {
             return
         }
 
@@ -172,13 +172,13 @@ extension EventListViewController: EventListViewModelDelegate {
     }
 
     func didUpdateFavoriteStatusForEventAt(section: Int, originalIndex: Int, newIndex: Int) {
-        guard let cell = mainTableView.cellForRow(at: IndexPath(row: .zero, section: section)) as? EventListTableViewCell else {
+        guard let cell = mainTableView.cellForRow(at: IndexPath(row: .zero, section: section)) as? HorizontalCollectionViewTableViewCell else {
             return
         }
 
-        cell.mainCollectionView.performBatchUpdates {
-            cell.mainCollectionView.deleteItems(at: [IndexPath(row: originalIndex, section: .zero)])
-            cell.mainCollectionView.insertItems(at: [IndexPath(row: newIndex, section: .zero)])
+        cell.collectionView.performBatchUpdates {
+            cell.collectionView.deleteItems(at: [IndexPath(row: originalIndex, section: .zero)])
+            cell.collectionView.insertItems(at: [IndexPath(row: newIndex, section: .zero)])
         }
     }
 }

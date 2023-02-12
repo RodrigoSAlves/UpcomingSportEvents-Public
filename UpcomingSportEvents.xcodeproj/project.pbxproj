@@ -18,8 +18,8 @@
 		EB4B69842997EBF3003CE1F1 /* EventsBySport.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B69832997EBF3003CE1F1 /* EventsBySport.swift */; };
 		EB4B69862997EC00003CE1F1 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B69852997EC00003CE1F1 /* Sport.swift */; };
 		EB4B69882997EC08003CE1F1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B69872997EC08003CE1F1 /* Event.swift */; };
-		EB4B698D2997F57E003CE1F1 /* EventListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B698B2997F57E003CE1F1 /* EventListTableViewCell.swift */; };
-		EB4B698E2997F57E003CE1F1 /* EventListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4B698C2997F57E003CE1F1 /* EventListTableViewCell.xib */; };
+		EB4B698D2997F57E003CE1F1 /* HorizontalCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B698B2997F57E003CE1F1 /* HorizontalCollectionViewTableViewCell.swift */; };
+		EB4B698E2997F57E003CE1F1 /* HorizontalCollectionViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4B698C2997F57E003CE1F1 /* HorizontalCollectionViewTableViewCell.xib */; };
 		EB4B69912997F7C7003CE1F1 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B698F2997F7C7003CE1F1 /* EventCollectionViewCell.swift */; };
 		EB4B69922997F7C7003CE1F1 /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4B69902997F7C7003CE1F1 /* EventCollectionViewCell.xib */; };
 		EB4B69952997FBA3003CE1F1 /* ExpandableSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4B69942997FBA3003CE1F1 /* ExpandableSectionHeaderView.xib */; };
@@ -91,8 +91,8 @@
 		EB4B69832997EBF3003CE1F1 /* EventsBySport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsBySport.swift; sourceTree = "<group>"; };
 		EB4B69852997EC00003CE1F1 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		EB4B69872997EC08003CE1F1 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		EB4B698B2997F57E003CE1F1 /* EventListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListTableViewCell.swift; sourceTree = "<group>"; };
-		EB4B698C2997F57E003CE1F1 /* EventListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventListTableViewCell.xib; sourceTree = "<group>"; };
+		EB4B698B2997F57E003CE1F1 /* HorizontalCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		EB4B698C2997F57E003CE1F1 /* HorizontalCollectionViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalCollectionViewTableViewCell.xib; sourceTree = "<group>"; };
 		EB4B698F2997F7C7003CE1F1 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		EB4B69902997F7C7003CE1F1 /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
 		EB4B69942997FBA3003CE1F1 /* ExpandableSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandableSectionHeaderView.xib; sourceTree = "<group>"; };
@@ -194,6 +194,7 @@
 		EB2C7AE42999AB1B006F2486 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				EB2C7AE62999B3EB006F2486 /* HorizontalCollectionViewTableViewCell */,
 				EB2C7AE52999AB27006F2486 /* ExpandableSectionTableViewHeaderView */,
 			);
 			path = ViewComponents;
@@ -206,6 +207,15 @@
 				EB4B69942997FBA3003CE1F1 /* ExpandableSectionHeaderView.xib */,
 			);
 			path = ExpandableSectionTableViewHeaderView;
+			sourceTree = "<group>";
+		};
+		EB2C7AE62999B3EB006F2486 /* HorizontalCollectionViewTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EB4B698B2997F57E003CE1F1 /* HorizontalCollectionViewTableViewCell.swift */,
+				EB4B698C2997F57E003CE1F1 /* HorizontalCollectionViewTableViewCell.xib */,
+			);
+			path = HorizontalCollectionViewTableViewCell;
 			sourceTree = "<group>";
 		};
 		EB4B69782997BF5C003CE1F1 /* Models */ = {
@@ -233,8 +243,6 @@
 		EB4B69822997E50F003CE1F1 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				EB4B698B2997F57E003CE1F1 /* EventListTableViewCell.swift */,
-				EB4B698C2997F57E003CE1F1 /* EventListTableViewCell.xib */,
 				EB4B698F2997F7C7003CE1F1 /* EventCollectionViewCell.swift */,
 				EB4B69902997F7C7003CE1F1 /* EventCollectionViewCell.xib */,
 			);
@@ -616,7 +624,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB4B698E2997F57E003CE1F1 /* EventListTableViewCell.xib in Resources */,
+				EB4B698E2997F57E003CE1F1 /* HorizontalCollectionViewTableViewCell.xib in Resources */,
 				EBD707482996FF4F00ECF0E8 /* LaunchScreen.storyboard in Resources */,
 				EBD707762997023E00ECF0E8 /* EventList.storyboard in Resources */,
 				EB4B69952997FBA3003CE1F1 /* ExpandableSectionHeaderView.xib in Resources */,
@@ -678,7 +686,7 @@
 				EBA8FCCA299921710075B4D8 /* FavoritesRepositoryProtocol.swift in Sources */,
 				EBD7078729970F9B00ECF0E8 /* SceneAssembly.swift in Sources */,
 				EBA8FCC7299921590075B4D8 /* EventRepositoryProtocol.swift in Sources */,
-				EB4B698D2997F57E003CE1F1 /* EventListTableViewCell.swift in Sources */,
+				EB4B698D2997F57E003CE1F1 /* HorizontalCollectionViewTableViewCell.swift in Sources */,
 				EB2C7ADE2999685A006F2486 /* AppIcon.swift in Sources */,
 				EBD7078529970F7000ECF0E8 /* EventListSceneAssembly.swift in Sources */,
 				EBA8FCC12999204E0075B4D8 /* FavoritesStorageProtocol.swift in Sources */,
