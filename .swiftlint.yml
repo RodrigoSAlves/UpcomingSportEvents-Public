@@ -57,8 +57,8 @@ large_tuple: 4
 type_name:
   min_length: 4 # only warning
   max_length: # warning and error
-    warning: 40
-    error: 50
+    warning: 60
+    error: 80
   excluded: iPhone # excluded via string
 identifier_name:
   min_length: # only min_length
