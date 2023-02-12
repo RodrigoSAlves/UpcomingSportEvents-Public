@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol EventRepositoryProtocol {
-    func getEventsBySport(completion: @escaping (Result<[EventsBySport], GetEventsBySportError>) -> Void)
-}
-
 struct EventRepository: EventRepositoryProtocol {
     let sportsService: SportsServiceProtocol
 

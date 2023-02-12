@@ -17,5 +17,13 @@ final class RepositoryAssembly: Assembly {
 
             return EventRepository(sportsService: sportsService)
         }
+
+        container.register(FavoritesRepositoryProtocol.self) { resolver in
+            guard let favoritesStorage = resolver.resolve(FavoritesStorageProtocol.self) else {
+                fatalError("Could not resolve FavoritesStorageProtocol dependency")
+            }
+
+            return FavoritesRepository(favoritesStorage: favoritesStorage)
+        }
     }
 }

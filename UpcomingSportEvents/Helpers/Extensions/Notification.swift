@@ -8,5 +8,7 @@
 import Foundation
 
 extension Notification.Name {
-    static let didToggleEventFavoriteStatus = Notification.Name("didToggleEventFavoriteStatus")
+    static let didUpdateEventFavoriteStatus = Notification.Name("didUpdateEventFavoriteStatus")
+    static let didAddEventToFavorites = Notification.Name("didAddEventToFavorites")
+    static let didRemoveEventFromFavorites = Notification.Name("didRemoveEventFromFavorites")
 }

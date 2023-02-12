@@ -71,7 +71,7 @@ extension EventListViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
 
-        cell.fill(events: viewModel.eventsBySport[indexPath.section].events)
+        cell.fill(eventsBySport: viewModel.eventsBySport[indexPath.section])
         cell.delegate = self
 
         return cell
@@ -104,8 +104,8 @@ extension EventListViewController: EventListViewModelDelegate {
         }
     }
 
-    func didUpdateFavoriteStateForEventAt(section: Int, index: Int) {
-        mainTableView.reloadSections(IndexSet(integer: section), with: .automatic)
+    func didUpdateFavoriteStatusForEventAt(section: Int, originalIndex: Int, newIndex: Int) {
+        // Do nothing
     }
 }
 

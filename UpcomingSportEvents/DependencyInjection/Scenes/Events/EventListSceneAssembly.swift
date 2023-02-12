@@ -15,7 +15,11 @@ final class EventListSceneAssembly: Assembly {
                 fatalError("Could not resolve EventRepositoryProtocol dependency")
             }
 
-            return EventListViewModel(eventRepository: eventRepository)
+            guard let favoritesRepository = resolver.resolve(FavoritesRepositoryProtocol.self) else {
+                fatalError("Could not resolve FavoritesRepositoryProtocol dependency")
+            }
+
+            return EventListViewModel(eventRepository: eventRepository, favoritesRepository: favoritesRepository)
         }
     }
 }

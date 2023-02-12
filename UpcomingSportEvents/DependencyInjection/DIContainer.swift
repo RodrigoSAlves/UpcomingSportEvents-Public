@@ -18,7 +18,8 @@ final class DIContainer {
             [
                 SceneAssembly(),
                 NetworkingAssembly(),
-                RepositoryAssembly()
+                RepositoryAssembly(),
+                PersistenceAssembly()
             ],
             container: container
         )

@@ -11,13 +11,12 @@ protocol EventListViewModelDelegate: AnyObject {
     func didFinishLoadingSportsAndEvents()
     func didFailToLoadSportsAndEvents(error: GetEventsBySportError)
     func didToggleExpansionForSection(section: Int, isExpanded: Bool)
-    func didUpdateFavoriteStateForEventAt(section: Int, index: Int)
+    func didUpdateFavoriteStatusForEventAt(section: Int, originalIndex: Int, newIndex: Int)
 }
-
-var favoriteEvents: [String: Bool] = [:]
 
 final class EventListViewModel {
     private let eventRepository: EventRepositoryProtocol
+    private let favoritesRepository: FavoritesRepositoryProtocol
 
     private(set) var eventsBySport: [EventsBySport] = [EventsBySport]()
     private(set) var getEventsBySportError: GetEventsBySportError?
@@ -26,8 +25,9 @@ final class EventListViewModel {
 
     weak var delegate: EventListViewModelDelegate?
 
-    init(eventRepository: EventRepositoryProtocol) {
+    init(eventRepository: EventRepositoryProtocol, favoritesRepository: FavoritesRepositoryProtocol) {
         self.eventRepository = eventRepository
+        self.favoritesRepository = favoritesRepository
         loadSportingEvents()
     }
 
@@ -49,7 +49,6 @@ final class EventListViewModel {
             case .success(let eventsBySport):
                 self.eventsBySport = eventsBySport
                 self.updateExpandedStates()
-                self.updateFavoriteEvents()
                 self.delegate?.didFinishLoadingSportsAndEvents()
             case .failure(let error):
                 self.getEventsBySportError = error
@@ -69,16 +68,6 @@ final class EventListViewModel {
         sportExpansionStates = updatedExpansionStates
     }
 
-    private func updateFavoriteEvents() {
-        var updatedFavoriteEvents: [String: Bool] = [:]
-
-        eventsBySport.flatMap { $0.events }.forEach {
-            updatedFavoriteEvents[$0.id] = favoriteEvents[$0.id] ?? false
-        }
-
-        favoriteEvents = updatedFavoriteEvents
-    }
-
     func toggleSportExpansion(sport: Sport) {
         guard let sectionIndex = eventsBySport.firstIndex(where: { $0.sport.id == sport.id }),
               sportExpansionStates[sport.id] != nil else {
@@ -96,31 +85,31 @@ final class EventListViewModel {
 
     func toggleFavoriteForEvent(event: Event) {
         guard let sectionIndex = eventsBySport.firstIndex(where: { $0.sport.id == event.sportId }),
-              let eventIndex = eventsBySport[sectionIndex].events.firstIndex(where: { $0.id == event.id }) else {
+              let originalIndex = eventsBySport[sectionIndex].events.firstIndex(where: { $0.id == event.id }) else {
             return
         }
 
-        print("Index before toggle \(eventIndex)")
+        favoritesRepository.toggleFavoriteStatus(event: event)
 
-        let newFavoriteStatus: Bool
+        eventsBySport[sectionIndex].events.sort {
+            let isFirstElementFavorite = favoritesRepository.getFavoriteStatus(event: $0)
+            let isSecondElementFavorite = favoritesRepository.getFavoriteStatus(event: $1)
 
-        if favoriteEvents[event.id] != nil {
-            newFavoriteStatus = !favoriteEvents[event.id]!
-        } else {
-            newFavoriteStatus = true
+            if isFirstElementFavorite == isSecondElementFavorite {
+                return $0.startTime < $1.startTime
+            } else {
+                return isFirstElementFavorite
+            }
         }
 
-        favoriteEvents[event.id] = newFavoriteStatus
+        guard let newIndex = eventsBySport[sectionIndex].events.firstIndex(where: { $0.id == event.id }) else {
+            return
+        }
 
-        let notificationPayload = ToggleEventFavoriteStatusNotificationPayload(
-            event: event,
-            newFavoriteStatus: newFavoriteStatus
-        )
-
-        NotificationCenter.default.post(name: .didToggleEventFavoriteStatus, object: notificationPayload)
+        delegate?.didUpdateFavoriteStatusForEventAt(section: sectionIndex, originalIndex: originalIndex, newIndex: newIndex)
     }
 
     func isFavorite(event: Event) -> Bool {
-        return favoriteEvents[event.id] ?? false
+        return favoritesRepository.getFavoriteStatus(event: event)
     }
 }

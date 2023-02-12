@@ -23,7 +23,15 @@
 		EBA8FCB1299808650075B4D8 /* UIDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCB0299808650075B4D8 /* UIDesignableView.swift */; };
 		EBA8FCB3299820C60075B4D8 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCB2299820C60075B4D8 /* Collection.swift */; };
 		EBA8FCB7299838BB0075B4D8 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCB6299838BB0075B4D8 /* Notification.swift */; };
-		EBA8FCBA2998392D0075B4D8 /* ToggleEventFavoriteStatusNotificationPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCB92998392D0075B4D8 /* ToggleEventFavoriteStatusNotificationPayload.swift */; };
+		EBA8FCBA2998392D0075B4D8 /* DidUpdateEventFavoriteStatusNotificationPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCB92998392D0075B4D8 /* DidUpdateEventFavoriteStatusNotificationPayload.swift */; };
+		EBA8FCBD29991F0D0075B4D8 /* FavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCBC29991F0D0075B4D8 /* FavoritesRepository.swift */; };
+		EBA8FCC12999204E0075B4D8 /* FavoritesStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCC02999204E0075B4D8 /* FavoritesStorageProtocol.swift */; };
+		EBA8FCC3299920920075B4D8 /* InMemoryFavoritesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCC2299920920075B4D8 /* InMemoryFavoritesStorage.swift */; };
+		EBA8FCC7299921590075B4D8 /* EventRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCC6299921590075B4D8 /* EventRepositoryProtocol.swift */; };
+		EBA8FCCA299921710075B4D8 /* FavoritesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCC9299921710075B4D8 /* FavoritesRepositoryProtocol.swift */; };
+		EBA8FCCC299922930075B4D8 /* PersistenceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCCB299922930075B4D8 /* PersistenceAssembly.swift */; };
+		EBA8FCCE299931240075B4D8 /* DidAddEventToFavoritesNotificationPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCCD299931240075B4D8 /* DidAddEventToFavoritesNotificationPayload.swift */; };
+		EBA8FCD0299931420075B4D8 /* DidRemoveEventFromFavoritesNotificationPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCCF299931420075B4D8 /* DidRemoveEventFromFavoritesNotificationPayload.swift */; };
 		EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */; };
 		EBD707452996FF4F00ECF0E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD707442996FF4F00ECF0E8 /* Assets.xcassets */; };
 		EBD707482996FF4F00ECF0E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD707462996FF4F00ECF0E8 /* LaunchScreen.storyboard */; };
@@ -83,7 +91,15 @@
 		EBA8FCB0299808650075B4D8 /* UIDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDesignableView.swift; sourceTree = "<group>"; };
 		EBA8FCB2299820C60075B4D8 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		EBA8FCB6299838BB0075B4D8 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
-		EBA8FCB92998392D0075B4D8 /* ToggleEventFavoriteStatusNotificationPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleEventFavoriteStatusNotificationPayload.swift; sourceTree = "<group>"; };
+		EBA8FCB92998392D0075B4D8 /* DidUpdateEventFavoriteStatusNotificationPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidUpdateEventFavoriteStatusNotificationPayload.swift; sourceTree = "<group>"; };
+		EBA8FCBC29991F0D0075B4D8 /* FavoritesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepository.swift; sourceTree = "<group>"; };
+		EBA8FCC02999204E0075B4D8 /* FavoritesStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStorageProtocol.swift; sourceTree = "<group>"; };
+		EBA8FCC2299920920075B4D8 /* InMemoryFavoritesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryFavoritesStorage.swift; sourceTree = "<group>"; };
+		EBA8FCC6299921590075B4D8 /* EventRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRepositoryProtocol.swift; sourceTree = "<group>"; };
+		EBA8FCC9299921710075B4D8 /* FavoritesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepositoryProtocol.swift; sourceTree = "<group>"; };
+		EBA8FCCB299922930075B4D8 /* PersistenceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceAssembly.swift; sourceTree = "<group>"; };
+		EBA8FCCD299931240075B4D8 /* DidAddEventToFavoritesNotificationPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidAddEventToFavoritesNotificationPayload.swift; sourceTree = "<group>"; };
+		EBA8FCCF299931420075B4D8 /* DidRemoveEventFromFavoritesNotificationPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidRemoveEventFromFavoritesNotificationPayload.swift; sourceTree = "<group>"; };
 		EBD707382996FF4D00ECF0E8 /* UpcomingSportEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpcomingSportEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBD707442996FF4F00ECF0E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -192,9 +208,37 @@
 		EBA8FCB82998391E0075B4D8 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				EBA8FCB92998392D0075B4D8 /* ToggleEventFavoriteStatusNotificationPayload.swift */,
+				EBA8FCB92998392D0075B4D8 /* DidUpdateEventFavoriteStatusNotificationPayload.swift */,
+				EBA8FCCD299931240075B4D8 /* DidAddEventToFavoritesNotificationPayload.swift */,
+				EBA8FCCF299931420075B4D8 /* DidRemoveEventFromFavoritesNotificationPayload.swift */,
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		EBA8FCBE29991F9E0075B4D8 /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				EBA8FCC4299921400075B4D8 /* Protocols */,
+				EBA8FCC2299920920075B4D8 /* InMemoryFavoritesStorage.swift */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
+		EBA8FCC4299921400075B4D8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EBA8FCC02999204E0075B4D8 /* FavoritesStorageProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EBA8FCC5299921480075B4D8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EBA8FCC6299921590075B4D8 /* EventRepositoryProtocol.swift */,
+				EBA8FCC9299921710075B4D8 /* FavoritesRepositoryProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		EBD7072F2996FF4D00ECF0E8 = {
@@ -224,6 +268,7 @@
 				EBD7076B299700A200ECF0E8 /* Scenes */,
 				EBD7078E2997144000ECF0E8 /* Networking */,
 				EBD707962997179900ECF0E8 /* Repositories */,
+				EBA8FCBE29991F9E0075B4D8 /* Persistance */,
 				EB4B69782997BF5C003CE1F1 /* Models */,
 				EBD70771299701CB00ECF0E8 /* Helpers */,
 				EBD7079929971C7600ECF0E8 /* Configurations */,
@@ -299,6 +344,7 @@
 				EBD7077D29970DDB00ECF0E8 /* DIContainer.swift */,
 				EBD7078A299713FE00ECF0E8 /* NetworkingAssembly.swift */,
 				EBD7078C2997140900ECF0E8 /* RepositoryAssembly.swift */,
+				EBA8FCCB299922930075B4D8 /* PersistenceAssembly.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -333,7 +379,9 @@
 		EBD707962997179900ECF0E8 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				EBA8FCC5299921480075B4D8 /* Protocols */,
 				EBD70797299717AB00ECF0E8 /* EventRepository.swift */,
+				EBA8FCBC29991F0D0075B4D8 /* FavoritesRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -530,14 +578,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB4B697B2997BF74003CE1F1 /* PresentableError.swift in Sources */,
+				EBA8FCD0299931420075B4D8 /* DidRemoveEventFromFavoritesNotificationPayload.swift in Sources */,
 				EB4B69912997F7C7003CE1F1 /* EventCollectionViewCell.swift in Sources */,
 				EBD707A4299726EC00ECF0E8 /* SportData.swift in Sources */,
-				EBA8FCBA2998392D0075B4D8 /* ToggleEventFavoriteStatusNotificationPayload.swift in Sources */,
+				EBA8FCBA2998392D0075B4D8 /* DidUpdateEventFavoriteStatusNotificationPayload.swift in Sources */,
 				EBD707702997018E00ECF0E8 /* EventListViewController.swift in Sources */,
+				EBA8FCCA299921710075B4D8 /* FavoritesRepositoryProtocol.swift in Sources */,
 				EBD7078729970F9B00ECF0E8 /* SceneAssembly.swift in Sources */,
+				EBA8FCC7299921590075B4D8 /* EventRepositoryProtocol.swift in Sources */,
 				EB4B698D2997F57E003CE1F1 /* EventListTableViewCell.swift in Sources */,
 				EBD7078529970F7000ECF0E8 /* EventListSceneAssembly.swift in Sources */,
+				EBA8FCC12999204E0075B4D8 /* FavoritesStorageProtocol.swift in Sources */,
 				EB4B697D2997BF8E003CE1F1 /* GetEventsBySportError.swift in Sources */,
+				EBA8FCCC299922930075B4D8 /* PersistenceAssembly.swift in Sources */,
 				EBD707A62997272900ECF0E8 /* EventData.swift in Sources */,
 				EB4B69862997EC00003CE1F1 /* Sport.swift in Sources */,
 				EBD707742997020600ECF0E8 /* Storyboarded.swift in Sources */,
@@ -545,9 +598,11 @@
 				EB4B69972997FBB6003CE1F1 /* SportSectionHeaderView.swift in Sources */,
 				EBD7077E29970DDB00ECF0E8 /* DIContainer.swift in Sources */,
 				EBA8FCB1299808650075B4D8 /* UIDesignableView.swift in Sources */,
+				EBA8FCC3299920920075B4D8 /* InMemoryFavoritesStorage.swift in Sources */,
 				EBD707912997146200ECF0E8 /* SportsService.swift in Sources */,
 				EB4B69882997EC08003CE1F1 /* Event.swift in Sources */,
 				EBD707892997102500ECF0E8 /* EventListViewModel.swift in Sources */,
+				EBA8FCBD29991F0D0075B4D8 /* FavoritesRepository.swift in Sources */,
 				EBA8FCB3299820C60075B4D8 /* Collection.swift in Sources */,
 				EB4B69812997C3F2003CE1F1 /* BaseService.swift in Sources */,
 				EBD7079C29971E1C00ECF0E8 /* Environment.swift in Sources */,
@@ -556,6 +611,7 @@
 				EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */,
 				EBA8FCB7299838BB0075B4D8 /* Notification.swift in Sources */,
 				EB4B697F2997C273003CE1F1 /* NetworkError.swift in Sources */,
+				EBA8FCCE299931240075B4D8 /* DidAddEventToFavoritesNotificationPayload.swift in Sources */,
 				EBD70798299717AB00ECF0E8 /* EventRepository.swift in Sources */,
 				EBD7078D2997140900ECF0E8 /* RepositoryAssembly.swift in Sources */,
 			);
