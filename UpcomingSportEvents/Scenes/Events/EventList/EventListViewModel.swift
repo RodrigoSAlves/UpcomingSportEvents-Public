@@ -48,7 +48,6 @@ final class EventListViewModel {
             switch result {
             case .success(let eventsBySport):
                 self.eventsBySport = eventsBySport
-                self.updateExpandedStates()
                 self.delegate?.didFinishLoadingSportsAndEvents()
             case .failure(let error):
                 self.getEventsBySportError = error
@@ -57,30 +56,19 @@ final class EventListViewModel {
         }
     }
 
-    private func updateExpandedStates() {
-        var updatedExpansionStates: [String: Bool] = [:]
-
-        eventsBySport.forEach {
-            // If we receive new sports, maintain expansion of those who were expanded and exist in new array
-            updatedExpansionStates[$0.sport.id] = sportExpansionStates[$0.sport.id] ?? true
-        }
-
-        sportExpansionStates = updatedExpansionStates
-    }
-
     func toggleSportExpansion(sport: Sport) {
-        guard let sectionIndex = eventsBySport.firstIndex(where: { $0.sport.id == sport.id }),
-              sportExpansionStates[sport.id] != nil else {
+        guard let sectionIndex = eventsBySport.firstIndex(where: { $0.sport.id == sport.id }) else {
             return
         }
 
-        let newExpandedValue = !sportExpansionStates[sport.id]!
+        let currentExpansionState = sportExpansionStates[sport.id] ?? true
+        let newExpandedValue = !currentExpansionState
         sportExpansionStates[sport.id] = newExpandedValue
         delegate?.didToggleExpansionForSection(section: sectionIndex, isExpanded: newExpandedValue)
     }
 
     func isExpanded(sport: Sport) -> Bool {
-        return sportExpansionStates[sport.id] ?? false
+        return sportExpansionStates[sport.id] ?? true
     }
 
     func toggleFavoriteForEvent(event: Event) {

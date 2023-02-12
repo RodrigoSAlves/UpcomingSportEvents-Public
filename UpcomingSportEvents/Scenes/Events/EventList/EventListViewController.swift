@@ -67,12 +67,11 @@ extension EventListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let viewModel, let cell = tableView.dequeueReusableCell(withIdentifier: EventListTableViewCell.identifier, for: indexPath) as? EventListTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: EventListTableViewCell.identifier, for: indexPath) as? EventListTableViewCell else {
             return UITableViewCell()
         }
 
-        cell.fill(eventsBySport: viewModel.eventsBySport[indexPath.section])
-        cell.delegate = self
+        cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.section)
 
         return cell
     }
@@ -83,6 +82,45 @@ extension EventListViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.defaultSportsTableViewCellHeight
+    }
+}
+
+extension EventListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel?.eventsBySport[collectionView.tag].events.count ?? 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let viewModel, let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventCollectionViewCell.identifier, for: indexPath) as? EventCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+
+        let event = viewModel.eventsBySport[collectionView.tag].events[indexPath.row]
+
+        cell.fill(
+            event: event,
+            isFavorite: viewModel.isFavorite(event: event)
+        )
+
+        cell.delegate = self
+
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 225.0, height: collectionView.frame.height)
+    }
+}
+
+extension EventListViewController: SportSectionHeaderViewDelegate {
+    func didTapToggleSectionButton(sport: Sport) {
+        viewModel?.toggleSportExpansion(sport: sport)
+    }
+}
+
+extension EventListViewController: EventCollectionViewCellDelegate {
+    func didTapMakeFavorite(event: Event) {
+        viewModel?.toggleFavoriteForEvent(event: event)
     }
 }
 
@@ -105,22 +143,13 @@ extension EventListViewController: EventListViewModelDelegate {
     }
 
     func didUpdateFavoriteStatusForEventAt(section: Int, originalIndex: Int, newIndex: Int) {
-        // Do nothing
-    }
-}
+        guard let cell = mainTableView.cellForRow(at: IndexPath(row: .zero, section: section)) as? EventListTableViewCell else {
+            return
+        }
 
-extension EventListViewController: SportSectionHeaderViewDelegate {
-    func didTapToggleSectionButton(sport: Sport) {
-        viewModel?.toggleSportExpansion(sport: sport)
-    }
-}
-
-extension EventListViewController: EventListTableViewCellDelegate {
-    func didTapMakeFavorite(event: Event) {
-        viewModel?.toggleFavoriteForEvent(event: event)
-    }
-
-    func isFavorite(event: Event) -> Bool {
-        return viewModel?.isFavorite(event: event) ?? false
+        cell.mainCollectionView.performBatchUpdates {
+            cell.mainCollectionView.deleteItems(at: [IndexPath(row: originalIndex, section: .zero)])
+            cell.mainCollectionView.insertItems(at: [IndexPath(row: newIndex, section: .zero)])
+        }
     }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol EventCollectionViewDelegate: AnyObject {
+protocol EventCollectionViewCellDelegate: AnyObject {
     func didTapMakeFavorite(event: Event)
 }
 
@@ -20,7 +20,7 @@ class EventCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var makeFavoriteButton: UIButton!
     @IBOutlet weak var startTimeLabel: UILabel!
 
-    weak var delegate: EventCollectionViewDelegate?
+    weak var delegate: EventCollectionViewCellDelegate?
     var event: Event?
 
     func fill(event: Event, isFavorite: Bool) {
