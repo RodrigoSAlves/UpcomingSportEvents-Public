@@ -74,6 +74,13 @@ extension EventListViewController: UITableViewDataSource, UITableViewDelegate {
             isExpanded: viewModel.getSportSectionExpansionState(sport: sport)
         )
 
+        headerView.containerView.backgroundColor = .sportHeaderBackgroundColor
+        headerView.titleLabel.textColor = .sportHeaderTitleTextColor
+        headerView.toggleSectionExpansionButton.tintColor = .sportHeaderExpandButtonTintColor
+        headerView.leftIcon.tintColor = .sportHeaderTitleTextColor
+
+        let viewHeight = self.tableView(tableView, heightForHeaderInSection: section)
+        headerView.containerView.setCornerRadius(viewHeight / 2)
         headerView.delegate = self
 
         return headerView

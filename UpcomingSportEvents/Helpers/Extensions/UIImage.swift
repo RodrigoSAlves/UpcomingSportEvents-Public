@@ -1,14 +1,13 @@
 //
-//  AppIcon.swift
+//  UIImage.swift
 //  UpcomingSportEvents
 //
-//  Created by Rodrigo Alves on 12/02/2023.
+//  Created by Rodrigo Alves on 13/02/2023.
 //
 
 import UIKit
 
-struct AppIcon {
-
+extension UIImage {
     // Chevrons
     static var chevronUp: UIImage { return UIImage(named: "ic-chevron-up")! }
     static var chevronDown: UIImage { return UIImage(named: "ic-chevron-down")! }

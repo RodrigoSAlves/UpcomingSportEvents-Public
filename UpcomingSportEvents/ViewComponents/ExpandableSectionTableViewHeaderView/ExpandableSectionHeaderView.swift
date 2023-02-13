@@ -15,12 +15,7 @@ class ExpandableSectionHeaderView: UITableViewHeaderFooterView {
     static let nibIdentifier = "ExpandableSectionHeaderView"
     static let identifier = "ExpandableSectionHeaderView"
 
-    struct LayoutOptions {
-        let backgroundColor: UIColor
-        let titleTextColor: UIColor
-        let toggleExpansionButtonTintColor: UIColor
-    }
-
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var toggleSectionExpansionButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var leftIcon: UIImageView!
@@ -36,7 +31,7 @@ class ExpandableSectionHeaderView: UITableViewHeaderFooterView {
     }
 
     func setIsExpanded(isExpanded: Bool) {
-        toggleSectionExpansionButton.setImage(isExpanded ? AppIcon.chevronDown : AppIcon.chevronUp, for: .normal)
+        toggleSectionExpansionButton.setImage(isExpanded ? .chevronDown : .chevronUp, for: .normal)
     }
 
     @IBAction func didTapToggleSectionExpansionButton(_ sender: Any) {

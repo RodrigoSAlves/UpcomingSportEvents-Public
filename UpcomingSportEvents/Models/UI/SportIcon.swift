@@ -11,27 +11,27 @@ struct SportIcon {
     static func getMainIcon(for sport: Sport) -> UIImage {
         switch sport.id {
         case "FOOT":
-            return AppIcon.sportIconSoccer
+            return .sportIconSoccer
         case "BASK":
-            return AppIcon.sportIconBasketball
+            return .sportIconBasketball
         case "TENN":
-            return AppIcon.sportIconTennis
+            return .sportIconTennis
         case "TABL":
-            return AppIcon.sportIconTableTennis
+            return .sportIconTableTennis
         case "VOLL":
-            return AppIcon.sportIconVolleyball
+            return .sportIconVolleyball
         case "ESPS":
-            return AppIcon.sportIconESports
+            return .sportIconESports
         case "ICEH":
-            return AppIcon.sportIconIceHockey
+            return .sportIconIceHockey
         case "HAND":
-            return AppIcon.sportIconHandball
+            return .sportIconHandball
         case "SNOO":
-            return AppIcon.sportIconSnooker
+            return .sportIconSnooker
         case "BADM":
-            return AppIcon.sportIconBadminton
+            return .sportIconBadminton
         default:
-            return AppIcon.sportIconDefault
+            return .sportIconDefault
         }
     }
 }
