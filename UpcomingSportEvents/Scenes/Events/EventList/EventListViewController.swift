@@ -15,6 +15,7 @@ class EventListViewController: UIViewController, Storyboarded {
         static let defaultSportsTableViewCellHeight: CGFloat = 124.0
         static let defaultSportSectionHeaderHeight: CGFloat = 35.0
         static let defaultEventCollectionViewCellWidth: CGFloat = 225.0
+        static let defaultLoadingTransitionAnimationDuration: CGFloat = 0.3
     }
 
     @IBOutlet weak var mainTableView: UITableView!
@@ -53,6 +54,42 @@ class EventListViewController: UIViewController, Storyboarded {
             UINib(nibName: ExpandableSectionHeaderView.nibIdentifier, bundle: nil),
             forHeaderFooterViewReuseIdentifier: ExpandableSectionHeaderView.identifier
         )
+    }
+
+    func animateIsLoadingSportingEventsTransition(isLoading: Bool) {
+        if isLoading {
+            loadingEventsLabel.alpha = .zero
+            loadingEventsLabel.isHidden = false
+
+            let animations = { [weak self] in
+                guard let self else {
+                    return
+                }
+
+                self.loadingEventsLabel.alpha = 1.0
+                self.mainTableView.alpha = 0.0
+            }
+
+            UIView.animate(withDuration: Constants.defaultLoadingTransitionAnimationDuration, animations: animations)
+        } else {
+            loadingEventsLabel.alpha = 1.0
+            loadingEventsLabel.isHidden = false
+
+            let animations = { [weak self] in
+                guard let self else {
+                    return
+                }
+
+                self.loadingEventsLabel.alpha = 0.0
+                self.mainTableView.alpha = 1.0
+            }
+
+            let completion: (Bool) -> Void = { [weak self] _ in
+                self?.loadingEventsLabel.isHidden = true
+            }
+
+            UIView.animate(withDuration: Constants.defaultLoadingTransitionAnimationDuration, animations: animations, completion: completion)
+        }
     }
 }
 
@@ -170,45 +207,7 @@ extension EventListViewController: EventCollectionViewCellDelegate {
 
 extension EventListViewController: EventListViewModelDelegate {
     func didUpdateIsLoadingSportingEvents(isLoadingSportingEvents: Bool) {
-
-        var animations: (() -> Void)?
-        var completion: ((Bool) -> Void)?
-
-        if isLoadingSportingEvents {
-            loadingEventsLabel.alpha = 0.0
-            loadingEventsLabel.isHidden = false
-
-            animations = { [weak self] in
-                guard let self else {
-                    return
-                }
-
-                self.loadingEventsLabel.alpha = 1.0
-                self.mainTableView.alpha = 0.0
-            }
-        } else {
-            loadingEventsLabel.alpha = 1.0
-            loadingEventsLabel.isHidden = false
-
-            animations = { [weak self] in
-                guard let self else {
-                    return
-                }
-
-                self.loadingEventsLabel.alpha = 0.0
-                self.mainTableView.alpha = 1.0
-            }
-
-            completion = { [weak self] _ in
-                self?.loadingEventsLabel.isHidden = true
-            }
-        }
-
-        guard let animations else {
-            return
-        }
-
-        UIView.animate(withDuration: 1.0, animations: animations)
+        animateIsLoadingSportingEventsTransition(isLoading: isLoadingSportingEvents)
     }
 
     func didFinishLoadingSportsAndEvents() {
