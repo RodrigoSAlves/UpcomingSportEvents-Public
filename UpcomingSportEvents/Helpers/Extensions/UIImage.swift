@@ -24,4 +24,9 @@ extension UIImage {
     static var sportIconBadminton: UIImage { return UIImage(named: "ic-sport-badm")! }
     static var sportIconHandball: UIImage { return UIImage(named: "ic-sport-hand")! }
     static var sportIconSnooker: UIImage { return UIImage(named: "ic-sport-snoo")! }
+
+    // Navbar Button Icons
+    static var user: UIImage { return UIImage(named: "ic-user")! }
+    static var filters: UIImage { return UIImage(named: "ic-filters")! }
+    static var navBarLogoWhite: UIImage { return UIImage(named: "NavBarLogoLight")! }
 }

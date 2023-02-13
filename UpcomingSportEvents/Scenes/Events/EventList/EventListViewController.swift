@@ -23,7 +23,16 @@ class EventListViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavBar()
         setupUI()
+    }
+
+    func setupNavBar() {
+        addLogoToNavbar()
+        setNavBarRightButton(image: .user, action: #selector(didTapProfileButton))
+    }
+
+    @objc func didTapProfileButton() {
     }
 
     func setupUI() {

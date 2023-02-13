@@ -9,7 +9,9 @@ import UIKit
 
 extension UIColor {
     // Main Colors
-    static var mainBackgroundColor: UIColor { return UIColor(named: "mainBackgroundColor")! }
+    static var mainBackgroundColor: UIColor { return UIColor(named: "MainBackgroundColor")! }
+    static var navBarBarButtonItemsTintColor: UIColor { return UIColor(named: "NavBarBarButtonItemsTintColor")! }
+    static var navBarLogoTintColor: UIColor { return UIColor(named: "NavBarLogoTintColor")! }
 
     // Sport Section Header Colors
     static var sportHeaderBackgroundColor: UIColor { return UIColor(named: "SportHeaderBackgroundColor")! }

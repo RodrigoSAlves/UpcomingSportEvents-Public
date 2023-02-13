@@ -30,6 +30,7 @@
 		EB2C7AFE2999BB79006F2486 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCE82999467F0075B4D8 /* Poppins-SemiBoldItalic.ttf */; };
 		EB2C7AFF2999BB79006F2486 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCDF2999467F0075B4D8 /* Poppins-Thin.ttf */; };
 		EB2C7B002999BB79006F2486 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCD92999467E0075B4D8 /* Poppins-ThinItalic.ttf */; };
+		EB2C7B05299A1509006F2486 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C7B04299A1509006F2486 /* UIViewController.swift */; };
 		EB4B697B2997BF74003CE1F1 /* PresentableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B697A2997BF74003CE1F1 /* PresentableError.swift */; };
 		EB4B697D2997BF8E003CE1F1 /* GetEventsBySportError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B697C2997BF8E003CE1F1 /* GetEventsBySportError.swift */; };
 		EB4B697F2997C273003CE1F1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B697E2997C273003CE1F1 /* NetworkError.swift */; };
@@ -104,6 +105,7 @@
 		EB2C7ADF2999A863006F2486 /* DidUpdateExpandableSectionExpansionStatusNotificationPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidUpdateExpandableSectionExpansionStatusNotificationPayload.swift; sourceTree = "<group>"; };
 		EB2C7AEB2999B576006F2486 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		EB2C7AED2999B580006F2486 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		EB2C7B04299A1509006F2486 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		EB4B697A2997BF74003CE1F1 /* PresentableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableError.swift; sourceTree = "<group>"; };
 		EB4B697C2997BF8E003CE1F1 /* GetEventsBySportError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventsBySportError.swift; sourceTree = "<group>"; };
 		EB4B697E2997C273003CE1F1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				EB2C7AD6299965F7006F2486 /* UIView.swift */,
 				EB2C7AEB2999B576006F2486 /* UIColor.swift */,
 				EB2C7AED2999B580006F2486 /* UIImage.swift */,
+				EB2C7B04299A1509006F2486 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 				EBD7077E29970DDB00ECF0E8 /* DIContainer.swift in Sources */,
 				EBA8FCB1299808650075B4D8 /* UIDesignableView.swift in Sources */,
 				EBA8FCC3299920920075B4D8 /* InMemoryFavoritesStorage.swift in Sources */,
+				EB2C7B05299A1509006F2486 /* UIViewController.swift in Sources */,
 				EBD707912997146200ECF0E8 /* SportsService.swift in Sources */,
 				EB2C7AE02999A863006F2486 /* DidUpdateExpandableSectionExpansionStatusNotificationPayload.swift in Sources */,
 				EB4B69882997EC08003CE1F1 /* Event.swift in Sources */,
