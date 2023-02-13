@@ -15,6 +15,10 @@ class EventCollectionViewCell: UICollectionViewCell {
     static let nibIdentifier = "EventCollectionViewCell"
     static let identifier = "EventCollectionViewCell"
 
+    struct Constants {
+        static let defaultContainerViewCornerRadius: CGFloat = 16.0
+    }
+
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var firstOpponentLabel: UILabel!
     @IBOutlet weak var secondOpponentLabel: UILabel!
@@ -23,10 +27,11 @@ class EventCollectionViewCell: UICollectionViewCell {
 
     weak var delegate: EventCollectionViewCellDelegate?
     var event: Event?
+    var timer: Timer?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        containerView.setCornerRadius(16.0)
+        containerView.setCornerRadius(Constants.defaultContainerViewCornerRadius)
     }
 
     func fill(event: Event, isFavorite: Bool) {
@@ -35,9 +40,43 @@ class EventCollectionViewCell: UICollectionViewCell {
         secondOpponentLabel.text = event.secondOpponentName
 
         makeFavoriteButton.tintColor = isFavorite ? .favoriteActiveColor : .favoriteInactiveColor
+        updateStartTimeLabel()
+        scheduleTimer()
+    }
 
-        let components = Calendar.current.dateComponents([.hour, .minute, .second], from: Date(), to: event.startTime)
-        // startTimeLabel.text = "\(components.hour ?? 0) : \(components.minute ?? 0) : \(components.second ?? 0)"
+    func updateStartTimeLabel() {
+        guard let event else {
+            startTimeLabel.text = nil
+            return
+        }
+
+        guard event.startTime > Date() else {
+            startTimeLabel.text = "Already started"
+            return
+        }
+
+        startTimeLabel.text = Date().getHoursMinutesSecondsRemaining(until: event.startTime) ?? ""
+    }
+
+    func scheduleTimer() {
+        guard timer == nil else {
+            return
+        }
+
+        guard let event, event.startTime > Date() else {
+            timer?.invalidate()
+            timer = nil
+
+            return
+        }
+
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+            guard let self else {
+                return
+            }
+
+            self.updateStartTimeLabel()
+        }
     }
 
     @IBAction func didTapMakeFavoriteButton(_ sender: Any) {

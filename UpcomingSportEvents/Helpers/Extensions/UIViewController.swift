@@ -10,7 +10,7 @@ import UIKit
 extension UIViewController {
 
     struct NavBarConstants {
-        static let defaultNavBarLogoSize: CGSize = CGSize(width: 150.0, height: 45.0)
+        static let defaultNavBarLogoSize: CGSize = CGSize(width: 150.0, height: 40.0)
         static let defaultNavBarBarButtonItemSize: CGSize = CGSize(width: 22.5, height: 22.5)
     }
 

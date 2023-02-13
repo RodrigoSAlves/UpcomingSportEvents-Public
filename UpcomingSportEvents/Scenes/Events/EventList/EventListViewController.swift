@@ -14,6 +14,7 @@ class EventListViewController: UIViewController, Storyboarded {
     struct Constants {
         static let defaultSportsTableViewCellHeight: CGFloat = 124.0
         static let defaultSportSectionHeaderHeight: CGFloat = 35.0
+        static let defaultEventCollectionViewCellWidth: CGFloat = 225.0
     }
 
     @IBOutlet weak var mainTableView: UITableView!
@@ -150,7 +151,7 @@ extension EventListViewController: UICollectionViewDataSource, UICollectionViewD
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 225.0, height: collectionView.frame.height)
+        return CGSize(width: Constants.defaultEventCollectionViewCellWidth, height: collectionView.frame.height)
     }
 }
 
