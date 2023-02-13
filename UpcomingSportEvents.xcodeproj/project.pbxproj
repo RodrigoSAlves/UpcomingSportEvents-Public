@@ -70,6 +70,7 @@
 		EBAF39F4299AEB07005ED847 /* Matchables.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39F3299AEB07005ED847 /* Matchables.swift */; };
 		EBAF39F6299AF0E3005ED847 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39F5299AF0E3005ED847 /* main.swift */; };
 		EBAF39F9299AF162005ED847 /* Cuckoo in Frameworks */ = {isa = PBXBuildFile; productRef = EBAF39F8299AF162005ED847 /* Cuckoo */; };
+		EBAF39FE299AF208005ED847 /* EventListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39FD299AF208005ED847 /* EventListViewModelTests.swift */; };
 		EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */; };
 		EBD707452996FF4F00ECF0E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD707442996FF4F00ECF0E8 /* Assets.xcassets */; };
 		EBD707482996FF4F00ECF0E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD707462996FF4F00ECF0E8 /* LaunchScreen.storyboard */; };
@@ -174,6 +175,7 @@
 		EBAF39ED299AE8EC005ED847 /* SportAndEventsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportAndEventsFactory.swift; sourceTree = "<group>"; };
 		EBAF39F3299AEB07005ED847 /* Matchables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matchables.swift; sourceTree = "<group>"; };
 		EBAF39F5299AF0E3005ED847 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EBAF39FD299AF208005ED847 /* EventListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModelTests.swift; sourceTree = "<group>"; };
 		EBD707382996FF4D00ECF0E8 /* UpcomingSportEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpcomingSportEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBD707442996FF4F00ECF0E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -424,6 +426,22 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
+		EBAF39FA299AF1E4005ED847 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EBAF39FC299AF1EA005ED847 /* Events */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EBAF39FC299AF1EA005ED847 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				EBAF39FD299AF208005ED847 /* EventListViewModelTests.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
 		EBD7072F2996FF4D00ECF0E8 = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +486,7 @@
 		EBD707512996FF4F00ECF0E8 /* UpcomingSportEventsTests */ = {
 			isa = PBXGroup;
 			children = (
+				EBAF39FA299AF1E4005ED847 /* Scenes */,
 				EBAF39EC299AE8DA005ED847 /* Factories */,
 				EBAF39E7299AE7C4005ED847 /* Repositories */,
 				EBAF39E5299AE647005ED847 /* GeneratedMocks.swift */,
@@ -782,7 +801,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $ACTION == \"indexbuild\" ]; then\n  echo \"Not running Cuckoo generator during indexing.\"\n  exit 0\nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"Not running Cuckoo generator during preview builds.\"\n  exit 0\nfi\n\n# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PROJECT_DIR}/run\" --download generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Repositories/Protocols/EventRepositoryProtocol.swift\" \\\n\"${INPUT_DIR}/Repositories/Protocols/FavoritesRepository.swift\" \\\n\"${INPUT_DIR}/Networking/Protocols/BaseServiceProtocol.swift\" \\\n\"${INPUT_DIR}/Networking/Protocols/SportsServiceProtocol.swift\" \\\n";
+			shellScript = "if [ $ACTION == \"indexbuild\" ]; then\n  echo \"Not running Cuckoo generator during indexing.\"\n  exit 0\nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"Not running Cuckoo generator during preview builds.\"\n  exit 0\nfi\n\n# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PROJECT_DIR}/run\" --download generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Repositories/Protocols/EventRepositoryProtocol.swift\" \\\n\"${INPUT_DIR}/Repositories/Protocols/FavoritesRepositoryProtocol.swift\" \\\n\"${INPUT_DIR}/Networking/Protocols/BaseServiceProtocol.swift\" \\\n\"${INPUT_DIR}/Networking/Protocols/SportsServiceProtocol.swift\" \\\n\"${INPUT_DIR}/Scenes/Events/EventList/EventListViewModel.swift\" \\\n\"${INPUT_DIR}/Scenes/Events/EventList/EventListViewController.swift\" \\\n";
 		};
 		EBD707792997055A00ECF0E8 /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -869,6 +888,7 @@
 			files = (
 				EBAF39EE299AE8EC005ED847 /* SportAndEventsFactory.swift in Sources */,
 				EBAF39EB299AE7E5005ED847 /* EventRepositoryTests.swift in Sources */,
+				EBAF39FE299AF208005ED847 /* EventListViewModelTests.swift in Sources */,
 				EBAF39E6299AE647005ED847 /* GeneratedMocks.swift in Sources */,
 				EBAF39F4299AEB07005ED847 /* Matchables.swift in Sources */,
 			);

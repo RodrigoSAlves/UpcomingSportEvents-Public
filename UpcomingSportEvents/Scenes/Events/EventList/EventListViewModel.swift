@@ -35,7 +35,7 @@ final class EventListViewModel {
         loadSportingEvents()
     }
 
-    private func loadSportingEvents() {
+    func loadSportingEvents() {
         guard !isLoadingSportingEvents else {
             return
         }

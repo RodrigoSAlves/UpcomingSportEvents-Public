@@ -50,4 +50,49 @@ struct SportAndEventsFactory {
             )
         ]
     }
+
+    static func makeDefaultEventsBySport() -> [EventsBySport] {
+        return [
+            EventsBySport(
+                sport: Sport(
+                    id: "FOOT",
+                    name: "SOCCER"
+                ),
+                events: [
+                    Event(
+                        id: "29135390",
+                        name: "Juventus FC - Paris Saint-Germain",
+                        sportId: "FOOT",
+                        startTime: Date(timeIntervalSince1970: 1667447160)
+                    ),
+                    Event(
+                        id: "29135368",
+                        name: "AC Milan - FC Red Bull Salzburg",
+                        sportId: "FOOT",
+                        startTime: Date(timeIntervalSince1970: 1672026900)
+                    ),
+                    Event(
+                        id: "29135365",
+                        name: "Maccabi Haifa - SL Benfica",
+                        sportId: "FOOT",
+                        startTime: Date(timeIntervalSince1970: 1669743180)
+                    )
+                ]
+            ),
+            EventsBySport(
+                sport: Sport(
+                    id: "FOOT",
+                    name: "SOCCER"
+                ),
+                events: [
+                    Event(
+                        id: "29135390",
+                        name: "Judd Trump - Mark Allen",
+                        sportId: "SNOO",
+                        startTime: Date(timeIntervalSince1970: 1677214560)
+                    )
+                ]
+            )
+        ]
+    }
 }
