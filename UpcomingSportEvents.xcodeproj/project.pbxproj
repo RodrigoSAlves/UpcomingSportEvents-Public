@@ -64,6 +64,7 @@
 		EBAF39DF299AC8AD005ED847 /* CustomAlertView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBAF39DE299AC8AD005ED847 /* CustomAlertView.storyboard */; };
 		EBAF39E1299ACFF0005ED847 /* MiscellaneousAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39E0299ACFF0005ED847 /* MiscellaneousAssembly.swift */; };
 		EBAF39E3299AD20E005ED847 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39E2299AD20E005ED847 /* GlobalConstants.swift */; };
+		EBAF39E6299AE647005ED847 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39E5299AE647005ED847 /* GeneratedMocks.swift */; };
 		EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */; };
 		EBD707452996FF4F00ECF0E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD707442996FF4F00ECF0E8 /* Assets.xcassets */; };
 		EBD707482996FF4F00ECF0E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD707462996FF4F00ECF0E8 /* LaunchScreen.storyboard */; };
@@ -164,6 +165,7 @@
 		EBAF39DE299AC8AD005ED847 /* CustomAlertView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomAlertView.storyboard; sourceTree = "<group>"; };
 		EBAF39E0299ACFF0005ED847 /* MiscellaneousAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscellaneousAssembly.swift; sourceTree = "<group>"; };
 		EBAF39E2299AD20E005ED847 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		EBAF39E5299AE647005ED847 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		EBD707382996FF4D00ECF0E8 /* UpcomingSportEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpcomingSportEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBD707442996FF4F00ECF0E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 		EBD707512996FF4F00ECF0E8 /* UpcomingSportEventsTests */ = {
 			isa = PBXGroup;
 			children = (
+				EBAF39E5299AE647005ED847 /* GeneratedMocks.swift */,
 				EBD707522996FF4F00ECF0E8 /* UpcomingSportEventsTests.swift */,
 			);
 			path = UpcomingSportEventsTests;
@@ -601,6 +604,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBD707652996FF4F00ECF0E8 /* Build configuration list for PBXNativeTarget "UpcomingSportEventsTests" */;
 			buildPhases = (
+				EBAF39E4299AE573005ED847 /* Run Cuckoo */,
 				EBD7074A2996FF4F00ECF0E8 /* Sources */,
 				EBD7074B2996FF4F00ECF0E8 /* Frameworks */,
 				EBD7074C2996FF4F00ECF0E8 /* Resources */,
@@ -731,6 +735,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		EBAF39E4299AE573005ED847 /* Run Cuckoo */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Cuckoo";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $ACTION == \"indexbuild\" ]; then\n  echo \"Not running Cuckoo generator during indexing.\"\n  exit 0\nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"Not running Cuckoo generator during preview builds.\"\n  exit 0\nfi\n\n# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PROJECT_DIR}/run\" --download generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Repositories/Protocols/EventRepositoryProtocol.swift\" \\\n";
+		};
 		EBD707792997055A00ECF0E8 /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -814,6 +836,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBD707532996FF4F00ECF0E8 /* UpcomingSportEventsTests.swift in Sources */,
+				EBAF39E6299AE647005ED847 /* GeneratedMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,6 +972,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
