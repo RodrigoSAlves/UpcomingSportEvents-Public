@@ -65,10 +65,12 @@
 		EBAF39E1299ACFF0005ED847 /* MiscellaneousAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39E0299ACFF0005ED847 /* MiscellaneousAssembly.swift */; };
 		EBAF39E3299AD20E005ED847 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39E2299AD20E005ED847 /* GlobalConstants.swift */; };
 		EBAF39E6299AE647005ED847 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39E5299AE647005ED847 /* GeneratedMocks.swift */; };
+		EBAF39EB299AE7E5005ED847 /* EventRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39EA299AE7E5005ED847 /* EventRepositoryTests.swift */; };
+		EBAF39EE299AE8EC005ED847 /* SportAndEventsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39ED299AE8EC005ED847 /* SportAndEventsFactory.swift */; };
+		EBAF39F1299AEA33005ED847 /* Cuckoo in Frameworks */ = {isa = PBXBuildFile; productRef = EBAF39F0299AEA33005ED847 /* Cuckoo */; };
 		EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */; };
 		EBD707452996FF4F00ECF0E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD707442996FF4F00ECF0E8 /* Assets.xcassets */; };
 		EBD707482996FF4F00ECF0E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD707462996FF4F00ECF0E8 /* LaunchScreen.storyboard */; };
-		EBD707532996FF4F00ECF0E8 /* UpcomingSportEventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD707522996FF4F00ECF0E8 /* UpcomingSportEventsTests.swift */; };
 		EBD7075D2996FF4F00ECF0E8 /* UpcomingSportEventsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7075C2996FF4F00ECF0E8 /* UpcomingSportEventsUITests.swift */; };
 		EBD7075F2996FF4F00ECF0E8 /* UpcomingSportEventsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7075E2996FF4F00ECF0E8 /* UpcomingSportEventsUITestsLaunchTests.swift */; };
 		EBD707702997018E00ECF0E8 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7076F2997018E00ECF0E8 /* EventListViewController.swift */; };
@@ -166,13 +168,14 @@
 		EBAF39E0299ACFF0005ED847 /* MiscellaneousAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscellaneousAssembly.swift; sourceTree = "<group>"; };
 		EBAF39E2299AD20E005ED847 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		EBAF39E5299AE647005ED847 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
+		EBAF39EA299AE7E5005ED847 /* EventRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRepositoryTests.swift; sourceTree = "<group>"; };
+		EBAF39ED299AE8EC005ED847 /* SportAndEventsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportAndEventsFactory.swift; sourceTree = "<group>"; };
 		EBD707382996FF4D00ECF0E8 /* UpcomingSportEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpcomingSportEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBD707442996FF4F00ECF0E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBD707472996FF4F00ECF0E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBD707492996FF4F00ECF0E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBD7074E2996FF4F00ECF0E8 /* UpcomingSportEventsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UpcomingSportEventsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EBD707522996FF4F00ECF0E8 /* UpcomingSportEventsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingSportEventsTests.swift; sourceTree = "<group>"; };
 		EBD707582996FF4F00ECF0E8 /* UpcomingSportEventsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UpcomingSportEventsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD7075C2996FF4F00ECF0E8 /* UpcomingSportEventsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingSportEventsUITests.swift; sourceTree = "<group>"; };
 		EBD7075E2996FF4F00ECF0E8 /* UpcomingSportEventsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingSportEventsUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -201,6 +204,7 @@
 			files = (
 				EBD7078129970E4400ECF0E8 /* Swinject in Frameworks */,
 				EBD7079F2997208B00ECF0E8 /* Alamofire in Frameworks */,
+				EBAF39F1299AEA33005ED847 /* Cuckoo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +404,22 @@
 			path = CustomAlertViewController;
 			sourceTree = "<group>";
 		};
+		EBAF39E7299AE7C4005ED847 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				EBAF39EA299AE7E5005ED847 /* EventRepositoryTests.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		EBAF39EC299AE8DA005ED847 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				EBAF39ED299AE8EC005ED847 /* SportAndEventsFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		EBD7072F2996FF4D00ECF0E8 = {
 			isa = PBXGroup;
 			children = (
@@ -443,8 +463,9 @@
 		EBD707512996FF4F00ECF0E8 /* UpcomingSportEventsTests */ = {
 			isa = PBXGroup;
 			children = (
+				EBAF39EC299AE8DA005ED847 /* Factories */,
+				EBAF39E7299AE7C4005ED847 /* Repositories */,
 				EBAF39E5299AE647005ED847 /* GeneratedMocks.swift */,
-				EBD707522996FF4F00ECF0E8 /* UpcomingSportEventsTests.swift */,
 			);
 			path = UpcomingSportEventsTests;
 			sourceTree = "<group>";
@@ -595,6 +616,7 @@
 			packageProductDependencies = (
 				EBD7078029970E4400ECF0E8 /* Swinject */,
 				EBD7079E2997208B00ECF0E8 /* Alamofire */,
+				EBAF39F0299AEA33005ED847 /* Cuckoo */,
 			);
 			productName = UpcomingSportEvents;
 			productReference = EBD707382996FF4D00ECF0E8 /* UpcomingSportEvents.app */;
@@ -672,6 +694,7 @@
 			packageReferences = (
 				EBD7077F29970E4400ECF0E8 /* XCRemoteSwiftPackageReference "Swinject" */,
 				EBD7079D2997208B00ECF0E8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				EBAF39EF299AEA32005ED847 /* XCRemoteSwiftPackageReference "Cuckoo" */,
 			);
 			productRefGroup = EBD707392996FF4D00ECF0E8 /* Products */;
 			projectDirPath = "";
@@ -751,7 +774,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $ACTION == \"indexbuild\" ]; then\n  echo \"Not running Cuckoo generator during indexing.\"\n  exit 0\nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"Not running Cuckoo generator during preview builds.\"\n  exit 0\nfi\n\n# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PROJECT_DIR}/run\" --download generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Repositories/Protocols/EventRepositoryProtocol.swift\" \\\n";
+			shellScript = "if [ $ACTION == \"indexbuild\" ]; then\n  echo \"Not running Cuckoo generator during indexing.\"\n  exit 0\nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"Not running Cuckoo generator during preview builds.\"\n  exit 0\nfi\n\n# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PROJECT_DIR}/run\" --download generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Repositories/Protocols/EventRepositoryProtocol.swift\" \\\n\"${INPUT_DIR}/Repositories/Protocols/FavoritesRepository.swift\" \\\n\"${INPUT_DIR}/Networking/Protocols/BaseServiceProtocol.swift\" \\\n\"${INPUT_DIR}/Networking/Protocols/SportsServiceProtocol.swift\" \\\n";
 		};
 		EBD707792997055A00ECF0E8 /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -835,7 +858,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBD707532996FF4F00ECF0E8 /* UpcomingSportEventsTests.swift in Sources */,
+				EBAF39EE299AE8EC005ED847 /* SportAndEventsFactory.swift in Sources */,
+				EBAF39EB299AE7E5005ED847 /* EventRepositoryTests.swift in Sources */,
 				EBAF39E6299AE647005ED847 /* GeneratedMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -912,6 +936,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -973,6 +998,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1168,6 +1194,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		EBAF39EF299AEA32005ED847 /* XCRemoteSwiftPackageReference "Cuckoo" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Brightify/Cuckoo.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.1;
+			};
+		};
 		EBD7077F29970E4400ECF0E8 /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject.git";
@@ -1187,6 +1221,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EBAF39F0299AEA33005ED847 /* Cuckoo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EBAF39EF299AEA32005ED847 /* XCRemoteSwiftPackageReference "Cuckoo" */;
+			productName = Cuckoo;
+		};
 		EBD7078029970E4400ECF0E8 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EBD7077F29970E4400ECF0E8 /* XCRemoteSwiftPackageReference "Swinject" */;
