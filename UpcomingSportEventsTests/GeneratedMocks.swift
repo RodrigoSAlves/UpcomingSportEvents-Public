@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: UpcomingSportEvents/Helpers/ViewConstructor.swift at 2023-02-13 23:31:51 +0000
+// MARK: - Mocks generated from file: UpcomingSportEvents/Helpers/ViewConstructor.swift at 2023-02-13 23:37:35 +0000
 
 //
 //  ViewConstructor.swift
@@ -183,7 +183,7 @@ import UIKit
 
 
 
-// MARK: - Mocks generated from file: UpcomingSportEvents/Networking/Protocols/BaseServiceProtocol.swift at 2023-02-13 23:31:51 +0000
+// MARK: - Mocks generated from file: UpcomingSportEvents/Networking/Protocols/BaseServiceProtocol.swift at 2023-02-13 23:37:35 +0000
 
 //
 //  BaseServiceProtocol.swift
@@ -307,7 +307,7 @@ import Foundation
 
 
 
-// MARK: - Mocks generated from file: UpcomingSportEvents/Networking/Protocols/SportsServiceProtocol.swift at 2023-02-13 23:31:51 +0000
+// MARK: - Mocks generated from file: UpcomingSportEvents/Networking/Protocols/SportsServiceProtocol.swift at 2023-02-13 23:37:35 +0000
 
 //
 //  SportsServiceProtocol.swift
@@ -441,7 +441,7 @@ import Foundation
 
 
 
-// MARK: - Mocks generated from file: UpcomingSportEvents/Repositories/Protocols/EventRepositoryProtocol.swift at 2023-02-13 23:31:51 +0000
+// MARK: - Mocks generated from file: UpcomingSportEvents/Repositories/Protocols/EventRepositoryProtocol.swift at 2023-02-13 23:37:35 +0000
 
 //
 //  EventRepositoryProtocol.swift
@@ -575,7 +575,7 @@ import Foundation
 
 
 
-// MARK: - Mocks generated from file: UpcomingSportEvents/Repositories/Protocols/FavoritesRepositoryProtocol.swift at 2023-02-13 23:31:51 +0000
+// MARK: - Mocks generated from file: UpcomingSportEvents/Repositories/Protocols/FavoritesRepositoryProtocol.swift at 2023-02-13 23:37:35 +0000
 
 //
 //  FavoritesRepositoryProtocol.swift
@@ -862,7 +862,7 @@ import Foundation
 
 
 
-// MARK: - Mocks generated from file: UpcomingSportEvents/Scenes/Events/EventList/EventListViewController.swift at 2023-02-13 23:31:51 +0000
+// MARK: - Mocks generated from file: UpcomingSportEvents/Scenes/Events/EventList/EventListViewController.swift at 2023-02-13 23:37:35 +0000
 
 //
 //  EventListViewController.swift
@@ -1674,7 +1674,7 @@ import UIKit
 
 
 
-// MARK: - Mocks generated from file: UpcomingSportEvents/Scenes/Events/EventList/EventListViewModel.swift at 2023-02-13 23:31:51 +0000
+// MARK: - Mocks generated from file: UpcomingSportEvents/Scenes/Events/EventList/EventListViewModel.swift at 2023-02-13 23:37:35 +0000
 
 //
 //  EventListViewModel.swift
