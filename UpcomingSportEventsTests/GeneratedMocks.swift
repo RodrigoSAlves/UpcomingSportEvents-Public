@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: UpcomingSportEvents/Networking/Protocols/BaseServiceProtocol.swift at 2023-02-13 22:01:12 +0000
+// MARK: - Mocks generated from file: UpcomingSportEvents/Networking/Protocols/BaseServiceProtocol.swift at 2023-02-13 22:25:58 +0000
 
 //
 //  BaseServiceProtocol.swift
@@ -122,7 +122,7 @@ import Foundation
 
 
 
-// MARK: - Mocks generated from file: UpcomingSportEvents/Networking/Protocols/SportsServiceProtocol.swift at 2023-02-13 22:01:12 +0000
+// MARK: - Mocks generated from file: UpcomingSportEvents/Networking/Protocols/SportsServiceProtocol.swift at 2023-02-13 22:25:58 +0000
 
 //
 //  SportsServiceProtocol.swift
@@ -256,7 +256,7 @@ import Foundation
 
 
 
-// MARK: - Mocks generated from file: UpcomingSportEvents/Repositories/Protocols/EventRepositoryProtocol.swift at 2023-02-13 22:01:12 +0000
+// MARK: - Mocks generated from file: UpcomingSportEvents/Repositories/Protocols/EventRepositoryProtocol.swift at 2023-02-13 22:25:58 +0000
 
 //
 //  EventRepositoryProtocol.swift

@@ -68,6 +68,7 @@
 		EBAF39EB299AE7E5005ED847 /* EventRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39EA299AE7E5005ED847 /* EventRepositoryTests.swift */; };
 		EBAF39EE299AE8EC005ED847 /* SportAndEventsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39ED299AE8EC005ED847 /* SportAndEventsFactory.swift */; };
 		EBAF39F1299AEA33005ED847 /* Cuckoo in Frameworks */ = {isa = PBXBuildFile; productRef = EBAF39F0299AEA33005ED847 /* Cuckoo */; };
+		EBAF39F4299AEB07005ED847 /* Matchables.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39F3299AEB07005ED847 /* Matchables.swift */; };
 		EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */; };
 		EBD707452996FF4F00ECF0E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD707442996FF4F00ECF0E8 /* Assets.xcassets */; };
 		EBD707482996FF4F00ECF0E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD707462996FF4F00ECF0E8 /* LaunchScreen.storyboard */; };
@@ -170,6 +171,7 @@
 		EBAF39E5299AE647005ED847 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		EBAF39EA299AE7E5005ED847 /* EventRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRepositoryTests.swift; sourceTree = "<group>"; };
 		EBAF39ED299AE8EC005ED847 /* SportAndEventsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportAndEventsFactory.swift; sourceTree = "<group>"; };
+		EBAF39F3299AEB07005ED847 /* Matchables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matchables.swift; sourceTree = "<group>"; };
 		EBD707382996FF4D00ECF0E8 /* UpcomingSportEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpcomingSportEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBD707442996FF4F00ECF0E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 				EBAF39EC299AE8DA005ED847 /* Factories */,
 				EBAF39E7299AE7C4005ED847 /* Repositories */,
 				EBAF39E5299AE647005ED847 /* GeneratedMocks.swift */,
+				EBAF39F3299AEB07005ED847 /* Matchables.swift */,
 			);
 			path = UpcomingSportEventsTests;
 			sourceTree = "<group>";
@@ -861,6 +864,7 @@
 				EBAF39EE299AE8EC005ED847 /* SportAndEventsFactory.swift in Sources */,
 				EBAF39EB299AE7E5005ED847 /* EventRepositoryTests.swift in Sources */,
 				EBAF39E6299AE647005ED847 /* GeneratedMocks.swift in Sources */,
+				EBAF39F4299AEB07005ED847 /* Matchables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@ import Foundation
 
 struct SportAndEventsFactory {
 
-    func makeDefaultSportsAndEventsData() -> [SportData] {
+    static func makeDefaultSportsAndEventsData() -> [SportData] {
         return [
             SportData(
                 id: "FOOT",
