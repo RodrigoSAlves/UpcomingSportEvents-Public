@@ -15,6 +15,7 @@ class EventCollectionViewCell: UICollectionViewCell {
     static let nibIdentifier = "EventCollectionViewCell"
     static let identifier = "EventCollectionViewCell"
 
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var firstOpponentLabel: UILabel!
     @IBOutlet weak var secondOpponentLabel: UILabel!
     @IBOutlet weak var makeFavoriteButton: UIButton!
@@ -23,15 +24,20 @@ class EventCollectionViewCell: UICollectionViewCell {
     weak var delegate: EventCollectionViewCellDelegate?
     var event: Event?
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        containerView.setCornerRadius(16.0)
+    }
+
     func fill(event: Event, isFavorite: Bool) {
         self.event = event
         firstOpponentLabel.text = event.firstOpponentName
         secondOpponentLabel.text = event.secondOpponentName
 
-        makeFavoriteButton.backgroundColor = isFavorite ? .yellow : .darkGray
+        makeFavoriteButton.tintColor = isFavorite ? .favoriteActiveColor : .favoriteInactiveColor
 
         let components = Calendar.current.dateComponents([.hour, .minute, .second], from: Date(), to: event.startTime)
-        startTimeLabel.text = "\(components.hour ?? 0) : \(components.minute ?? 0) : \(components.second ?? 0)"
+        // startTimeLabel.text = "\(components.hour ?? 0) : \(components.minute ?? 0) : \(components.second ?? 0)"
     }
 
     @IBAction func didTapMakeFavoriteButton(_ sender: Any) {

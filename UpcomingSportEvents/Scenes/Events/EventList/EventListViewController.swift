@@ -12,7 +12,7 @@ class EventListViewController: UIViewController, Storyboarded {
     static let storyboardIdentifier: String = "EventList"
 
     struct Constants {
-        static let defaultSportsTableViewCellHeight: CGFloat = 100.0
+        static let defaultSportsTableViewCellHeight: CGFloat = 124.0
         static let defaultSportSectionHeaderHeight: CGFloat = 35.0
     }
 
@@ -31,6 +31,7 @@ class EventListViewController: UIViewController, Storyboarded {
         mainTableView.dataSource = self
         mainTableView.showsVerticalScrollIndicator = false
         mainTableView.showsHorizontalScrollIndicator = false
+        mainTableView.separatorStyle = .none
 
         mainTableView.register(
             UINib(nibName: HorizontalCollectionViewTableViewCell.nibIdentifier, bundle: nil),

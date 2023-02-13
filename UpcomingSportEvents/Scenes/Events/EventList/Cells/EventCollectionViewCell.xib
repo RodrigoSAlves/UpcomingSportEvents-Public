@@ -1,84 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-ExtraLight.ttf">
+            <string>Poppins-ExtraLight</string>
+        </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="EventCollectionViewCell" customModule="UpcomingSportEvents" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="390" height="298"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="204"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="390" height="298"/>
+                <rect key="frame" x="0.0" y="0.0" width="390" height="204"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efO-09-6tw">
-                        <rect key="frame" x="0.0" y="59" width="390" height="239"/>
+                        <rect key="frame" x="0.0" y="75" width="390" height="129"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="8YM-GL-Trz" userLabel="Opponents Stack View">
-                                <rect key="frame" x="0.0" y="0.0" width="330" height="40.666666666666664"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="8YM-GL-Trz" userLabel="Opponents Stack View">
+                                <rect key="frame" x="16" y="12" width="328" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opponent 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SA5-MJ-ghz" userLabel="First Opponent Label">
-                                        <rect key="frame" x="0.0" y="0.0" width="88" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="68.666666666666671" height="17"/>
+                                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opponent 2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yf1-vt-3cr" userLabel="Second Opponent Label">
-                                        <rect key="frame" x="0.0" y="20.333333333333329" width="90.666666666666671" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="17" width="71.333333333333329" height="17"/>
+                                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="NpL-fG-QLX" userLabel="Starting Time Stack View">
-                                <rect key="frame" x="0.0" y="40.666666666666671" width="330" height="40.666666666666671"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qut-Au-lND">
+                                <rect key="frame" x="16" y="54" width="328" height="38.333333333333343"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starts in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFI-I7-FWZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="63" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starts in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haI-7A-JXU">
+                                        <rect key="frame" x="0.0" y="0.0" width="328" height="15.666666666666666"/>
+                                        <fontDescription key="fontDescription" name="Poppins-ExtraLight" family="Poppins" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16:01:59" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Fg-fg-l3A" userLabel="Start Time">
-                                        <rect key="frame" x="0.0" y="20.333333333333329" width="65.666666666666671" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16:01:59" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdW-4v-kFm" userLabel="Start Time">
+                                        <rect key="frame" x="0.0" y="15.666666666666659" width="328" height="22.666666666666679"/>
+                                        <fontDescription key="fontDescription" name="Poppins-ExtraLight" family="Poppins" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wnp-y2-n3P">
-                                <rect key="frame" x="338" y="16" width="36" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="vdW-4v-kFm" secondAttribute="bottom" id="1Ee-Yg-N8K"/>
+                                    <constraint firstItem="haI-7A-JXU" firstAttribute="leading" secondItem="qut-Au-lND" secondAttribute="leading" id="Nb0-2e-F0M"/>
+                                    <constraint firstItem="haI-7A-JXU" firstAttribute="top" secondItem="qut-Au-lND" secondAttribute="top" id="Uzc-hE-R6x"/>
+                                    <constraint firstAttribute="trailing" secondItem="vdW-4v-kFm" secondAttribute="trailing" id="X6H-pk-qRU"/>
+                                    <constraint firstItem="vdW-4v-kFm" firstAttribute="top" secondItem="haI-7A-JXU" secondAttribute="bottom" id="d0w-ni-vTJ"/>
+                                    <constraint firstItem="vdW-4v-kFm" firstAttribute="leading" secondItem="qut-Au-lND" secondAttribute="leading" id="e5K-nW-icw"/>
+                                    <constraint firstAttribute="trailing" secondItem="haI-7A-JXU" secondAttribute="trailing" id="oMk-mE-lky"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wnp-y2-n3P">
+                                <rect key="frame" x="352" y="12" width="26" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Wnp-y2-n3P" secondAttribute="height" multiplier="1:1" constant="1" id="5Gz-BP-XNb"/>
-                                    <constraint firstAttribute="height" constant="35" id="RP7-Ty-ovb"/>
+                                    <constraint firstAttribute="height" constant="25" id="RP7-Ty-ovb"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <color key="tintColor" name="FavoriteActiveColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ic-favorite"/>
                                 <connections>
                                     <action selector="didTapMakeFavoriteButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="tXD-s1-vQR"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="EventCardBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NpL-fG-QLX" firstAttribute="trailing" secondItem="8YM-GL-Trz" secondAttribute="trailing" id="0NL-Od-D4L"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NpL-fG-QLX" secondAttribute="bottom" constant="8" id="1bF-aR-I7z"/>
-                            <constraint firstAttribute="trailing" secondItem="Wnp-y2-n3P" secondAttribute="trailing" constant="16" id="4l4-TM-h0q"/>
-                            <constraint firstItem="Wnp-y2-n3P" firstAttribute="top" secondItem="efO-09-6tw" secondAttribute="top" constant="16" id="4wg-hL-uCa"/>
-                            <constraint firstItem="NpL-fG-QLX" firstAttribute="top" secondItem="8YM-GL-Trz" secondAttribute="bottom" id="WhK-W9-X2h"/>
+                            <constraint firstAttribute="trailing" secondItem="Wnp-y2-n3P" secondAttribute="trailing" constant="12" id="4l4-TM-h0q"/>
+                            <constraint firstItem="Wnp-y2-n3P" firstAttribute="top" secondItem="efO-09-6tw" secondAttribute="top" constant="12" id="4wg-hL-uCa"/>
+                            <constraint firstItem="qut-Au-lND" firstAttribute="leading" secondItem="8YM-GL-Trz" secondAttribute="leading" id="VmB-wl-fse"/>
+                            <constraint firstItem="qut-Au-lND" firstAttribute="top" secondItem="8YM-GL-Trz" secondAttribute="bottom" constant="8" id="WRS-7F-gxa"/>
                             <constraint firstItem="Wnp-y2-n3P" firstAttribute="leading" secondItem="8YM-GL-Trz" secondAttribute="trailing" constant="8" id="aZ0-aI-Yu7"/>
-                            <constraint firstItem="NpL-fG-QLX" firstAttribute="leading" secondItem="8YM-GL-Trz" secondAttribute="leading" id="bT8-hp-xOm"/>
-                            <constraint firstItem="8YM-GL-Trz" firstAttribute="leading" secondItem="efO-09-6tw" secondAttribute="leading" id="m5K-RA-m70"/>
-                            <constraint firstItem="8YM-GL-Trz" firstAttribute="top" secondItem="efO-09-6tw" secondAttribute="top" id="x3H-zD-tfy"/>
+                            <constraint firstItem="8YM-GL-Trz" firstAttribute="leading" secondItem="efO-09-6tw" secondAttribute="leading" constant="16" id="m5K-RA-m70"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qut-Au-lND" secondAttribute="bottom" constant="8" id="sIl-8C-Wz2"/>
+                            <constraint firstItem="qut-Au-lND" firstAttribute="trailing" secondItem="8YM-GL-Trz" secondAttribute="trailing" id="uUe-pm-i74"/>
+                            <constraint firstItem="8YM-GL-Trz" firstAttribute="top" secondItem="efO-09-6tw" secondAttribute="top" constant="12" id="x3H-zD-tfy"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -88,21 +106,26 @@
                 <constraint firstItem="hCK-ke-8B0" firstAttribute="trailing" secondItem="efO-09-6tw" secondAttribute="trailing" id="75p-VH-gdL"/>
                 <constraint firstItem="efO-09-6tw" firstAttribute="leading" secondItem="hCK-ke-8B0" secondAttribute="leading" id="EZP-d8-vZk"/>
                 <constraint firstItem="hCK-ke-8B0" firstAttribute="bottom" secondItem="efO-09-6tw" secondAttribute="bottom" id="afR-Id-sZ8"/>
-                <constraint firstItem="efO-09-6tw" firstAttribute="top" secondItem="hCK-ke-8B0" secondAttribute="top" id="nJM-Bm-YcH"/>
+                <constraint firstItem="efO-09-6tw" firstAttribute="top" secondItem="hCK-ke-8B0" secondAttribute="top" constant="16" id="nJM-Bm-YcH"/>
             </constraints>
-            <size key="customSize" width="182" height="314"/>
+            <size key="customSize" width="182" height="220"/>
             <connections>
+                <outlet property="containerView" destination="efO-09-6tw" id="m9T-hr-xgn"/>
                 <outlet property="firstOpponentLabel" destination="SA5-MJ-ghz" id="FZa-cl-AqJ"/>
                 <outlet property="makeFavoriteButton" destination="Wnp-y2-n3P" id="TS4-Do-2zS"/>
                 <outlet property="secondOpponentLabel" destination="yf1-vt-3cr" id="6rP-uw-Faf"/>
-                <outlet property="startTimeLabel" destination="7Fg-fg-l3A" id="Zk9-bf-0Tz"/>
+                <outlet property="startTimeLabel" destination="vdW-4v-kFm" id="mo7-nm-gsj"/>
             </connections>
-            <point key="canvasLocation" x="155.72519083969465" y="112.67605633802818"/>
+            <point key="canvasLocation" x="155.72519083969465" y="79.577464788732399"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="ic-favorite" width="800" height="800"/>
+        <namedColor name="EventCardBackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FavoriteActiveColor">
+            <color red="1" green="0.83921568627450982" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
