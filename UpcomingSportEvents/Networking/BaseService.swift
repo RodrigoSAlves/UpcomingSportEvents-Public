@@ -8,10 +8,6 @@
 import Alamofire
 import Foundation
 
-protocol BaseServiceProtocol {
-    var baseURL: URL { get }
-}
-
 class BaseService: BaseServiceProtocol {
     let baseURL: URL
 

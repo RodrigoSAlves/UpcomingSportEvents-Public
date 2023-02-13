@@ -8,10 +8,6 @@
 import Alamofire
 import Foundation
 
-protocol SportsServiceProtocol {
-    func getAllSportsEagerLoadedWithEvents(completion: @escaping ((Result<[SportData], NetworkError>) -> Void))
-}
-
 final class SportsService: BaseService, SportsServiceProtocol {
 
     struct Endpoint {

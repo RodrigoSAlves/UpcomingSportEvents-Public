@@ -32,6 +32,8 @@
 		EB2C7B002999BB79006F2486 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCD92999467E0075B4D8 /* Poppins-ThinItalic.ttf */; };
 		EB2C7B05299A1509006F2486 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C7B04299A1509006F2486 /* UIViewController.swift */; };
 		EB2C7B07299A1DB1006F2486 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C7B06299A1DB1006F2486 /* Date.swift */; };
+		EB2C7B0B299A212B006F2486 /* BaseServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C7B0A299A212B006F2486 /* BaseServiceProtocol.swift */; };
+		EB2C7B0D299A2143006F2486 /* SportsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C7B0C299A2143006F2486 /* SportsServiceProtocol.swift */; };
 		EB4B697B2997BF74003CE1F1 /* PresentableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B697A2997BF74003CE1F1 /* PresentableError.swift */; };
 		EB4B697D2997BF8E003CE1F1 /* GetEventsBySportError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B697C2997BF8E003CE1F1 /* GetEventsBySportError.swift */; };
 		EB4B697F2997C273003CE1F1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B697E2997C273003CE1F1 /* NetworkError.swift */; };
@@ -108,6 +110,8 @@
 		EB2C7AED2999B580006F2486 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		EB2C7B04299A1509006F2486 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		EB2C7B06299A1DB1006F2486 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		EB2C7B0A299A212B006F2486 /* BaseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseServiceProtocol.swift; sourceTree = "<group>"; };
+		EB2C7B0C299A2143006F2486 /* SportsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsServiceProtocol.swift; sourceTree = "<group>"; };
 		EB4B697A2997BF74003CE1F1 /* PresentableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableError.swift; sourceTree = "<group>"; };
 		EB4B697C2997BF8E003CE1F1 /* GetEventsBySportError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventsBySportError.swift; sourceTree = "<group>"; };
 		EB4B697E2997C273003CE1F1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -240,6 +244,15 @@
 				EB4B698C2997F57E003CE1F1 /* HorizontalCollectionViewTableViewCell.xib */,
 			);
 			path = HorizontalCollectionViewTableViewCell;
+			sourceTree = "<group>";
+		};
+		EB2C7B09299A211B006F2486 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EB2C7B0A299A212B006F2486 /* BaseServiceProtocol.swift */,
+				EB2C7B0C299A2143006F2486 /* SportsServiceProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		EB4B69782997BF5C003CE1F1 /* Models */ = {
@@ -495,6 +508,7 @@
 		EBD7078E2997144000ECF0E8 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				EB2C7B09299A211B006F2486 /* Protocols */,
 				EBD707A12997268C00ECF0E8 /* SportsService */,
 				EB4B69802997C3F2003CE1F1 /* BaseService.swift */,
 				EB4B697E2997C273003CE1F1 /* NetworkError.swift */,
@@ -730,6 +744,8 @@
 				EBA8FCBA2998392D0075B4D8 /* DidUpdateEventFavoriteStatusNotificationPayload.swift in Sources */,
 				EBD707702997018E00ECF0E8 /* EventListViewController.swift in Sources */,
 				EBA8FCCA299921710075B4D8 /* FavoritesRepositoryProtocol.swift in Sources */,
+				EB2C7B0D299A2143006F2486 /* SportsServiceProtocol.swift in Sources */,
+				EB2C7B0B299A212B006F2486 /* BaseServiceProtocol.swift in Sources */,
 				EBD7078729970F9B00ECF0E8 /* SceneAssembly.swift in Sources */,
 				EBA8FCC7299921590075B4D8 /* EventRepositoryProtocol.swift in Sources */,
 				EB4B698D2997F57E003CE1F1 /* HorizontalCollectionViewTableViewCell.swift in Sources */,
