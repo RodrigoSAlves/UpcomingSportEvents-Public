@@ -67,16 +67,12 @@ class EventListViewController: UIViewController, Storyboarded {
     }
 
     func presentError(error: PresentableError) {
-        guard let customAlertViewController = viewConstructor?.getCustomAlertViewController() else {
-            return
-        }
-
         let actionHandler: CustomAlertViewController.LayoutOptions.ActionHandler = { [weak self] alertViewController in
             alertViewController.dismiss(animated: true)
             self?.errorStackView.fadeIn()
         }
 
-        customAlertViewController.options = CustomAlertViewController.LayoutOptions(
+        let options = CustomAlertViewController.LayoutOptions(
             icon: error.icon,
             title: error.title,
             message: error.message,
@@ -84,7 +80,9 @@ class EventListViewController: UIViewController, Storyboarded {
             actionButtonHandler: actionHandler
         )
 
-        present(customAlertViewController, animated: true)
+        if let customAlertViewController = viewConstructor?.getCustomAlertViewController(layoutOptions: options) {
+            present(customAlertViewController, animated: true)
+        }
     }
 
     @IBAction func didTapRetryButton(_ sender: Any) {

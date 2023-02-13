@@ -1,4 +1,189 @@
-// MARK: - Mocks generated from file: UpcomingSportEvents/Networking/Protocols/BaseServiceProtocol.swift at 2023-02-13 22:53:47 +0000
+// MARK: - Mocks generated from file: UpcomingSportEvents/Helpers/ViewConstructor.swift at 2023-02-13 23:31:51 +0000
+
+//
+//  ViewConstructor.swift
+//  UpcomingSportEvents
+//
+//  Created by Rodrigo Alves on 10/02/2023.
+//
+
+import Cuckoo
+@testable import UpcomingSportEvents
+
+import UIKit
+
+
+
+
+
+
+ class MockViewConstructorProtocol: ViewConstructorProtocol, Cuckoo.ProtocolMock {
+    
+     typealias MocksType = ViewConstructorProtocol
+    
+     typealias Stubbing = __StubbingProxy_ViewConstructorProtocol
+     typealias Verification = __VerificationProxy_ViewConstructorProtocol
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
+
+    
+    private var __defaultImplStub: ViewConstructorProtocol?
+
+     func enableDefaultImplementation(_ stub: ViewConstructorProtocol) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+
+    
+
+    
+    
+    
+    
+     func getEventListViewController() -> UINavigationController {
+        
+    return cuckoo_manager.call(
+    """
+    getEventListViewController() -> UINavigationController
+    """,
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.getEventListViewController())
+        
+    }
+    
+    
+    
+    
+    
+     func getCustomAlertViewController(layoutOptions: CustomAlertViewController.LayoutOptions) -> CustomAlertViewController {
+        
+    return cuckoo_manager.call(
+    """
+    getCustomAlertViewController(layoutOptions: CustomAlertViewController.LayoutOptions) -> CustomAlertViewController
+    """,
+            parameters: (layoutOptions),
+            escapingParameters: (layoutOptions),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.getCustomAlertViewController(layoutOptions: layoutOptions))
+        
+    }
+    
+    
+
+     struct __StubbingProxy_ViewConstructorProtocol: Cuckoo.StubbingProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+    
+         init(manager: Cuckoo.MockManager) {
+            self.cuckoo_manager = manager
+        }
+        
+        
+        
+        
+        func getEventListViewController() -> Cuckoo.ProtocolStubFunction<(), UINavigationController> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return .init(stub: cuckoo_manager.createStub(for: MockViewConstructorProtocol.self, method:
+    """
+    getEventListViewController() -> UINavigationController
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func getCustomAlertViewController<M1: Cuckoo.Matchable>(layoutOptions: M1) -> Cuckoo.ProtocolStubFunction<(CustomAlertViewController.LayoutOptions), CustomAlertViewController> where M1.MatchedType == CustomAlertViewController.LayoutOptions {
+            let matchers: [Cuckoo.ParameterMatcher<(CustomAlertViewController.LayoutOptions)>] = [wrap(matchable: layoutOptions) { $0 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockViewConstructorProtocol.self, method:
+    """
+    getCustomAlertViewController(layoutOptions: CustomAlertViewController.LayoutOptions) -> CustomAlertViewController
+    """, parameterMatchers: matchers))
+        }
+        
+        
+    }
+
+     struct __VerificationProxy_ViewConstructorProtocol: Cuckoo.VerificationProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+        private let callMatcher: Cuckoo.CallMatcher
+        private let sourceLocation: Cuckoo.SourceLocation
+    
+         init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+            self.cuckoo_manager = manager
+            self.callMatcher = callMatcher
+            self.sourceLocation = sourceLocation
+        }
+    
+        
+    
+        
+        
+        
+        @discardableResult
+        func getEventListViewController() -> Cuckoo.__DoNotUse<(), UINavigationController> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return cuckoo_manager.verify(
+    """
+    getEventListViewController() -> UINavigationController
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func getCustomAlertViewController<M1: Cuckoo.Matchable>(layoutOptions: M1) -> Cuckoo.__DoNotUse<(CustomAlertViewController.LayoutOptions), CustomAlertViewController> where M1.MatchedType == CustomAlertViewController.LayoutOptions {
+            let matchers: [Cuckoo.ParameterMatcher<(CustomAlertViewController.LayoutOptions)>] = [wrap(matchable: layoutOptions) { $0 }]
+            return cuckoo_manager.verify(
+    """
+    getCustomAlertViewController(layoutOptions: CustomAlertViewController.LayoutOptions) -> CustomAlertViewController
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+    }
+}
+
+
+ class ViewConstructorProtocolStub: ViewConstructorProtocol {
+    
+
+    
+
+    
+    
+    
+    
+     func getEventListViewController() -> UINavigationController  {
+        return DefaultValueRegistry.defaultValue(for: (UINavigationController).self)
+    }
+    
+    
+    
+    
+    
+     func getCustomAlertViewController(layoutOptions: CustomAlertViewController.LayoutOptions) -> CustomAlertViewController  {
+        return DefaultValueRegistry.defaultValue(for: (CustomAlertViewController).self)
+    }
+    
+    
+}
+
+
+
+
+
+// MARK: - Mocks generated from file: UpcomingSportEvents/Networking/Protocols/BaseServiceProtocol.swift at 2023-02-13 23:31:51 +0000
 
 //
 //  BaseServiceProtocol.swift
@@ -122,7 +307,7 @@ import Foundation
 
 
 
-// MARK: - Mocks generated from file: UpcomingSportEvents/Networking/Protocols/SportsServiceProtocol.swift at 2023-02-13 22:53:47 +0000
+// MARK: - Mocks generated from file: UpcomingSportEvents/Networking/Protocols/SportsServiceProtocol.swift at 2023-02-13 23:31:51 +0000
 
 //
 //  SportsServiceProtocol.swift
@@ -256,7 +441,7 @@ import Foundation
 
 
 
-// MARK: - Mocks generated from file: UpcomingSportEvents/Repositories/Protocols/EventRepositoryProtocol.swift at 2023-02-13 22:53:47 +0000
+// MARK: - Mocks generated from file: UpcomingSportEvents/Repositories/Protocols/EventRepositoryProtocol.swift at 2023-02-13 23:31:51 +0000
 
 //
 //  EventRepositoryProtocol.swift
@@ -390,7 +575,7 @@ import Foundation
 
 
 
-// MARK: - Mocks generated from file: UpcomingSportEvents/Repositories/Protocols/FavoritesRepositoryProtocol.swift at 2023-02-13 22:53:47 +0000
+// MARK: - Mocks generated from file: UpcomingSportEvents/Repositories/Protocols/FavoritesRepositoryProtocol.swift at 2023-02-13 23:31:51 +0000
 
 //
 //  FavoritesRepositoryProtocol.swift
@@ -677,7 +862,7 @@ import Foundation
 
 
 
-// MARK: - Mocks generated from file: UpcomingSportEvents/Scenes/Events/EventList/EventListViewController.swift at 2023-02-13 22:53:47 +0000
+// MARK: - Mocks generated from file: UpcomingSportEvents/Scenes/Events/EventList/EventListViewController.swift at 2023-02-13 23:31:51 +0000
 
 //
 //  EventListViewController.swift
@@ -1489,7 +1674,7 @@ import UIKit
 
 
 
-// MARK: - Mocks generated from file: UpcomingSportEvents/Scenes/Events/EventList/EventListViewModel.swift at 2023-02-13 22:53:47 +0000
+// MARK: - Mocks generated from file: UpcomingSportEvents/Scenes/Events/EventList/EventListViewModel.swift at 2023-02-13 23:31:51 +0000
 
 //
 //  EventListViewModel.swift
@@ -1817,6 +2002,751 @@ import Foundation
     
     
      func didUpdateFavoriteStatusForEventAt(section: Int, originalIndex: Int, newIndex: Int)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+ class MockEventListViewModel: EventListViewModel, Cuckoo.ClassMock {
+    
+     typealias MocksType = EventListViewModel
+    
+     typealias Stubbing = __StubbingProxy_EventListViewModel
+     typealias Verification = __VerificationProxy_EventListViewModel
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
+
+    
+    private var __defaultImplStub: EventListViewModel?
+
+     func enableDefaultImplementation(_ stub: EventListViewModel) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+    
+    
+    
+     override var eventsBySport: [EventsBySport] {
+        get {
+            return cuckoo_manager.getter("eventsBySport",
+                superclassCall:
+                    
+                    super.eventsBySport
+                    ,
+                defaultCall: __defaultImplStub!.eventsBySport)
+        }
+        
+    }
+    
+    
+    
+    
+    
+     override var getEventsBySportError: GetEventsBySportError? {
+        get {
+            return cuckoo_manager.getter("getEventsBySportError",
+                superclassCall:
+                    
+                    super.getEventsBySportError
+                    ,
+                defaultCall: __defaultImplStub!.getEventsBySportError)
+        }
+        
+    }
+    
+    
+    
+    
+    
+     override var isLoadingSportingEvents: Bool {
+        get {
+            return cuckoo_manager.getter("isLoadingSportingEvents",
+                superclassCall:
+                    
+                    super.isLoadingSportingEvents
+                    ,
+                defaultCall: __defaultImplStub!.isLoadingSportingEvents)
+        }
+        
+    }
+    
+    
+    
+    
+    
+     override var sportsSectionsExpansionStatuses: [String: Bool] {
+        get {
+            return cuckoo_manager.getter("sportsSectionsExpansionStatuses",
+                superclassCall:
+                    
+                    super.sportsSectionsExpansionStatuses
+                    ,
+                defaultCall: __defaultImplStub!.sportsSectionsExpansionStatuses)
+        }
+        
+    }
+    
+    
+    
+    
+    
+     override var delegate: EventListViewModelDelegate? {
+        get {
+            return cuckoo_manager.getter("delegate",
+                superclassCall:
+                    
+                    super.delegate
+                    ,
+                defaultCall: __defaultImplStub!.delegate)
+        }
+        
+        set {
+            cuckoo_manager.setter("delegate",
+                value: newValue,
+                superclassCall:
+                    
+                    super.delegate = newValue
+                    ,
+                defaultCall: __defaultImplStub!.delegate = newValue)
+        }
+        
+    }
+    
+    
+
+    
+
+    
+    
+    
+    
+     override func viewWillAppear()  {
+        
+    return cuckoo_manager.call(
+    """
+    viewWillAppear()
+    """,
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                super.viewWillAppear()
+                ,
+            defaultCall: __defaultImplStub!.viewWillAppear())
+        
+    }
+    
+    
+    
+    
+    
+     override func loadSportingEvents()  {
+        
+    return cuckoo_manager.call(
+    """
+    loadSportingEvents()
+    """,
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                super.loadSportingEvents()
+                ,
+            defaultCall: __defaultImplStub!.loadSportingEvents())
+        
+    }
+    
+    
+    
+    
+    
+     override func getSportSectionIdentifier(sport: Sport) -> String {
+        
+    return cuckoo_manager.call(
+    """
+    getSportSectionIdentifier(sport: Sport) -> String
+    """,
+            parameters: (sport),
+            escapingParameters: (sport),
+            superclassCall:
+                
+                super.getSportSectionIdentifier(sport: sport)
+                ,
+            defaultCall: __defaultImplStub!.getSportSectionIdentifier(sport: sport))
+        
+    }
+    
+    
+    
+    
+    
+     override func getSportSectionExpansionState(sport: Sport) -> Bool {
+        
+    return cuckoo_manager.call(
+    """
+    getSportSectionExpansionState(sport: Sport) -> Bool
+    """,
+            parameters: (sport),
+            escapingParameters: (sport),
+            superclassCall:
+                
+                super.getSportSectionExpansionState(sport: sport)
+                ,
+            defaultCall: __defaultImplStub!.getSportSectionExpansionState(sport: sport))
+        
+    }
+    
+    
+    
+    
+    
+     override func setSportSectionIsExpanded(sport: Sport, isExpanded: Bool)  {
+        
+    return cuckoo_manager.call(
+    """
+    setSportSectionIsExpanded(sport: Sport, isExpanded: Bool)
+    """,
+            parameters: (sport, isExpanded),
+            escapingParameters: (sport, isExpanded),
+            superclassCall:
+                
+                super.setSportSectionIsExpanded(sport: sport, isExpanded: isExpanded)
+                ,
+            defaultCall: __defaultImplStub!.setSportSectionIsExpanded(sport: sport, isExpanded: isExpanded))
+        
+    }
+    
+    
+    
+    
+    
+     override func toggleSportSectionExpansion(sectionIdentifier: String)  {
+        
+    return cuckoo_manager.call(
+    """
+    toggleSportSectionExpansion(sectionIdentifier: String)
+    """,
+            parameters: (sectionIdentifier),
+            escapingParameters: (sectionIdentifier),
+            superclassCall:
+                
+                super.toggleSportSectionExpansion(sectionIdentifier: sectionIdentifier)
+                ,
+            defaultCall: __defaultImplStub!.toggleSportSectionExpansion(sectionIdentifier: sectionIdentifier))
+        
+    }
+    
+    
+    
+    
+    
+     override func toggleFavoriteForEvent(event: Event)  {
+        
+    return cuckoo_manager.call(
+    """
+    toggleFavoriteForEvent(event: Event)
+    """,
+            parameters: (event),
+            escapingParameters: (event),
+            superclassCall:
+                
+                super.toggleFavoriteForEvent(event: event)
+                ,
+            defaultCall: __defaultImplStub!.toggleFavoriteForEvent(event: event))
+        
+    }
+    
+    
+    
+    
+    
+     override func isFavorite(event: Event) -> Bool {
+        
+    return cuckoo_manager.call(
+    """
+    isFavorite(event: Event) -> Bool
+    """,
+            parameters: (event),
+            escapingParameters: (event),
+            superclassCall:
+                
+                super.isFavorite(event: event)
+                ,
+            defaultCall: __defaultImplStub!.isFavorite(event: event))
+        
+    }
+    
+    
+    
+    
+    
+     override func didTapRetryButton()  {
+        
+    return cuckoo_manager.call(
+    """
+    didTapRetryButton()
+    """,
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                super.didTapRetryButton()
+                ,
+            defaultCall: __defaultImplStub!.didTapRetryButton())
+        
+    }
+    
+    
+
+     struct __StubbingProxy_EventListViewModel: Cuckoo.StubbingProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+    
+         init(manager: Cuckoo.MockManager) {
+            self.cuckoo_manager = manager
+        }
+        
+        
+        
+        var eventsBySport: Cuckoo.ClassToBeStubbedReadOnlyProperty<MockEventListViewModel, [EventsBySport]> {
+            return .init(manager: cuckoo_manager, name: "eventsBySport")
+        }
+        
+        
+        
+        
+        var getEventsBySportError: Cuckoo.ClassToBeStubbedReadOnlyProperty<MockEventListViewModel, GetEventsBySportError?> {
+            return .init(manager: cuckoo_manager, name: "getEventsBySportError")
+        }
+        
+        
+        
+        
+        var isLoadingSportingEvents: Cuckoo.ClassToBeStubbedReadOnlyProperty<MockEventListViewModel, Bool> {
+            return .init(manager: cuckoo_manager, name: "isLoadingSportingEvents")
+        }
+        
+        
+        
+        
+        var sportsSectionsExpansionStatuses: Cuckoo.ClassToBeStubbedReadOnlyProperty<MockEventListViewModel, [String: Bool]> {
+            return .init(manager: cuckoo_manager, name: "sportsSectionsExpansionStatuses")
+        }
+        
+        
+        
+        
+        var delegate: Cuckoo.ClassToBeStubbedOptionalProperty<MockEventListViewModel, EventListViewModelDelegate> {
+            return .init(manager: cuckoo_manager, name: "delegate")
+        }
+        
+        
+        
+        
+        
+        func viewWillAppear() -> Cuckoo.ClassStubNoReturnFunction<()> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return .init(stub: cuckoo_manager.createStub(for: MockEventListViewModel.self, method:
+    """
+    viewWillAppear()
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func loadSportingEvents() -> Cuckoo.ClassStubNoReturnFunction<()> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return .init(stub: cuckoo_manager.createStub(for: MockEventListViewModel.self, method:
+    """
+    loadSportingEvents()
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func getSportSectionIdentifier<M1: Cuckoo.Matchable>(sport: M1) -> Cuckoo.ClassStubFunction<(Sport), String> where M1.MatchedType == Sport {
+            let matchers: [Cuckoo.ParameterMatcher<(Sport)>] = [wrap(matchable: sport) { $0 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockEventListViewModel.self, method:
+    """
+    getSportSectionIdentifier(sport: Sport) -> String
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func getSportSectionExpansionState<M1: Cuckoo.Matchable>(sport: M1) -> Cuckoo.ClassStubFunction<(Sport), Bool> where M1.MatchedType == Sport {
+            let matchers: [Cuckoo.ParameterMatcher<(Sport)>] = [wrap(matchable: sport) { $0 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockEventListViewModel.self, method:
+    """
+    getSportSectionExpansionState(sport: Sport) -> Bool
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func setSportSectionIsExpanded<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(sport: M1, isExpanded: M2) -> Cuckoo.ClassStubNoReturnFunction<(Sport, Bool)> where M1.MatchedType == Sport, M2.MatchedType == Bool {
+            let matchers: [Cuckoo.ParameterMatcher<(Sport, Bool)>] = [wrap(matchable: sport) { $0.0 }, wrap(matchable: isExpanded) { $0.1 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockEventListViewModel.self, method:
+    """
+    setSportSectionIsExpanded(sport: Sport, isExpanded: Bool)
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func toggleSportSectionExpansion<M1: Cuckoo.Matchable>(sectionIdentifier: M1) -> Cuckoo.ClassStubNoReturnFunction<(String)> where M1.MatchedType == String {
+            let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: sectionIdentifier) { $0 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockEventListViewModel.self, method:
+    """
+    toggleSportSectionExpansion(sectionIdentifier: String)
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func toggleFavoriteForEvent<M1: Cuckoo.Matchable>(event: M1) -> Cuckoo.ClassStubNoReturnFunction<(Event)> where M1.MatchedType == Event {
+            let matchers: [Cuckoo.ParameterMatcher<(Event)>] = [wrap(matchable: event) { $0 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockEventListViewModel.self, method:
+    """
+    toggleFavoriteForEvent(event: Event)
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func isFavorite<M1: Cuckoo.Matchable>(event: M1) -> Cuckoo.ClassStubFunction<(Event), Bool> where M1.MatchedType == Event {
+            let matchers: [Cuckoo.ParameterMatcher<(Event)>] = [wrap(matchable: event) { $0 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockEventListViewModel.self, method:
+    """
+    isFavorite(event: Event) -> Bool
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func didTapRetryButton() -> Cuckoo.ClassStubNoReturnFunction<()> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return .init(stub: cuckoo_manager.createStub(for: MockEventListViewModel.self, method:
+    """
+    didTapRetryButton()
+    """, parameterMatchers: matchers))
+        }
+        
+        
+    }
+
+     struct __VerificationProxy_EventListViewModel: Cuckoo.VerificationProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+        private let callMatcher: Cuckoo.CallMatcher
+        private let sourceLocation: Cuckoo.SourceLocation
+    
+         init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+            self.cuckoo_manager = manager
+            self.callMatcher = callMatcher
+            self.sourceLocation = sourceLocation
+        }
+    
+        
+        
+        
+        var eventsBySport: Cuckoo.VerifyReadOnlyProperty<[EventsBySport]> {
+            return .init(manager: cuckoo_manager, name: "eventsBySport", callMatcher: callMatcher, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        var getEventsBySportError: Cuckoo.VerifyReadOnlyProperty<GetEventsBySportError?> {
+            return .init(manager: cuckoo_manager, name: "getEventsBySportError", callMatcher: callMatcher, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        var isLoadingSportingEvents: Cuckoo.VerifyReadOnlyProperty<Bool> {
+            return .init(manager: cuckoo_manager, name: "isLoadingSportingEvents", callMatcher: callMatcher, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        var sportsSectionsExpansionStatuses: Cuckoo.VerifyReadOnlyProperty<[String: Bool]> {
+            return .init(manager: cuckoo_manager, name: "sportsSectionsExpansionStatuses", callMatcher: callMatcher, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        var delegate: Cuckoo.VerifyOptionalProperty<EventListViewModelDelegate> {
+            return .init(manager: cuckoo_manager, name: "delegate", callMatcher: callMatcher, sourceLocation: sourceLocation)
+        }
+        
+        
+    
+        
+        
+        
+        @discardableResult
+        func viewWillAppear() -> Cuckoo.__DoNotUse<(), Void> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return cuckoo_manager.verify(
+    """
+    viewWillAppear()
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func loadSportingEvents() -> Cuckoo.__DoNotUse<(), Void> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return cuckoo_manager.verify(
+    """
+    loadSportingEvents()
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func getSportSectionIdentifier<M1: Cuckoo.Matchable>(sport: M1) -> Cuckoo.__DoNotUse<(Sport), String> where M1.MatchedType == Sport {
+            let matchers: [Cuckoo.ParameterMatcher<(Sport)>] = [wrap(matchable: sport) { $0 }]
+            return cuckoo_manager.verify(
+    """
+    getSportSectionIdentifier(sport: Sport) -> String
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func getSportSectionExpansionState<M1: Cuckoo.Matchable>(sport: M1) -> Cuckoo.__DoNotUse<(Sport), Bool> where M1.MatchedType == Sport {
+            let matchers: [Cuckoo.ParameterMatcher<(Sport)>] = [wrap(matchable: sport) { $0 }]
+            return cuckoo_manager.verify(
+    """
+    getSportSectionExpansionState(sport: Sport) -> Bool
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func setSportSectionIsExpanded<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(sport: M1, isExpanded: M2) -> Cuckoo.__DoNotUse<(Sport, Bool), Void> where M1.MatchedType == Sport, M2.MatchedType == Bool {
+            let matchers: [Cuckoo.ParameterMatcher<(Sport, Bool)>] = [wrap(matchable: sport) { $0.0 }, wrap(matchable: isExpanded) { $0.1 }]
+            return cuckoo_manager.verify(
+    """
+    setSportSectionIsExpanded(sport: Sport, isExpanded: Bool)
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func toggleSportSectionExpansion<M1: Cuckoo.Matchable>(sectionIdentifier: M1) -> Cuckoo.__DoNotUse<(String), Void> where M1.MatchedType == String {
+            let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: sectionIdentifier) { $0 }]
+            return cuckoo_manager.verify(
+    """
+    toggleSportSectionExpansion(sectionIdentifier: String)
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func toggleFavoriteForEvent<M1: Cuckoo.Matchable>(event: M1) -> Cuckoo.__DoNotUse<(Event), Void> where M1.MatchedType == Event {
+            let matchers: [Cuckoo.ParameterMatcher<(Event)>] = [wrap(matchable: event) { $0 }]
+            return cuckoo_manager.verify(
+    """
+    toggleFavoriteForEvent(event: Event)
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func isFavorite<M1: Cuckoo.Matchable>(event: M1) -> Cuckoo.__DoNotUse<(Event), Bool> where M1.MatchedType == Event {
+            let matchers: [Cuckoo.ParameterMatcher<(Event)>] = [wrap(matchable: event) { $0 }]
+            return cuckoo_manager.verify(
+    """
+    isFavorite(event: Event) -> Bool
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func didTapRetryButton() -> Cuckoo.__DoNotUse<(), Void> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return cuckoo_manager.verify(
+    """
+    didTapRetryButton()
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+    }
+}
+
+
+ class EventListViewModelStub: EventListViewModel {
+    
+    
+    
+    
+     override var eventsBySport: [EventsBySport] {
+        get {
+            return DefaultValueRegistry.defaultValue(for: ([EventsBySport]).self)
+        }
+        
+    }
+    
+    
+    
+    
+    
+     override var getEventsBySportError: GetEventsBySportError? {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (GetEventsBySportError?).self)
+        }
+        
+    }
+    
+    
+    
+    
+    
+     override var isLoadingSportingEvents: Bool {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (Bool).self)
+        }
+        
+    }
+    
+    
+    
+    
+    
+     override var sportsSectionsExpansionStatuses: [String: Bool] {
+        get {
+            return DefaultValueRegistry.defaultValue(for: ([String: Bool]).self)
+        }
+        
+    }
+    
+    
+    
+    
+    
+     override var delegate: EventListViewModelDelegate? {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (EventListViewModelDelegate?).self)
+        }
+        
+        set { }
+        
+    }
+    
+    
+
+    
+
+    
+    
+    
+    
+     override func viewWillAppear()   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+    
+    
+    
+    
+     override func loadSportingEvents()   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+    
+    
+    
+    
+     override func getSportSectionIdentifier(sport: Sport) -> String  {
+        return DefaultValueRegistry.defaultValue(for: (String).self)
+    }
+    
+    
+    
+    
+    
+     override func getSportSectionExpansionState(sport: Sport) -> Bool  {
+        return DefaultValueRegistry.defaultValue(for: (Bool).self)
+    }
+    
+    
+    
+    
+    
+     override func setSportSectionIsExpanded(sport: Sport, isExpanded: Bool)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+    
+    
+    
+    
+     override func toggleSportSectionExpansion(sectionIdentifier: String)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+    
+    
+    
+    
+     override func toggleFavoriteForEvent(event: Event)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+    
+    
+    
+    
+     override func isFavorite(event: Event) -> Bool  {
+        return DefaultValueRegistry.defaultValue(for: (Bool).self)
+    }
+    
+    
+    
+    
+    
+     override func didTapRetryButton()   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     

@@ -71,6 +71,8 @@
 		EBAF39F6299AF0E3005ED847 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39F5299AF0E3005ED847 /* main.swift */; };
 		EBAF39F9299AF162005ED847 /* Cuckoo in Frameworks */ = {isa = PBXBuildFile; productRef = EBAF39F8299AF162005ED847 /* Cuckoo */; };
 		EBAF39FE299AF208005ED847 /* EventListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39FD299AF208005ED847 /* EventListViewModelTests.swift */; };
+		EBAF3A00299AF728005ED847 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39FF299AF728005ED847 /* EventListViewController.swift */; };
+		EBAF3A02299AFC73005ED847 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF3A01299AFC73005ED847 /* UIWindow.swift */; };
 		EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */; };
 		EBD707452996FF4F00ECF0E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD707442996FF4F00ECF0E8 /* Assets.xcassets */; };
 		EBD707482996FF4F00ECF0E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD707462996FF4F00ECF0E8 /* LaunchScreen.storyboard */; };
@@ -176,6 +178,8 @@
 		EBAF39F3299AEB07005ED847 /* Matchables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matchables.swift; sourceTree = "<group>"; };
 		EBAF39F5299AF0E3005ED847 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EBAF39FD299AF208005ED847 /* EventListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModelTests.swift; sourceTree = "<group>"; };
+		EBAF39FF299AF728005ED847 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		EBAF3A01299AFC73005ED847 /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		EBD707382996FF4D00ECF0E8 /* UpcomingSportEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpcomingSportEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBD707442996FF4F00ECF0E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -317,6 +321,7 @@
 				EB2C7AED2999B580006F2486 /* UIImage.swift */,
 				EB2C7B04299A1509006F2486 /* UIViewController.swift */,
 				EB2C7B06299A1DB1006F2486 /* Date.swift */,
+				EBAF3A01299AFC73005ED847 /* UIWindow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				EBAF39FD299AF208005ED847 /* EventListViewModelTests.swift */,
+				EBAF39FF299AF728005ED847 /* EventListViewController.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -801,7 +807,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $ACTION == \"indexbuild\" ]; then\n  echo \"Not running Cuckoo generator during indexing.\"\n  exit 0\nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"Not running Cuckoo generator during preview builds.\"\n  exit 0\nfi\n\n# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PROJECT_DIR}/run\" --download generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Repositories/Protocols/EventRepositoryProtocol.swift\" \\\n\"${INPUT_DIR}/Repositories/Protocols/FavoritesRepositoryProtocol.swift\" \\\n\"${INPUT_DIR}/Networking/Protocols/BaseServiceProtocol.swift\" \\\n\"${INPUT_DIR}/Networking/Protocols/SportsServiceProtocol.swift\" \\\n\"${INPUT_DIR}/Scenes/Events/EventList/EventListViewModel.swift\" \\\n\"${INPUT_DIR}/Scenes/Events/EventList/EventListViewController.swift\" \\\n";
+			shellScript = "if [ $ACTION == \"indexbuild\" ]; then\n  echo \"Not running Cuckoo generator during indexing.\"\n  exit 0\nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"Not running Cuckoo generator during preview builds.\"\n  exit 0\nfi\n\n# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PROJECT_DIR}/run\" --download generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Repositories/Protocols/EventRepositoryProtocol.swift\" \\\n\"${INPUT_DIR}/Repositories/Protocols/FavoritesRepositoryProtocol.swift\" \\\n\"${INPUT_DIR}/Networking/Protocols/BaseServiceProtocol.swift\" \\\n\"${INPUT_DIR}/Networking/Protocols/SportsServiceProtocol.swift\" \\\n\"${INPUT_DIR}/Scenes/Events/EventList/EventListViewModel.swift\" \\\n\"${INPUT_DIR}/Scenes/Events/EventList/EventListViewController.swift\" \\\n\"${INPUT_DIR}/Helpers/ViewConstructor.swift\"\n";
 		};
 		EBD707792997055A00ECF0E8 /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -835,6 +841,7 @@
 				EB4B69912997F7C7003CE1F1 /* EventCollectionViewCell.swift in Sources */,
 				EBD707A4299726EC00ECF0E8 /* SportData.swift in Sources */,
 				EBA8FCBA2998392D0075B4D8 /* DidUpdateEventFavoriteStatusNotificationPayload.swift in Sources */,
+				EBAF3A02299AFC73005ED847 /* UIWindow.swift in Sources */,
 				EBD707702997018E00ECF0E8 /* EventListViewController.swift in Sources */,
 				EBA8FCCA299921710075B4D8 /* FavoritesRepositoryProtocol.swift in Sources */,
 				EB2C7B0D299A2143006F2486 /* SportsServiceProtocol.swift in Sources */,
@@ -887,6 +894,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBAF39EE299AE8EC005ED847 /* SportAndEventsFactory.swift in Sources */,
+				EBAF3A00299AF728005ED847 /* EventListViewController.swift in Sources */,
 				EBAF39EB299AE7E5005ED847 /* EventRepositoryTests.swift in Sources */,
 				EBAF39FE299AF208005ED847 /* EventListViewModelTests.swift in Sources */,
 				EBAF39E6299AE647005ED847 /* GeneratedMocks.swift in Sources */,

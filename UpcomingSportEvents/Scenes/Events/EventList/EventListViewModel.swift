@@ -15,7 +15,7 @@ protocol EventListViewModelDelegate: AnyObject {
     func didUpdateFavoriteStatusForEventAt(section: Int, originalIndex: Int, newIndex: Int)
 }
 
-final class EventListViewModel {
+class EventListViewModel {
     private let eventRepository: EventRepositoryProtocol
     private let favoritesRepository: FavoritesRepositoryProtocol
 

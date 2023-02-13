@@ -9,7 +9,7 @@ import UIKit
 
 protocol ViewConstructorProtocol {
     func getEventListViewController() -> UINavigationController
-    func getCustomAlertViewController() -> CustomAlertViewController
+    func getCustomAlertViewController(layoutOptions: CustomAlertViewController.LayoutOptions) -> CustomAlertViewController
 }
 
 struct ViewConstructor: ViewConstructorProtocol {
@@ -22,7 +22,9 @@ struct ViewConstructor: ViewConstructorProtocol {
         return UINavigationController.init(rootViewController: viewController)
     }
 
-    func getCustomAlertViewController() -> CustomAlertViewController {
-        return CustomAlertViewController.instantiate()
+    func getCustomAlertViewController(layoutOptions: CustomAlertViewController.LayoutOptions) -> CustomAlertViewController {
+        let viewController = CustomAlertViewController.instantiate()
+        viewController.options = layoutOptions
+        return viewController
     }
 }
