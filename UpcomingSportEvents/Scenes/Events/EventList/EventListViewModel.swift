@@ -8,6 +8,7 @@
 import Foundation
 
 protocol EventListViewModelDelegate: AnyObject {
+    func didUpdateIsLoadingSportingEvents(isLoadingSportingEvents: Bool)
     func didFinishLoadingSportsAndEvents()
     func didFailToLoadSportsAndEvents(error: GetEventsBySportError)
     func didToggleExpansionForSection(section: Int, isExpanded: Bool)
@@ -37,6 +38,7 @@ final class EventListViewModel {
         }
 
         isLoadingSportingEvents = true
+        delegate?.didUpdateIsLoadingSportingEvents(isLoadingSportingEvents: isLoadingSportingEvents)
 
         eventRepository.getEventsBySport { [weak self] result in
             guard let self else {
@@ -53,6 +55,8 @@ final class EventListViewModel {
                 self.getEventsBySportError = error
                 self.delegate?.didFailToLoadSportsAndEvents(error: error)
             }
+
+            self.delegate?.didUpdateIsLoadingSportingEvents(isLoadingSportingEvents: self.isLoadingSportingEvents)
         }
     }
 

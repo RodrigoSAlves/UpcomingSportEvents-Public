@@ -19,6 +19,7 @@ class EventListViewController: UIViewController, Storyboarded {
 
     @IBOutlet weak var mainTableView: UITableView!
 
+    @IBOutlet weak var loadingEventsLabel: UILabel!
     var viewModel: EventListViewModel?
     var collectionViewOffsets = [Int: CGFloat]()
 
@@ -168,6 +169,48 @@ extension EventListViewController: EventCollectionViewCellDelegate {
 }
 
 extension EventListViewController: EventListViewModelDelegate {
+    func didUpdateIsLoadingSportingEvents(isLoadingSportingEvents: Bool) {
+
+        var animations: (() -> Void)?
+        var completion: ((Bool) -> Void)?
+
+        if isLoadingSportingEvents {
+            loadingEventsLabel.alpha = 0.0
+            loadingEventsLabel.isHidden = false
+
+            animations = { [weak self] in
+                guard let self else {
+                    return
+                }
+
+                self.loadingEventsLabel.alpha = 1.0
+                self.mainTableView.alpha = 0.0
+            }
+        } else {
+            loadingEventsLabel.alpha = 1.0
+            loadingEventsLabel.isHidden = false
+
+            animations = { [weak self] in
+                guard let self else {
+                    return
+                }
+
+                self.loadingEventsLabel.alpha = 0.0
+                self.mainTableView.alpha = 1.0
+            }
+
+            completion = { [weak self] _ in
+                self?.loadingEventsLabel.isHidden = true
+            }
+        }
+
+        guard let animations else {
+            return
+        }
+
+        UIView.animate(withDuration: 1.0, animations: animations)
+    }
+
     func didFinishLoadingSportsAndEvents() {
         mainTableView.reloadData()
     }

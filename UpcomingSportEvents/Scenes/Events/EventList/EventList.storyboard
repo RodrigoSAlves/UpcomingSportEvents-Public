@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Italic.ttf">
+            <string>Poppins-Italic</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Event List View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -17,21 +22,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TXA-SW-2f9">
+                            <tableView clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TXA-SW-2f9">
                                 <rect key="frame" x="8" y="55" width="359" height="715"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8H-fd-umj">
+                                <rect key="frame" x="20" y="400" width="335" height="25.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Poppins-Italic" family="Poppins" pointSize="18"/>
+                                <color key="textColor" name="BlackAndWhiteTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="MainBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="i8H-fd-umj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="2Ag-Ap-DYl"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TXA-SW-2f9" secondAttribute="trailing" constant="8" id="MDN-Xs-iwW"/>
+                            <constraint firstItem="i8H-fd-umj" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="O62-e4-CgT"/>
                             <constraint firstItem="TXA-SW-2f9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="QFQ-6y-kgf"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="i8H-fd-umj" secondAttribute="trailing" constant="20" id="Uwh-cx-d9B"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="TXA-SW-2f9" secondAttribute="bottom" constant="8" id="d9A-Gv-K5o"/>
                             <constraint firstItem="TXA-SW-2f9" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="kMQ-Kl-J61"/>
+                            <constraint firstItem="i8H-fd-umj" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="z1T-BN-3ia"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadingEventsLabel" destination="i8H-fd-umj" id="T7i-fW-5Wu"/>
                         <outlet property="mainTableView" destination="TXA-SW-2f9" id="OkO-RL-1D4"/>
                     </connections>
                 </viewController>
@@ -41,8 +57,11 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="BlackAndWhiteTextColor">
+            <color red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="MainBackgroundColor">
-            <color red="0.96470588235294119" green="0.96078431372549022" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.92941176470588238" green="0.92941176470588238" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
