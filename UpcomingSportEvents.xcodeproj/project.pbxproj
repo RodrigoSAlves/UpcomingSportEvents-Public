@@ -9,8 +9,27 @@
 /* Begin PBXBuildFile section */
 		EB2C7AD7299965F7006F2486 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C7AD6299965F7006F2486 /* UIView.swift */; };
 		EB2C7ADC299967DA006F2486 /* SportIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C7ADB299967DA006F2486 /* SportIcon.swift */; };
-		EB2C7ADE2999685A006F2486 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C7ADD2999685A006F2486 /* AppIcon.swift */; };
 		EB2C7AE02999A863006F2486 /* DidUpdateExpandableSectionExpansionStatusNotificationPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C7ADF2999A863006F2486 /* DidUpdateExpandableSectionExpansionStatusNotificationPayload.swift */; };
+		EB2C7AEC2999B576006F2486 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C7AEB2999B576006F2486 /* UIColor.swift */; };
+		EB2C7AEE2999B580006F2486 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C7AED2999B580006F2486 /* UIImage.swift */; };
+		EB2C7AEF2999BB79006F2486 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCE92999467F0075B4D8 /* Poppins-Black.ttf */; };
+		EB2C7AF02999BB79006F2486 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCE42999467F0075B4D8 /* Poppins-BlackItalic.ttf */; };
+		EB2C7AF12999BB79006F2486 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCDD2999467F0075B4D8 /* Poppins-Bold.ttf */; };
+		EB2C7AF22999BB79006F2486 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCE32999467F0075B4D8 /* Poppins-BoldItalic.ttf */; };
+		EB2C7AF32999BB79006F2486 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCE52999467F0075B4D8 /* Poppins-ExtraBold.ttf */; };
+		EB2C7AF42999BB79006F2486 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCDB2999467F0075B4D8 /* Poppins-ExtraBoldItalic.ttf */; };
+		EB2C7AF52999BB79006F2486 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCD82999467E0075B4D8 /* Poppins-ExtraLight.ttf */; };
+		EB2C7AF62999BB79006F2486 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCE62999467F0075B4D8 /* Poppins-ExtraLightItalic.ttf */; };
+		EB2C7AF72999BB79006F2486 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCE02999467F0075B4D8 /* Poppins-Italic.ttf */; };
+		EB2C7AF82999BB79006F2486 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCDE2999467F0075B4D8 /* Poppins-Light.ttf */; };
+		EB2C7AF92999BB79006F2486 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCE12999467F0075B4D8 /* Poppins-LightItalic.ttf */; };
+		EB2C7AFA2999BB79006F2486 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCDC2999467F0075B4D8 /* Poppins-Medium.ttf */; };
+		EB2C7AFB2999BB79006F2486 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCE22999467F0075B4D8 /* Poppins-MediumItalic.ttf */; };
+		EB2C7AFC2999BB79006F2486 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCE72999467F0075B4D8 /* Poppins-Regular.ttf */; };
+		EB2C7AFD2999BB79006F2486 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCDA2999467E0075B4D8 /* Poppins-SemiBold.ttf */; };
+		EB2C7AFE2999BB79006F2486 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCE82999467F0075B4D8 /* Poppins-SemiBoldItalic.ttf */; };
+		EB2C7AFF2999BB79006F2486 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCDF2999467F0075B4D8 /* Poppins-Thin.ttf */; };
+		EB2C7B002999BB79006F2486 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCD92999467E0075B4D8 /* Poppins-ThinItalic.ttf */; };
 		EB4B697B2997BF74003CE1F1 /* PresentableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B697A2997BF74003CE1F1 /* PresentableError.swift */; };
 		EB4B697D2997BF8E003CE1F1 /* GetEventsBySportError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B697C2997BF8E003CE1F1 /* GetEventsBySportError.swift */; };
 		EB4B697F2997C273003CE1F1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B697E2997C273003CE1F1 /* NetworkError.swift */; };
@@ -82,8 +101,9 @@
 /* Begin PBXFileReference section */
 		EB2C7AD6299965F7006F2486 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		EB2C7ADB299967DA006F2486 /* SportIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportIcon.swift; sourceTree = "<group>"; };
-		EB2C7ADD2999685A006F2486 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		EB2C7ADF2999A863006F2486 /* DidUpdateExpandableSectionExpansionStatusNotificationPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidUpdateExpandableSectionExpansionStatusNotificationPayload.swift; sourceTree = "<group>"; };
+		EB2C7AEB2999B576006F2486 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		EB2C7AED2999B580006F2486 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		EB4B697A2997BF74003CE1F1 /* PresentableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableError.swift; sourceTree = "<group>"; };
 		EB4B697C2997BF8E003CE1F1 /* GetEventsBySportError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventsBySportError.swift; sourceTree = "<group>"; };
 		EB4B697E2997C273003CE1F1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -255,6 +275,8 @@
 				EBA8FCB2299820C60075B4D8 /* Collection.swift */,
 				EBA8FCB6299838BB0075B4D8 /* Notification.swift */,
 				EB2C7AD6299965F7006F2486 /* UIView.swift */,
+				EB2C7AEB2999B576006F2486 /* UIColor.swift */,
+				EB2C7AED2999B580006F2486 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -431,7 +453,6 @@
 				EBD707732997020600ECF0E8 /* Storyboarded.swift */,
 				EBD707772997027200ECF0E8 /* ViewConstructor.swift */,
 				EBA8FCB0299808650075B4D8 /* UIDesignableView.swift */,
-				EB2C7ADD2999685A006F2486 /* AppIcon.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -624,6 +645,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB2C7AEF2999BB79006F2486 /* Poppins-Black.ttf in Resources */,
+				EB2C7AF02999BB79006F2486 /* Poppins-BlackItalic.ttf in Resources */,
+				EB2C7AF12999BB79006F2486 /* Poppins-Bold.ttf in Resources */,
+				EB2C7AF22999BB79006F2486 /* Poppins-BoldItalic.ttf in Resources */,
+				EB2C7AF32999BB79006F2486 /* Poppins-ExtraBold.ttf in Resources */,
+				EB2C7AF42999BB79006F2486 /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				EB2C7AF52999BB79006F2486 /* Poppins-ExtraLight.ttf in Resources */,
+				EB2C7AF62999BB79006F2486 /* Poppins-ExtraLightItalic.ttf in Resources */,
+				EB2C7AF72999BB79006F2486 /* Poppins-Italic.ttf in Resources */,
+				EB2C7AF82999BB79006F2486 /* Poppins-Light.ttf in Resources */,
+				EB2C7AF92999BB79006F2486 /* Poppins-LightItalic.ttf in Resources */,
+				EB2C7AFA2999BB79006F2486 /* Poppins-Medium.ttf in Resources */,
+				EB2C7AFB2999BB79006F2486 /* Poppins-MediumItalic.ttf in Resources */,
+				EB2C7AFC2999BB79006F2486 /* Poppins-Regular.ttf in Resources */,
+				EB2C7AFD2999BB79006F2486 /* Poppins-SemiBold.ttf in Resources */,
+				EB2C7AFE2999BB79006F2486 /* Poppins-SemiBoldItalic.ttf in Resources */,
+				EB2C7AFF2999BB79006F2486 /* Poppins-Thin.ttf in Resources */,
+				EB2C7B002999BB79006F2486 /* Poppins-ThinItalic.ttf in Resources */,
 				EB4B698E2997F57E003CE1F1 /* HorizontalCollectionViewTableViewCell.xib in Resources */,
 				EBD707482996FF4F00ECF0E8 /* LaunchScreen.storyboard in Resources */,
 				EBD707762997023E00ECF0E8 /* EventList.storyboard in Resources */,
@@ -678,6 +717,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB4B697B2997BF74003CE1F1 /* PresentableError.swift in Sources */,
+				EB2C7AEC2999B576006F2486 /* UIColor.swift in Sources */,
 				EBA8FCD0299931420075B4D8 /* DidRemoveEventFromFavoritesNotificationPayload.swift in Sources */,
 				EB4B69912997F7C7003CE1F1 /* EventCollectionViewCell.swift in Sources */,
 				EBD707A4299726EC00ECF0E8 /* SportData.swift in Sources */,
@@ -687,7 +727,6 @@
 				EBD7078729970F9B00ECF0E8 /* SceneAssembly.swift in Sources */,
 				EBA8FCC7299921590075B4D8 /* EventRepositoryProtocol.swift in Sources */,
 				EB4B698D2997F57E003CE1F1 /* HorizontalCollectionViewTableViewCell.swift in Sources */,
-				EB2C7ADE2999685A006F2486 /* AppIcon.swift in Sources */,
 				EBD7078529970F7000ECF0E8 /* EventListSceneAssembly.swift in Sources */,
 				EBA8FCC12999204E0075B4D8 /* FavoritesStorageProtocol.swift in Sources */,
 				EB4B697D2997BF8E003CE1F1 /* GetEventsBySportError.swift in Sources */,
@@ -709,6 +748,7 @@
 				EBA8FCB3299820C60075B4D8 /* Collection.swift in Sources */,
 				EB4B69812997C3F2003CE1F1 /* BaseService.swift in Sources */,
 				EBD7079C29971E1C00ECF0E8 /* Environment.swift in Sources */,
+				EB2C7AEE2999B580006F2486 /* UIImage.swift in Sources */,
 				EB4B69842997EBF3003CE1F1 /* EventsBySport.swift in Sources */,
 				EBD707782997027200ECF0E8 /* ViewConstructor.swift in Sources */,
 				EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */,
