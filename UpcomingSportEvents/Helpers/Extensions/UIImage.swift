@@ -29,4 +29,8 @@ extension UIImage {
     static var user: UIImage { return UIImage(named: "ic-user")! }
     static var filters: UIImage { return UIImage(named: "ic-filters")! }
     static var navBarLogoWhite: UIImage { return UIImage(named: "NavBarLogoLight")! }
+
+    // Other Icons
+    static var connectivityError: UIImage { return UIImage(named: "ic-connectivity-error")! }
+    static var warning: UIImage { return UIImage(named: "ic-warning")! }
 }

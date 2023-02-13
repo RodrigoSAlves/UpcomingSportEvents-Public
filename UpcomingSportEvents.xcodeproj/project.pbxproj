@@ -60,6 +60,10 @@
 		EBA8FCCE299931240075B4D8 /* DidAddEventToFavoritesNotificationPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCCD299931240075B4D8 /* DidAddEventToFavoritesNotificationPayload.swift */; };
 		EBA8FCD0299931420075B4D8 /* DidRemoveEventFromFavoritesNotificationPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8FCCF299931420075B4D8 /* DidRemoveEventFromFavoritesNotificationPayload.swift */; };
 		EBA8FCD4299944950075B4D8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA8FCD3299944950075B4D8 /* Colors.xcassets */; };
+		EBAF39DD299AC8A1005ED847 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39DC299AC8A1005ED847 /* CustomAlertViewController.swift */; };
+		EBAF39DF299AC8AD005ED847 /* CustomAlertView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBAF39DE299AC8AD005ED847 /* CustomAlertView.storyboard */; };
+		EBAF39E1299ACFF0005ED847 /* MiscellaneousAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39E0299ACFF0005ED847 /* MiscellaneousAssembly.swift */; };
+		EBAF39E3299AD20E005ED847 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF39E2299AD20E005ED847 /* GlobalConstants.swift */; };
 		EBD7073C2996FF4D00ECF0E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */; };
 		EBD707452996FF4F00ECF0E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD707442996FF4F00ECF0E8 /* Assets.xcassets */; };
 		EBD707482996FF4F00ECF0E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD707462996FF4F00ECF0E8 /* LaunchScreen.storyboard */; };
@@ -156,6 +160,10 @@
 		EBA8FCE72999467F0075B4D8 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		EBA8FCE82999467F0075B4D8 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		EBA8FCE92999467F0075B4D8 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		EBAF39DC299AC8A1005ED847 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		EBAF39DE299AC8AD005ED847 /* CustomAlertView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomAlertView.storyboard; sourceTree = "<group>"; };
+		EBAF39E0299ACFF0005ED847 /* MiscellaneousAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscellaneousAssembly.swift; sourceTree = "<group>"; };
+		EBAF39E2299AD20E005ED847 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		EBD707382996FF4D00ECF0E8 /* UpcomingSportEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpcomingSportEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD7073B2996FF4D00ECF0E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBD707442996FF4F00ECF0E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -222,6 +230,7 @@
 		EB2C7AE42999AB1B006F2486 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				EBAF39DB299AC87C005ED847 /* CustomAlertViewController */,
 				EB2C7AE62999B3EB006F2486 /* HorizontalCollectionViewTableViewCell */,
 				EB2C7AE52999AB27006F2486 /* ExpandableSectionTableViewHeaderView */,
 			);
@@ -380,6 +389,15 @@
 			path = Poppins;
 			sourceTree = "<group>";
 		};
+		EBAF39DB299AC87C005ED847 /* CustomAlertViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EBAF39DC299AC8A1005ED847 /* CustomAlertViewController.swift */,
+				EBAF39DE299AC8AD005ED847 /* CustomAlertView.storyboard */,
+			);
+			path = CustomAlertViewController;
+			sourceTree = "<group>";
+		};
 		EBD7072F2996FF4D00ECF0E8 = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +490,7 @@
 				EBD707732997020600ECF0E8 /* Storyboarded.swift */,
 				EBD707772997027200ECF0E8 /* ViewConstructor.swift */,
 				EBA8FCB0299808650075B4D8 /* UIDesignableView.swift */,
+				EBAF39E2299AD20E005ED847 /* GlobalConstants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -484,6 +503,7 @@
 				EBD7078A299713FE00ECF0E8 /* NetworkingAssembly.swift */,
 				EBD7078C2997140900ECF0E8 /* RepositoryAssembly.swift */,
 				EBA8FCCB299922930075B4D8 /* PersistenceAssembly.swift */,
+				EBAF39E0299ACFF0005ED847 /* MiscellaneousAssembly.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -678,6 +698,7 @@
 				EB2C7AF92999BB79006F2486 /* Poppins-LightItalic.ttf in Resources */,
 				EB2C7AFA2999BB79006F2486 /* Poppins-Medium.ttf in Resources */,
 				EB2C7AFB2999BB79006F2486 /* Poppins-MediumItalic.ttf in Resources */,
+				EBAF39DF299AC8AD005ED847 /* CustomAlertView.storyboard in Resources */,
 				EB2C7AFC2999BB79006F2486 /* Poppins-Regular.ttf in Resources */,
 				EB2C7AFD2999BB79006F2486 /* Poppins-SemiBold.ttf in Resources */,
 				EB2C7AFE2999BB79006F2486 /* Poppins-SemiBoldItalic.ttf in Resources */,
@@ -747,7 +768,9 @@
 				EB2C7B0D299A2143006F2486 /* SportsServiceProtocol.swift in Sources */,
 				EB2C7B0B299A212B006F2486 /* BaseServiceProtocol.swift in Sources */,
 				EBD7078729970F9B00ECF0E8 /* SceneAssembly.swift in Sources */,
+				EBAF39DD299AC8A1005ED847 /* CustomAlertViewController.swift in Sources */,
 				EBA8FCC7299921590075B4D8 /* EventRepositoryProtocol.swift in Sources */,
+				EBAF39E1299ACFF0005ED847 /* MiscellaneousAssembly.swift in Sources */,
 				EB4B698D2997F57E003CE1F1 /* HorizontalCollectionViewTableViewCell.swift in Sources */,
 				EBD7078529970F7000ECF0E8 /* EventListSceneAssembly.swift in Sources */,
 				EBA8FCC12999204E0075B4D8 /* FavoritesStorageProtocol.swift in Sources */,
@@ -766,6 +789,7 @@
 				EB2C7B05299A1509006F2486 /* UIViewController.swift in Sources */,
 				EBD707912997146200ECF0E8 /* SportsService.swift in Sources */,
 				EB2C7AE02999A863006F2486 /* DidUpdateExpandableSectionExpansionStatusNotificationPayload.swift in Sources */,
+				EBAF39E3299AD20E005ED847 /* GlobalConstants.swift in Sources */,
 				EB4B69882997EC08003CE1F1 /* Event.swift in Sources */,
 				EBD707892997102500ECF0E8 /* EventListViewModel.swift in Sources */,
 				EBA8FCBD29991F0D0075B4D8 /* FavoritesRepository.swift in Sources */,

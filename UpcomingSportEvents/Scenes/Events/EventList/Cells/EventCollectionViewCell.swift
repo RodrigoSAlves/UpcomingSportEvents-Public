@@ -15,10 +15,6 @@ class EventCollectionViewCell: UICollectionViewCell {
     static let nibIdentifier = "EventCollectionViewCell"
     static let identifier = "EventCollectionViewCell"
 
-    struct Constants {
-        static let defaultContainerViewCornerRadius: CGFloat = 16.0
-    }
-
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var firstOpponentLabel: UILabel!
     @IBOutlet weak var secondOpponentLabel: UILabel!
@@ -31,7 +27,7 @@ class EventCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        containerView.setCornerRadius(Constants.defaultContainerViewCornerRadius)
+        containerView.setCornerRadius(GlobalConstants.defaultCornerRadius)
     }
 
     func fill(event: Event, isFavorite: Bool) {

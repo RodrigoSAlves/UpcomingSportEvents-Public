@@ -19,9 +19,11 @@ class EventListViewController: UIViewController, Storyboarded {
     }
 
     @IBOutlet weak var mainTableView: UITableView!
-
     @IBOutlet weak var loadingEventsLabel: UILabel!
+
     var viewModel: EventListViewModel?
+    var viewConstructor: ViewConstructorProtocol?
+
     var collectionViewOffsets = [Int: CGFloat]()
 
     override func viewDidLoad() {
@@ -215,7 +217,23 @@ extension EventListViewController: EventListViewModelDelegate {
     }
 
     func didFailToLoadSportsAndEvents(error: GetEventsBySportError) {
-        print(error.message)
+        guard let customAlertViewController = viewConstructor?.getCustomAlertViewController() else {
+            return
+        }
+
+        let actionHandler: CustomAlertViewController.LayoutOptions.ActionHandler = { alertViewController in
+            alertViewController.dismiss(animated: true)
+        }
+
+        customAlertViewController.options = CustomAlertViewController.LayoutOptions(
+            icon: error.icon,
+            title: error.title,
+            message: error.message,
+            actionButtonTitle: "OK",
+            actionButtonHandler: actionHandler
+        )
+
+        present(customAlertViewController, animated: true)
     }
 
     func didToggleExpansionForSection(section: Int, isExpanded: Bool) {

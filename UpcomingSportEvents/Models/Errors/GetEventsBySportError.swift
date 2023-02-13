@@ -6,9 +6,22 @@
 //
 
 import Foundation
+import UIKit
 
 enum GetEventsBySportError: PresentableError {
     case networkError(NetworkError)
+
+    var icon: UIImage? {
+        switch self {
+        case .networkError(let networkError):
+            switch networkError {
+            case .noInternetConnection:
+                return .connectivityError
+            default:
+                return .warning
+            }
+        }
+    }
 
     var title: String {
         switch self {

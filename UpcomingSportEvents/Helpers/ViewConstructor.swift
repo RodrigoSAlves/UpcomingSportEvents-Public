@@ -9,6 +9,7 @@ import UIKit
 
 protocol ViewConstructorProtocol {
     func getEventListViewController() -> UINavigationController
+    func getCustomAlertViewController() -> CustomAlertViewController
 }
 
 struct ViewConstructor: ViewConstructorProtocol {
@@ -16,7 +17,12 @@ struct ViewConstructor: ViewConstructorProtocol {
         let viewController = EventListViewController.instantiate()
         viewController.viewModel = DIContainer.shared.resolve()
         viewController.viewModel?.delegate = viewController
+        viewController.viewConstructor = DIContainer.shared.resolve()
 
         return UINavigationController.init(rootViewController: viewController)
+    }
+
+    func getCustomAlertViewController() -> CustomAlertViewController {
+        return CustomAlertViewController.instantiate()
     }
 }

@@ -24,4 +24,8 @@ extension UIColor {
 
     // Event List Colors
     static var eventCardBackgroundColor: UIColor { return UIColor(named: "EventCardBackgroundColor")! }
+
+    // Custom Alert View Colors
+    static var customAlertViewBackgroundColor: UIColor { return UIColor(named: "CustomAlertViewBackgroundColor")! }
+    static var customAlertViewContainerColor: UIColor { return UIColor(named: "CustomAlertViewContainerColor")! }
 }

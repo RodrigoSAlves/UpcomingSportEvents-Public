@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol PresentableError: Error {
+    var icon: UIImage? { get }
     var message: String { get }
     var title: String { get }
 }
