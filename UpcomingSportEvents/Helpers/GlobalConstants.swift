@@ -9,4 +9,5 @@ import Foundation
 
 struct GlobalConstants {
     static let defaultCornerRadius: CGFloat = 16.0
+    static let defaultOpacityAnimationDuration: TimeInterval = 0.3
 }

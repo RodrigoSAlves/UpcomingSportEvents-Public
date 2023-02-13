@@ -15,16 +15,22 @@ class EventListViewController: UIViewController, Storyboarded {
         static let defaultSportsTableViewCellHeight: CGFloat = 124.0
         static let defaultSportSectionHeaderHeight: CGFloat = 35.0
         static let defaultEventCollectionViewCellWidth: CGFloat = 225.0
-        static let defaultLoadingTransitionAnimationDuration: CGFloat = 0.3
     }
 
     @IBOutlet weak var mainTableView: UITableView!
     @IBOutlet weak var loadingEventsLabel: UILabel!
+    @IBOutlet weak var errorStackView: UIStackView!
+    @IBOutlet weak var retryButton: UIButton!
 
     var viewModel: EventListViewModel?
     var viewConstructor: ViewConstructorProtocol?
 
     var collectionViewOffsets = [Int: CGFloat]()
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.viewWillAppear()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,42 +62,33 @@ class EventListViewController: UIViewController, Storyboarded {
             UINib(nibName: ExpandableSectionHeaderView.nibIdentifier, bundle: nil),
             forHeaderFooterViewReuseIdentifier: ExpandableSectionHeaderView.identifier
         )
+
+        retryButton.setCornerRadius(GlobalConstants.defaultCornerRadius)
     }
 
-    func animateIsLoadingSportingEventsTransition(isLoading: Bool) {
-        if isLoading {
-            loadingEventsLabel.alpha = .zero
-            loadingEventsLabel.isHidden = false
-
-            let animations = { [weak self] in
-                guard let self else {
-                    return
-                }
-
-                self.loadingEventsLabel.alpha = 1.0
-                self.mainTableView.alpha = 0.0
-            }
-
-            UIView.animate(withDuration: Constants.defaultLoadingTransitionAnimationDuration, animations: animations)
-        } else {
-            loadingEventsLabel.alpha = 1.0
-            loadingEventsLabel.isHidden = false
-
-            let animations = { [weak self] in
-                guard let self else {
-                    return
-                }
-
-                self.loadingEventsLabel.alpha = 0.0
-                self.mainTableView.alpha = 1.0
-            }
-
-            let completion: (Bool) -> Void = { [weak self] _ in
-                self?.loadingEventsLabel.isHidden = true
-            }
-
-            UIView.animate(withDuration: Constants.defaultLoadingTransitionAnimationDuration, animations: animations, completion: completion)
+    func presentError(error: PresentableError) {
+        guard let customAlertViewController = viewConstructor?.getCustomAlertViewController() else {
+            return
         }
+
+        let actionHandler: CustomAlertViewController.LayoutOptions.ActionHandler = { [weak self] alertViewController in
+            alertViewController.dismiss(animated: true)
+            self?.errorStackView.fadeIn()
+        }
+
+        customAlertViewController.options = CustomAlertViewController.LayoutOptions(
+            icon: error.icon,
+            title: error.title,
+            message: error.message,
+            actionButtonTitle: "OK",
+            actionButtonHandler: actionHandler
+        )
+
+        present(customAlertViewController, animated: true)
+    }
+
+    @IBAction func didTapRetryButton(_ sender: Any) {
+        viewModel?.didTapRetryButton()
     }
 }
 
@@ -209,35 +206,30 @@ extension EventListViewController: EventCollectionViewCellDelegate {
 
 extension EventListViewController: EventListViewModelDelegate {
     func didUpdateIsLoadingSportingEvents(isLoadingSportingEvents: Bool) {
-        animateIsLoadingSportingEventsTransition(isLoading: isLoadingSportingEvents)
+        if isLoadingSportingEvents {
+            loadingEventsLabel.fadeIn()
+        } else {
+            loadingEventsLabel.fadeOut()
+        }
     }
 
     func didFinishLoadingSportsAndEvents() {
         mainTableView.reloadData()
+        mainTableView.fadeIn()
     }
 
-    func didFailToLoadSportsAndEvents(error: GetEventsBySportError) {
-        guard let customAlertViewController = viewConstructor?.getCustomAlertViewController() else {
-            return
+    func didUpdateGetEventsBySportError(error: GetEventsBySportError?) {
+        if let error {
+            presentError(error: error)
+            mainTableView.fadeOut()
+        } else {
+            errorStackView.fadeOut()
         }
-
-        let actionHandler: CustomAlertViewController.LayoutOptions.ActionHandler = { alertViewController in
-            alertViewController.dismiss(animated: true)
-        }
-
-        customAlertViewController.options = CustomAlertViewController.LayoutOptions(
-            icon: error.icon,
-            title: error.title,
-            message: error.message,
-            actionButtonTitle: "OK",
-            actionButtonHandler: actionHandler
-        )
-
-        present(customAlertViewController, animated: true)
     }
 
     func didToggleExpansionForSection(section: Int, isExpanded: Bool) {
         let indexPaths = [IndexPath(row: 0, section: section)]
+
         if isExpanded {
             mainTableView.insertRows(at: indexPaths, with: .fade)
         } else {

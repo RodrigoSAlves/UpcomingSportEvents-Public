@@ -10,7 +10,7 @@ import Foundation
 protocol EventListViewModelDelegate: AnyObject {
     func didUpdateIsLoadingSportingEvents(isLoadingSportingEvents: Bool)
     func didFinishLoadingSportsAndEvents()
-    func didFailToLoadSportsAndEvents(error: GetEventsBySportError)
+    func didUpdateGetEventsBySportError(error: GetEventsBySportError?)
     func didToggleExpansionForSection(section: Int, isExpanded: Bool)
     func didUpdateFavoriteStatusForEventAt(section: Int, originalIndex: Int, newIndex: Int)
 }
@@ -29,6 +29,9 @@ final class EventListViewModel {
     init(eventRepository: EventRepositoryProtocol, favoritesRepository: FavoritesRepositoryProtocol) {
         self.eventRepository = eventRepository
         self.favoritesRepository = favoritesRepository
+    }
+
+    func viewWillAppear() {
         loadSportingEvents()
     }
 
@@ -36,6 +39,9 @@ final class EventListViewModel {
         guard !isLoadingSportingEvents else {
             return
         }
+
+        getEventsBySportError = nil
+        delegate?.didUpdateGetEventsBySportError(error: nil)
 
         isLoadingSportingEvents = true
         delegate?.didUpdateIsLoadingSportingEvents(isLoadingSportingEvents: isLoadingSportingEvents)
@@ -46,6 +52,7 @@ final class EventListViewModel {
             }
 
             self.isLoadingSportingEvents = false
+            self.delegate?.didUpdateIsLoadingSportingEvents(isLoadingSportingEvents: self.isLoadingSportingEvents)
 
             switch result {
             case .success(let eventsBySport):
@@ -53,10 +60,8 @@ final class EventListViewModel {
                 self.delegate?.didFinishLoadingSportsAndEvents()
             case .failure(let error):
                 self.getEventsBySportError = error
-                self.delegate?.didFailToLoadSportsAndEvents(error: error)
+                self.delegate?.didUpdateGetEventsBySportError(error: error)
             }
-
-            self.delegate?.didUpdateIsLoadingSportingEvents(isLoadingSportingEvents: self.isLoadingSportingEvents)
         }
     }
 
@@ -114,5 +119,9 @@ final class EventListViewModel {
 
     func isFavorite(event: Event) -> Bool {
         return favoritesRepository.getFavoriteStatus(event: event)
+    }
+
+    func didTapRetryButton() {
+        loadSportingEvents()
     }
 }
